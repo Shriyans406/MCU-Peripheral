@@ -1,0 +1,20 @@
+19:16:53 **** Build of configuration Debug for project 004PeriClockEnable ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m0 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f051r8tx.d" -MT"Startup/startup_stm32f051r8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f051r8tx.o" "../Startup/startup_stm32f051r8tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32F0DISCOVERY -DSTM32 -DSTM32F0 -DSTM32F051R8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32F0DISCOVERY -DSTM32 -DSTM32F0 -DSTM32F051R8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32F0DISCOVERY -DSTM32 -DSTM32F0 -DSTM32F051R8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "004PeriClockEnable.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\004PeriClockEnable\STM32F051R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="004PeriClockEnable.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 004PeriClockEnable.elf
+ 
+arm-none-eabi-size  004PeriClockEnable.elf 
+arm-none-eabi-objdump -h -S 004PeriClockEnable.elf  > "004PeriClockEnable.list"
+   text	   data	    bss	    dec	    hex	filename
+    508	      0	   1568	   2076	    81c	004PeriClockEnable.elf
+Finished building: default.size.stdout
+ 
+Finished building: 004PeriClockEnable.list
+ 
+
+19:17:23 Build Finished. 0 errors, 0 warnings. (took 29s.958ms)
+

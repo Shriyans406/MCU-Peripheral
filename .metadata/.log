@@ -64,3 +64,54 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-01-28 19:57:48.711
 !MESSAGE Indexed '002SampleApp' (2 sources, 53 headers) in 0.915 sec: 1,952 declarations; 2,861 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+!SESSION 2026-01-31 01:16:22.818 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-01-31 01:16:53.631
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-01-31 01:16:53.636
+!MESSAGE Log4j2 initialized with config file C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-01-31 01:17:23.145
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-02-08 11:29:05.058 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-02-08 11:29:23.463
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-02-08 11:29:23.468
+!MESSAGE Log4j2 initialized with config file C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-02-08 11:29:44.489
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-02-08 11:35:54.862
+!MESSAGE Indexed 'Clock' (25 sources, 87 headers) in 8.46 sec: 5,596 declarations; 38,809 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0045%)
+!SESSION 2026-02-11 19:11:06.787 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-02-11 19:11:28.915
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-02-11 19:11:28.920
+!MESSAGE Log4j2 initialized with config file C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-02-11 19:11:59.907
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-02-11 19:15:03.279
+!MESSAGE Indexed '004PeriClockEnable' (2 sources, 53 headers) in 1.96 sec: 1,952 declarations; 2,860 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)

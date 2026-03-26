@@ -190,3 +190,39 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-16 18:18:52.069
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-03-25 17:14:23.128 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-25 17:15:11.776
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-25 17:15:11.781
+!MESSAGE Log4j2 initialized with config file C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-25 17:15:34.604
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-03-26 17:25:32.327 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-26 17:27:10.803
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-26 17:27:10.806
+!MESSAGE Log4j2 initialized with config file C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-26 17:27:28.308
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-26 17:30:33.016
+!MESSAGE Indexed 'stm32f4xx_drivers' (3 sources, 53 headers) in 2.34 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-26 17:38:17.201
+!MESSAGE Indexed 'stm32f4xx_drivers' (3 sources, 54 headers) in 1.67 sec: 1,954 declarations; 2,864 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.041%)

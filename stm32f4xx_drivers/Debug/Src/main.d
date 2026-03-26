@@ -1,0 +1,3 @@
+Src/main.o: ../Src/main.c \
+ C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h
+C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h:

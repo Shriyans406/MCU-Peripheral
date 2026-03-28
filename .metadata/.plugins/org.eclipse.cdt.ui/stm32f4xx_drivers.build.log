@@ -1,4 +1,4 @@
-18:52:30 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+12:52:00 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 ../Src/main.c:22:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
@@ -16,5 +16,5 @@ Finished building: default.size.stdout
 Finished building: stm32f4xx_drivers.list
  
 
-18:52:33 Build Finished. 0 errors, 1 warnings. (took 2s.951ms)
+12:52:14 Build Finished. 0 errors, 1 warnings. (took 13s.523ms)
 

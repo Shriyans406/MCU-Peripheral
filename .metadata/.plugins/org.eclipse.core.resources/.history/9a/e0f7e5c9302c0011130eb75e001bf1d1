@@ -8,8 +8,6 @@
 #ifndef INC_STM32F407XX_H_
 #define INC_STM32F407XX_H_
 
-#define __vo volatile
-
 #define FLASH_BASEADDR          0x08000000U
 #define SRAM1_BASEADDR          0x20000000U
 #define SRAM2_BASEADDR          0x20001C00U
@@ -54,20 +52,5 @@
 #define SYSCFG_BASE        (AHB2PERI_BASEADDR + 0x3800)
 #define USART1_BASE        (AHB2PERI_BASEADDR + 0x1000)
 #define USART6_BASE        (AHB2PERI_BASEADDR + 0x1400)
-
-typedef struct
-{
-	__vo uint32_t MODER;
-	__vo uint32_t OTYPER;
-	__vo uint32_t OSPEEDR;
-	__vo uint32_t PUPDR;
-	__vo uint32_t IDR;
-	__vo uint32_t ODR;
-	__vo uint32_t BSRR;
-	__vo uint32_t LCKR;
-	__vo uint32_t AFR[2];
-}GPIO_RegDef_t;
-
-
 
 #endif /* INC_STM32F407XX_H_ */

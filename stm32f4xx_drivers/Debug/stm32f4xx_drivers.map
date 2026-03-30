@@ -816,7 +816,7 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x00000013       0x19 ./Startup/startup_stm32f407vgtx.o
 
-.debug_macro    0x00000000     0x106d
+.debug_macro    0x00000000     0x1073
  .debug_macro   0x00000000       0x6c ./Src/main.o
  .debug_macro   0x0000006c      0xae4 ./Src/main.o
  .debug_macro   0x00000b50       0x22 ./Src/main.o
@@ -825,16 +825,16 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000c51      0x103 ./Src/main.o
  .debug_macro   0x00000d54       0x6a ./Src/main.o
  .debug_macro   0x00000dbe      0x1df ./Src/main.o
- .debug_macro   0x00000f9d       0xd0 ./Src/main.o
+ .debug_macro   0x00000f9d       0xd6 ./Src/main.o
 
 .debug_line     0x00000000      0x4e4
  .debug_line    0x00000000      0x469 ./Src/main.o
  .debug_line    0x00000469       0x7b ./Startup/startup_stm32f407vgtx.o
 
-.debug_str      0x00000000     0x4170
- .debug_str     0x00000000     0x4170 ./Src/main.o
-                               0x428c (size before relaxing)
- .debug_str     0x00004170       0x90 ./Startup/startup_stm32f407vgtx.o
+.debug_str      0x00000000     0x417e
+ .debug_str     0x00000000     0x417e ./Src/main.o
+                               0x429a (size before relaxing)
+ .debug_str     0x0000417e       0x90 ./Startup/startup_stm32f407vgtx.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/main.o

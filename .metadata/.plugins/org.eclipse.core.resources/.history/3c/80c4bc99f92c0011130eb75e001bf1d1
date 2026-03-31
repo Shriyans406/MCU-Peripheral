@@ -32,7 +32,6 @@
 #define GPIOG_BASEADDR       (AHB1PERI_BASEADDR + 0x1800)
 #define GPIOH_BASEADDR       (AHB1PERI_BASEADDR + 0x1C00)
 #define GPIOI_BASEADDR       (AHB1PERI_BASEADDR + 0x2000)
-#define RCC_BASEADDR         (AHB1PERI_BASEADDR + 0x3800)
 
 
 #define I2C1_BASE        (AHB1PERI_BASEADDR + 0x5400)
@@ -117,19 +116,6 @@ typedef struct
 #define GPIOH 			((GPIO_RegDef_t*)GPIOH_BASEADDR)
 #define GPIOI 			((GPIO_RegDef_t*)GPIOI_BASEADDR)
 
-#define RCC 			((GPIO_RegDef_t*)RCC_BASEADDR)
-
-
-#define GPIOA_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 0) )
-#define GPIOB_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 1) )
-
-
-#define I2C1_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 21) )
-
-#define SPI1_PCLK_EN() 			(RCC -> AHB2ENR |= (1 << 12) )
-
-
-#define GPIOA_PCLK_DI() 			(RCC -> AHB1ENR &= ~(1 << 0) )
 
 
 

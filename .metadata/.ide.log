@@ -1,12 +1,5 @@
-2026-03-31 10:44:50,926 [INFO] WebApp:194 - Connection lost
-2026-03-31 10:44:58,552 [INFO] WebApp:191 - Connection restablished
-2026-03-31 10:44:58,581 [INFO] WebApp:194 - Connection lost
-2026-03-31 10:44:58,783 [INFO] WebApp:191 - Connection restablished
-2026-03-31 11:05:39,258 [INFO] WebApp:194 - Connection lost
-2026-03-31 11:32:51,176 [INFO] WebApp:191 - Connection restablished
-2026-03-31 11:32:53,150 [INFO] WebApp:194 - Connection lost
-2026-03-31 11:32:53,440 [INFO] WebApp:191 - Connection restablished
-2026-03-31 11:35:14,822 [INFO] WebApp:194 - Connection lost
-2026-03-31 11:57:44,960 [INFO] WebApp:191 - Connection restablished
-2026-03-31 12:15:12,169 [INFO] WebApp:194 - Connection lost
-2026-03-31 16:40:04,612 [INFO] WebApp:191 - Connection restablished
+2026-03-31 22:24:47,452 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 22:24:47.090 ERROR Chromium process exit code: -2,147,483,645
+2026-03-31 22:24:47,650 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-03-31 22:24:47,668 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 22:24:47.656 ERROR Crash dump dir: C:\Users\HP\AppData\Local\JxBrowser\7.41.4\CrashReports
+2026-03-31 22:24:47,668 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-03-31 22:24:47,943 [ERROR] WebApp:412 - JxBrowser engine crashed! Exit code: -2147483645

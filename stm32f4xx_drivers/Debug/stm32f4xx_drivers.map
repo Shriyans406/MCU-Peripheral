@@ -267,6 +267,35 @@ Discarded input sections
  .text          0x00000000       0x14 ./Startup/startup_stm32f407vgtx.o
  .data          0x00000000        0x0 ./Startup/startup_stm32f407vgtx.o
  .bss           0x00000000        0x0 ./Startup/startup_stm32f407vgtx.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
+ .text          0x00000000        0x0 ./drivers/src/stm32f407xx_gpio_driver.o
+ .data          0x00000000        0x0 ./drivers/src/stm32f407xx_gpio_driver.o
+ .bss           0x00000000        0x0 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_info    0x00000000       0x69 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_abbrev  0x00000000       0x28 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_aranges
+                0x00000000       0x18 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000       0x76 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000      0xae4 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000       0x22 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000       0x8e ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000       0x51 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000      0x103 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000       0x6a ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000      0x13b ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_line    0x00000000      0x48d ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_str     0x00000000     0x4563 ./drivers/src/stm32f407xx_gpio_driver.o
+ .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_gpio_driver.o
+ .ARM.attributes
+                0x00000000       0x34 ./drivers/src/stm32f407xx_gpio_driver.o
  .text          0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-exit.o)
  .data          0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-exit.o)
  .bss           0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-exit.o)
@@ -512,6 +541,7 @@ LOAD ./Src/main.o
 LOAD ./Src/syscalls.o
 LOAD ./Src/sysmem.o
 LOAD ./Startup/startup_stm32f407vgtx.o
+LOAD ./drivers/src/stm32f407xx_gpio_driver.o
 START GROUP
 LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a
 LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
@@ -816,7 +846,7 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x00000013       0x19 ./Startup/startup_stm32f407vgtx.o
 
-.debug_macro    0x00000000     0x10d5
+.debug_macro    0x00000000     0x10d8
  .debug_macro   0x00000000       0x6c ./Src/main.o
  .debug_macro   0x0000006c      0xae4 ./Src/main.o
  .debug_macro   0x00000b50       0x22 ./Src/main.o
@@ -825,7 +855,7 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000c51      0x103 ./Src/main.o
  .debug_macro   0x00000d54       0x6a ./Src/main.o
  .debug_macro   0x00000dbe      0x1df ./Src/main.o
- .debug_macro   0x00000f9d      0x138 ./Src/main.o
+ .debug_macro   0x00000f9d      0x13b ./Src/main.o
 
 .debug_line     0x00000000      0x4e4
  .debug_line    0x00000000      0x469 ./Src/main.o

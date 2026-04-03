@@ -123,7 +123,7 @@ typedef struct
 #define GPIOH 			((GPIO_RegDef_t*)GPIOH_BASEADDR)
 #define GPIOI 			((GPIO_RegDef_t*)GPIOI_BASEADDR)
 
-#define RCC 			((RCC_RegDef_t*)RCC_BASEADDR)
+#define RCC 			((GPIO_RegDef_t*)RCC_BASEADDR)
 
 
 #define GPIOA_PCLK_EN()    	(RCC->AHB1ENR |= (1 << 0))

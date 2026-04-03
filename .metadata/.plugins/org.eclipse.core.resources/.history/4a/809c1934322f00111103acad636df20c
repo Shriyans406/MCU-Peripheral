@@ -61,23 +61,6 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi){
 	}
 }
 
-
-
-/*********************************************************************
- * @fn      		  - GPIO_Init
- *
- * @brief             -
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -
- *
- * @Note              -
-
- */
-
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
 void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
 //void GPIO_PeriCLockControl(GPIO_RegDef_t);

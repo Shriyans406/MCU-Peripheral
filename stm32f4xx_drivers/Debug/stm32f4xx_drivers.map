@@ -282,7 +282,7 @@ Discarded input sections
  .text.GPIO_PeriClockControl
                 0x00000000      0x10c ./drivers/src/stm32f407xx_gpio_driver.o
  .text.GPIO_Init
-                0x00000000      0x128 ./drivers/src/stm32f407xx_gpio_driver.o
+                0x00000000      0x146 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_info    0x00000000      0x43f ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_abbrev  0x00000000       0xf3 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_aranges
@@ -299,7 +299,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000      0x196 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_line    0x00000000      0x5ea ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_line    0x00000000      0x602 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_str     0x00000000     0x4b7a ./drivers/src/stm32f407xx_gpio_driver.o
  .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_frame   0x00000000       0x5c ./drivers/src/stm32f407xx_gpio_driver.o

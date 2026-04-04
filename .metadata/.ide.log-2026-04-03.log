@@ -1,0 +1,3 @@
+2026-04-03 13:21:23,883 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-04-03 16:18:27,978 [INFO] WebApp:194 - Connection lost
+2026-04-03 16:18:29,686 [INFO] WebApp:191 - Connection restablished

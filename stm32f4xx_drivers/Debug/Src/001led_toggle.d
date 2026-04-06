@@ -1,8 +1,9 @@
-drivers/src/stm32f407xx_gpio_driver.o: \
- ../drivers/src/stm32f407xx_gpio_driver.c \
+Src/001led_toggle.o: ../Src/001led_toggle.c \
+ C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h
+C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h:
 C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h:
 C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h:
 C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h:

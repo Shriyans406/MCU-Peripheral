@@ -5,3 +5,4 @@
 ../drivers/src/stm32f407xx_gpio_driver.c:210:10:GPIO_ReadFromInputPort	1
 ../drivers/src/stm32f407xx_gpio_driver.c:233:6:GPIO_WriteToOutputPin	2
 ../drivers/src/stm32f407xx_gpio_driver.c:259:6:GPIO_WriteToOutputPort	1
+../drivers/src/stm32f407xx_gpio_driver.c:278:6:GPIO_ToggleOutputPin	1

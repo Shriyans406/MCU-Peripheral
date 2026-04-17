@@ -55,12 +55,11 @@
 
 
 
-#define EXIT_BASE        (AHB2PERI_BASEADDR + 0x3C00)
-#define SPI1_BASE        (AHB2PERI_BASEADDR + 0x3000)
-#define SYSCFG_BASE        (AHB2PERI_BASEADDR + 0x3800)
-#define USART1_BASE        (AHB2PERI_BASEADDR + 0x1000)
-#define USART6_BASE        (AHB2PERI_BASEADDR + 0x1400)
-
+#define EXTI_BASEADDR						(APB2PERIPH_BASEADDR + 0x3C00)
+#define SPI1_BASEADDR						(APB2PERIPH_BASEADDR + 0x3000)
+#define SYSCFG_BASEADDR        				(APB2PERIPH_BASEADDR + 0x3800)
+#define USART1_BASEADDR						(APB2PERIPH_BASEADDR + 0x1000)
+#define USART6_BASEADDR						(APB2PERIPH_BASEADDR + 0x1400)
 typedef struct
 {
 	__vo uint32_t MODER;
@@ -113,6 +112,23 @@ typedef struct
 
 }RCC_RegDef_t;
 
+
+/*
+ * peripheral register definition structure for EXTI
+ */
+typedef struct
+{
+	__vo uint32_t IMR;    /*!< Give a short description,          	  	    Address offset: 0x00 */
+	__vo uint32_t EMR;    /*!< TODO,                						Address offset: 0x04 */
+	__vo uint32_t RTSR;   /*!< TODO,  									     Address offset: 0x08 */
+	__vo uint32_t FTSR;   /*!< TODO, 										Address offset: 0x0C */
+	__vo uint32_t SWIER;  /*!< TODO,  									   Address offset: 0x10 */
+	__vo uint32_t PR;     /*!< TODO,                   					   Address offset: 0x14 */
+
+}EXTI_RegDef_t;
+
+
+
 #define GPIOA 			((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define GPIOB 			((GPIO_RegDef_t*)GPIOB_BASEADDR)
 #define GPIOC 			((GPIO_RegDef_t*)GPIOC_BASEADDR)
@@ -122,6 +138,8 @@ typedef struct
 #define GPIOG 			((GPIO_RegDef_t*)GPIOG_BASEADDR)
 #define GPIOH 			((GPIO_RegDef_t*)GPIOH_BASEADDR)
 #define GPIOI 			((GPIO_RegDef_t*)GPIOI_BASEADDR)
+
+#define EXTI			((EXTI_RegDef_t*)EXTI_BASEADDR)
 
 #define RCC 			((RCC_RegDef_t*)RCC_BASEADDR)
 

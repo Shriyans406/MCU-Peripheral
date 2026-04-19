@@ -238,3 +238,11 @@
 2026-04-19 09:21:50,251 [INFO] PopulateThirdPartyThread:66 - Ending populate Thread
 2026-04-19 09:21:50,251 [INFO] LoadServerUpdatesThread:375 - End of LoadServerUpdate Thread
 2026-04-19 09:21:50,536 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
+2026-04-19 10:51:14,587 [INFO] WebApp:194 - Connection lost
+2026-04-19 10:51:16,553 [INFO] WebApp:191 - Connection restablished
+2026-04-19 10:51:16,751 [INFO] WebApp:194 - Connection lost
+2026-04-19 10:51:17,743 [INFO] WebApp:191 - Connection restablished
+2026-04-19 16:50:13,351 [INFO] WebApp:194 - Connection lost
+2026-04-19 16:50:14,241 [INFO] WebApp:191 - Connection restablished
+2026-04-19 22:10:45,971 [INFO] WebApp:194 - Connection lost
+2026-04-19 22:10:47,270 [INFO] WebApp:191 - Connection restablished

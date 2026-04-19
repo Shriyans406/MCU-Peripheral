@@ -1,4 +1,3 @@
-"./Src/002led_button.o"
 "./Src/main.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"

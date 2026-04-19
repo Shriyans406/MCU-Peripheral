@@ -24,10 +24,6 @@
 
 #include "stm32f407xx.h"
 
-void EXTI0_IRQHandler(void)
-{
-	GPIO_IRQHandling(0);
-}
 
 
 int main(void)
@@ -35,4 +31,7 @@ int main(void)
     return 0;
 }
 
-
+void EXTI0_IRQHandler(void)
+{
+	GPIO_IRQHandling(0);
+}

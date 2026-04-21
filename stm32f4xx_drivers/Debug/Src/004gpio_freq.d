@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c \
+Src/004gpio_freq.o: ../Src/004gpio_freq.c \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h

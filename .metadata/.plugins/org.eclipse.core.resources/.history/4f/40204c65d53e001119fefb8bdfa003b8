@@ -193,9 +193,6 @@ typedef struct
 #define I2C1_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 21) )
 
 #define SPI1_PCLK_EN() 			(RCC -> AHB2ENR |= (1 << 12) )
-#define SPI2_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 14) )
-#define SPI3_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 15) )
-#define SPI4_PCLK_EN() 			(RCC -> AHB2ENR |= (1 << 13) )
 
 #define SYSCFG_PCLK_EN()        (RCC->APB2ENR |= (1 << 14))
 

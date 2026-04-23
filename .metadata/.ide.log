@@ -336,3 +336,7 @@
 2026-04-24 01:18:17,930 [INFO] WebApp:225 - Starting web application
 2026-04-24 01:18:17,930 [INFO] WebApp:593 - Web application path used C:\ST\STM32CubeIDE_1.18.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.1.202504091515\db\plugins\mcufinder\reactClient1\index.html
 2026-04-24 01:18:18,874 [INFO] UserAuth:484 - Internet connection configuration mode: 1
+2026-04-24 01:27:09,834 [INFO] WebApp:194 - Connection lost
+2026-04-24 01:27:10,480 [INFO] WebApp:191 - Connection restablished
+2026-04-24 01:27:11,334 [INFO] WebApp:194 - Connection lost
+2026-04-24 01:27:11,547 [INFO] WebApp:191 - Connection restablished

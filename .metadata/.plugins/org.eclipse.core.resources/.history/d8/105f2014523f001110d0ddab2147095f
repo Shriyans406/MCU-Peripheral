@@ -60,9 +60,8 @@
 #define I2C2_BASE        (AHB1PERI_BASEADDR + 0x5800)
 #define I2C3_BASE        (AHB1PERI_BASEADDR + 0x5C00)
 
-#define SPI2_BASEADDR        (APB1PERIPH_BASEADDR + 0x3800)
-#define SPI3_BASEADDR        (APB1PERIPH_BASEADDR + 0x3C00)
-
+#define SPI2_BASE        (AHB1PERI_BASEADDR + 0x3800)
+#define SPI3_BASE        (AHB1PERI_BASEADDR + 0x3C00)
 
 #define USART2_BASE        (AHB1PERI_BASEADDR + 0x4400)
 #define USART3_BASE        (AHB1PERI_BASEADDR + 0x4800)
@@ -160,21 +159,6 @@ typedef struct
 } SYSCFG_RegDef_t;
 
 
-typedef struct
-{
-	__vo uint32_t CR1;        /*!< TODO,     										Address offset: 0x00 */
-	__vo uint32_t CR2;        /*!< TODO,     										Address offset: 0x04 */
-	__vo uint32_t SR;         /*!< TODO,     										Address offset: 0x08 */
-	__vo uint32_t DR;         /*!< TODO,     										Address offset: 0x0C */
-	__vo uint32_t CRCPR;      /*!< TODO,     										Address offset: 0x10 */
-	__vo uint32_t RXCRCR;     /*!< TODO,     										Address offset: 0x14 */
-	__vo uint32_t TXCRCR;     /*!< TODO,     										Address offset: 0x18 */
-	__vo uint32_t I2SCFGR;    /*!< TODO,     										Address offset: 0x1C */
-	__vo uint32_t I2SPR;      /*!< TODO,     										Address offset: 0x20 */
-} SPI_RegDef_t;
-
-
-
 #define GPIOA 			((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define GPIOB 			((GPIO_RegDef_t*)GPIOB_BASEADDR)
 #define GPIOC 			((GPIO_RegDef_t*)GPIOC_BASEADDR)
@@ -190,9 +174,9 @@ typedef struct
 #define RCC 			((RCC_RegDef_t*)RCC_BASEADDR)
 #define SYSCFG          ((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
 
-#define SPI1            ((SPI_RegDef_t*)SPI1_BASEADDR)
-#define SPI2            ((SPI_RegDef_t*)SPI2_BASEADDR)
-#define SPI3            ((SPI_RegDef_t*)SPI3_BASEADDR)
+#define SPI1            ((SPI_RegDef_t*)SPI1_BASE)
+#define SPI2            ((SPI_RegDef_t*)SPI2_BASE)
+#define SPI3            ((SPI_RegDef_t*)SPI3_BASE)
 
 
 #define GPIOA_PCLK_EN()    	(RCC->AHB1ENR |= (1 << 0))

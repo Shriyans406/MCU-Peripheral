@@ -69,38 +69,6 @@ typedef struct
 #define SPI_SCLK_SPEED_DIV128             	6
 #define SPI_SCLK_SPEED_DIV256             	7
 
-/*
- * @SPI_DFF
- */
-#define SPI_DFF_8BITS 	0
-#define SPI_DFF_16BITS  1
-
-/*
- * @CPOL
- */
-#define SPI_CPOL_HIGH 1
-#define SPI_CPOL_LOW 0
-
-
-/*
- * @CPHA
- */
-#define SPI_CPHA_HIGH 1
-#define SPI_CPHA_LOW 0
-
-/*
- * @SPI_SSM
- */
-#define SPI_SSM_EN     1
-#define SPI_SSM_DI     0
-
-/*
- * SPI related status flags definitions
- */
-#define SPI_TXE_FLAG    ( 1 << SPI_SR_TXE)
-#define SPI_RXNE_FLAG   ( 1 << SPI_SR_RXNE)
-#define SPI_BUSY_FLAG   ( 1 << SPI_SR_BSY)
-
 
 
 /*

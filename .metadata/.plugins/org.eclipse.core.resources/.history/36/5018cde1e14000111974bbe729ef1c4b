@@ -89,10 +89,10 @@ void SPI_Init(SPI_Handle_t *pSPIHandle)
  * @Note              -
 
  */
-void SPI_DeInit(SPI_RegDef_t *pSPIx)
-{
- //todo
-}
+//void SPI_DeInit(SPI_RegDef_t *pSPIx)
+//{
+// //todo
+//}
 //
 //uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx , uint32_t FlagName)
 //{

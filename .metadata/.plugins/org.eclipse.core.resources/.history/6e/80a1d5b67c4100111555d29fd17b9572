@@ -51,7 +51,7 @@ void SPI2_Inits(void){
 
 int main(void)
 {
-	char user_data[] = "Hello world";
+	char user_data[] = "Hello world"
 	SPI2_Inits();
 	SPI_GPIOInits();
 	SPI_SendData(SPI2, user_data, strlen(user_data));

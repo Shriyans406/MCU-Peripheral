@@ -32,29 +32,8 @@ void SPI_GPIOInits(void){
 	GPIO_Init(&SPIPins);
 }
 
-
-void SPI2_Inits(void){
-	SPI_Handle_t SPI2handle;
-
-	SPI2handle.pSPIx = SPI2;
-	SPI2handle.SPIConfig.SPI_BusConfig = SPI_BUS_CONFIG_FD;
-	SPI2handle.SPIConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
-	SPI2handle.SPIConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV2;//generates sclk of 8MHz
-	SPI2handle.SPIConfig.SPI_DFF = SPI_DFF_8BITS;
-	SPI2handle.SPIConfig.SPI_CPOL = SPI_CPOL_HIGH;
-	SPI2handle.SPIConfig.SPI_CPHA = SPI_CPHA_LOW;
-	SPI2handle.SPIConfig.SPI_SSM = SPI_SSM_EN; //software slave management enabled for NSS pin
-
-	SPI_Init(&SPI2handle);
-}
-
-
 int main(void)
 {
-	char user_data[] = "Hello world";
-	SPI2_Inits();
 	SPI_GPIOInits();
-	SPI_SendData(SPI2, user_data, strlen(user_data));
-	while(1);
 	return 0;
 }

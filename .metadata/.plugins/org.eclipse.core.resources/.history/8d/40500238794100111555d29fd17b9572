@@ -5,10 +5,6 @@
  *      Author: HP
  */
 
-
-#include<string.h>
-#include "stm32f407xx.h"
-
 void SPI_GPIOInits(void){
 	GPIO_Handle_t SPIPins;
 

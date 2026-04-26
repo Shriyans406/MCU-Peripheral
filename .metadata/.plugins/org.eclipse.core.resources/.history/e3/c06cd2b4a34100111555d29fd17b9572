@@ -55,7 +55,6 @@ int main(void)
 	SPI2_Inits();
 	SPI_GPIOInits();
 	SPI_SendData(SPI2, user_data, strlen(user_data));
-	SPI_PeripheralControl(SPI2, ENABLE);
 	while(1);
 	return 0;
 }

@@ -1,4 +1,4 @@
-20:02:14 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+00:42:13 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../Src/006spi_tx_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/006spi_tx_testing.d" -MT"Src/006spi_tx_testing.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/006spi_tx_testing.o"
 ../Src/006spi_tx_testing.c: In function 'main':
@@ -18,11 +18,11 @@ Finished building target: stm32f4xx_drivers.elf
 arm-none-eabi-size  stm32f4xx_drivers.elf 
 arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
    text	   data	    bss	    dec	    hex	filename
-   2216	      0	   1568	   3784	    ec8	stm32f4xx_drivers.elf
+   2280	      0	   1568	   3848	    f08	stm32f4xx_drivers.elf
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.list
  
 
-20:02:17 Build Finished. 0 errors, 1 warnings. (took 2s.817ms)
+00:42:17 Build Finished. 0 errors, 1 warnings. (took 3s.833ms)
 

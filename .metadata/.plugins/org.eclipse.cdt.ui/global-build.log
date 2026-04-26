@@ -1,5 +1,6 @@
-00:42:13 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+01:06:07 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
+arm-none-eabi-gcc "../drivers/src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_spi_driver.d" -MT"drivers/src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/src/stm32f407xx_spi_driver.o"
 arm-none-eabi-gcc "../Src/006spi_tx_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/006spi_tx_testing.d" -MT"Src/006spi_tx_testing.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/006spi_tx_testing.o"
 ../Src/006spi_tx_testing.c: In function 'main':
 ../Src/006spi_tx_testing.c:57:28: warning: pointer targets in passing argument 2 of 'SPI_SendData' differ in signedness [-Wpointer-sign]
@@ -18,7 +19,7 @@ Finished building target: stm32f4xx_drivers.elf
 arm-none-eabi-size  stm32f4xx_drivers.elf 
 arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
    text	   data	    bss	    dec	    hex	filename
-   2280	      0	   1568	   3848	    f08	stm32f4xx_drivers.elf
+   2344	      0	   1568	   3912	    f48	stm32f4xx_drivers.elf
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.list

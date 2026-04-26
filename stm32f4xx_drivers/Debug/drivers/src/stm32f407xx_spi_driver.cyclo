@@ -4,3 +4,4 @@
 ../drivers/src/stm32f407xx_spi_driver.c:122:6:SPI_DeInit	1
 ../drivers/src/stm32f407xx_spi_driver.c:137:9:SPI_GetFlagStatus	2
 ../drivers/src/stm32f407xx_spi_driver.c:146:6:SPI_SendData	4
+../drivers/src/stm32f407xx_spi_driver.c:189:7:SPI_SSIConfig	2

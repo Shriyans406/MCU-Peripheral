@@ -29,25 +29,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00001928  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00001198  00000000  00000000  00001958  2**0
+ 13 .debug_info   000011ca  00000000  00000000  00001958  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 000003ff  00000000  00000000  00002af0  2**0
+ 14 .debug_abbrev 000003ff  00000000  00000000  00002b22  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000118  00000000  00000000  00002ef0  2**3
+ 15 .debug_aranges 00000120  00000000  00000000  00002f28  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 000000c3  00000000  00000000  00003008  2**0
+ 16 .debug_rnglists 000000c9  00000000  00000000  00003048  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000025ce  00000000  00000000  000030cb  2**0
+ 17 .debug_macro  000025ce  00000000  00000000  00003111  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000016cd  00000000  00000000  00005699  2**0
+ 18 .debug_line   000016f8  00000000  00000000  000056df  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00008eeb  00000000  00000000  00006d66  2**0
+ 19 .debug_str    00008efe  00000000  00000000  00006dd7  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  0000fc51  2**0
+ 20 .comment      00000043  00000000  00000000  0000fcd5  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00000390  00000000  00000000  0000fc94  2**2
+ 21 .debug_frame  000003b8  00000000  00000000  0000fd18  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000074  00000000  00000000  00010024  2**0
+ 22 .debug_line_str 00000074  00000000  00000000  000100d0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -177,20 +177,20 @@ void SPI2_Inits(void){
 	SPI2handle.SPIConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
  8000242:	2301      	movs	r3, #1
  8000244:	713b      	strb	r3, [r7, #4]
-	SPI2handle.SPIConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV2;//generates sclk of 8MHz
- 8000246:	2300      	movs	r3, #0
+	SPI2handle.SPIConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV8;//generates sclk of 8MHz
+ 8000246:	2302      	movs	r3, #2
  8000248:	71bb      	strb	r3, [r7, #6]
 	SPI2handle.SPIConfig.SPI_DFF = SPI_DFF_8BITS;
  800024a:	2300      	movs	r3, #0
  800024c:	71fb      	strb	r3, [r7, #7]
-	SPI2handle.SPIConfig.SPI_CPOL = SPI_CPOL_HIGH;
- 800024e:	2301      	movs	r3, #1
+	SPI2handle.SPIConfig.SPI_CPOL = SPI_CPOL_LOW;
+ 800024e:	2300      	movs	r3, #0
  8000250:	723b      	strb	r3, [r7, #8]
 	SPI2handle.SPIConfig.SPI_CPHA = SPI_CPHA_LOW;
  8000252:	2300      	movs	r3, #0
  8000254:	727b      	strb	r3, [r7, #9]
-	SPI2handle.SPIConfig.SPI_SSM = SPI_SSM_EN; //software slave management enabled for NSS pin
- 8000256:	2301      	movs	r3, #1
+	SPI2handle.SPIConfig.SPI_SSM = SPI_SSM_DI; //software slave management enabled for NSS pin
+ 8000256:	2300      	movs	r3, #0
  8000258:	72bb      	strb	r3, [r7, #10]
 
 	SPI_Init(&SPI2handle);
@@ -220,25 +220,26 @@ int main(void)
  800027c:	e883 0007 	stmia.w	r3, {r0, r1, r2}
 	SPI2_Inits();
  8000280:	f7ff ffd8 	bl	8000234 <SPI2_Inits>
+	SPI_SSOEConfig(SPI2, ENABLE);
+ 8000284:	2101      	movs	r1, #1
+ 8000286:	480b      	ldr	r0, [pc, #44]	@ (80002b4 <main+0x44>)
+ 8000288:	f000 faf3 	bl	8000872 <SPI_SSOEConfig>
 	SPI_GPIOInits();
- 8000284:	f7ff ffa8 	bl	80001d8 <SPI_GPIOInits>
+ 800028c:	f7ff ffa4 	bl	80001d8 <SPI_GPIOInits>
 	SPI_SendData(SPI2, user_data, strlen(user_data));
- 8000288:	1d3b      	adds	r3, r7, #4
- 800028a:	4618      	mov	r0, r3
- 800028c:	f7ff ff9c 	bl	80001c8 <strlen>
- 8000290:	4602      	mov	r2, r0
- 8000292:	1d3b      	adds	r3, r7, #4
- 8000294:	4619      	mov	r1, r3
- 8000296:	4807      	ldr	r0, [pc, #28]	@ (80002b4 <main+0x44>)
- 8000298:	f000 fab4 	bl	8000804 <SPI_SendData>
-	SPI_PeripheralControl(SPI2, ENABLE);
- 800029c:	2101      	movs	r1, #1
+ 8000290:	1d3b      	adds	r3, r7, #4
+ 8000292:	4618      	mov	r0, r3
+ 8000294:	f7ff ff98 	bl	80001c8 <strlen>
+ 8000298:	4602      	mov	r2, r0
+ 800029a:	1d3b      	adds	r3, r7, #4
+ 800029c:	4619      	mov	r1, r3
  800029e:	4805      	ldr	r0, [pc, #20]	@ (80002b4 <main+0x44>)
- 80002a0:	f000 fa2e 	bl	8000700 <SPI_PeripheralControl>
-	SPI_SSIConfig(SPI2, ENABLE);
+ 80002a0:	f000 fab0 	bl	8000804 <SPI_SendData>
+	SPI_PeripheralControl(SPI2, ENABLE);
  80002a4:	2101      	movs	r1, #1
  80002a6:	4803      	ldr	r0, [pc, #12]	@ (80002b4 <main+0x44>)
- 80002a8:	f000 fae3 	bl	8000872 <SPI_SSIConfig>
+ 80002a8:	f000 fa2a 	bl	8000700 <SPI_PeripheralControl>
+	//SPI_SSIConfig(SPI2, ENABLE);
 	while(1);
  80002ac:	bf00      	nop
  80002ae:	e7fd      	b.n	80002ac <main+0x3c>
@@ -1218,12 +1219,12 @@ void SPI_SendData(SPI_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len)
  800086e:	46bd      	mov	sp, r7
  8000870:	bd80      	pop	{r7, pc}
 
-08000872 <SPI_SSIConfig>:
+08000872 <SPI_SSOEConfig>:
  *
  * @Note              -
 
  */
-void  SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
+void  SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
 {
  8000872:	b480      	push	{r7}
  8000874:	b083      	sub	sp, #12
@@ -1234,27 +1235,27 @@ void  SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
 	if(EnOrDi == ENABLE)
  800087e:	78fb      	ldrb	r3, [r7, #3]
  8000880:	2b01      	cmp	r3, #1
- 8000882:	d106      	bne.n	8000892 <SPI_SSIConfig+0x20>
+ 8000882:	d106      	bne.n	8000892 <SPI_SSOEConfig+0x20>
 	{
-		pSPIx->CR1 |=  (1 << SPI_CR1_SSI);
+		pSPIx->CR2 |=  (1 << SPI_CR2_SSOE);
  8000884:	687b      	ldr	r3, [r7, #4]
- 8000886:	681b      	ldr	r3, [r3, #0]
- 8000888:	f443 7280 	orr.w	r2, r3, #256	@ 0x100
+ 8000886:	685b      	ldr	r3, [r3, #4]
+ 8000888:	f043 0204 	orr.w	r2, r3, #4
  800088c:	687b      	ldr	r3, [r7, #4]
- 800088e:	601a      	str	r2, [r3, #0]
+ 800088e:	605a      	str	r2, [r3, #4]
 	{
-		pSPIx->CR1 &=  ~(1 << SPI_CR1_SSI);
+		pSPIx->CR2 &=  ~(1 << SPI_CR2_SSOE);
 	}
 
 
 }
- 8000890:	e005      	b.n	800089e <SPI_SSIConfig+0x2c>
-		pSPIx->CR1 &=  ~(1 << SPI_CR1_SSI);
+ 8000890:	e005      	b.n	800089e <SPI_SSOEConfig+0x2c>
+		pSPIx->CR2 &=  ~(1 << SPI_CR2_SSOE);
  8000892:	687b      	ldr	r3, [r7, #4]
- 8000894:	681b      	ldr	r3, [r3, #0]
- 8000896:	f423 7280 	bic.w	r2, r3, #256	@ 0x100
+ 8000894:	685b      	ldr	r3, [r3, #4]
+ 8000896:	f023 0204 	bic.w	r2, r3, #4
  800089a:	687b      	ldr	r3, [r7, #4]
- 800089c:	601a      	str	r2, [r3, #0]
+ 800089c:	605a      	str	r2, [r3, #4]
 }
  800089e:	bf00      	nop
  80008a0:	370c      	adds	r7, #12

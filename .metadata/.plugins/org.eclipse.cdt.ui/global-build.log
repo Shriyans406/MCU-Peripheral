@@ -1,15 +1,14 @@
-01:06:07 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+15:07:03 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
-arm-none-eabi-gcc "../drivers/src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_spi_driver.d" -MT"drivers/src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/src/stm32f407xx_spi_driver.o"
-arm-none-eabi-gcc "../Src/006spi_tx_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/006spi_tx_testing.d" -MT"Src/006spi_tx_testing.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/006spi_tx_testing.o"
-../Src/006spi_tx_testing.c: In function 'main':
-../Src/006spi_tx_testing.c:57:28: warning: pointer targets in passing argument 2 of 'SPI_SendData' differ in signedness [-Wpointer-sign]
-   57 |         SPI_SendData(SPI2, user_data, strlen(user_data));
+arm-none-eabi-gcc "../Src/007spi_txonly_arduino.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/007spi_txonly_arduino.d" -MT"Src/007spi_txonly_arduino.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/007spi_txonly_arduino.o"
+../Src/007spi_txonly_arduino.c: In function 'main':
+../Src/007spi_txonly_arduino.c:58:28: warning: pointer targets in passing argument 2 of 'SPI_SendData' differ in signedness [-Wpointer-sign]
+   58 |         SPI_SendData(SPI2, user_data, strlen(user_data));
       |                            ^~~~~~~~~
       |                            |
       |                            char *
 In file included from C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h:324,
-                 from ../Src/006spi_tx_testing.c:10:
+                 from ../Src/007spi_txonly_arduino.c:10:
 C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_spi_driver.h:120:48: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
   120 | void SPI_SendData(SPI_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len);
       |                                       ~~~~~~~~~^~~~~~~~~

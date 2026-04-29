@@ -1,24 +1,13 @@
-18:37:19 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+18:45:18 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../Src/007spi_txonly_arduino.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/007spi_txonly_arduino.d" -MT"Src/007spi_txonly_arduino.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/007spi_txonly_arduino.o"
-../Src/007spi_txonly_arduino.c: In function 'main':
-../Src/007spi_txonly_arduino.c:86:28: warning: pointer targets in passing argument 2 of 'SPI_SendData' differ in signedness [-Wpointer-sign]
-   86 |         SPI_SendData(SPI2, user_data, strlen(user_data));
-      |                            ^~~~~~~~~
-      |                            |
-      |                            char *
-In file included from C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h:324,
-                 from ../Src/007spi_txonly_arduino.c:10:
-C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_spi_driver.h:120:48: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
-  120 | void SPI_SendData(SPI_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len);
-      |                                       ~~~~~~~~~^~~~~~~~~
 arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f4xx_drivers.elf
  
 arm-none-eabi-size  stm32f4xx_drivers.elf 
 arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
    text	   data	    bss	    dec	    hex	filename
-   2516	      0	   1568	   4084	    ff4	stm32f4xx_drivers.elf
+   2556	      0	   1568	   4124	   101c	stm32f4xx_drivers.elf
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.list

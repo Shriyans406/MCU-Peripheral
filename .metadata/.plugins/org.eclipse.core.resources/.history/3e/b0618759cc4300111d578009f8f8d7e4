@@ -65,7 +65,7 @@ void GPIO_ButtonInit(void){
 
 	//GPIO_PeriClockControl(GPIOA, ENABLE);
 
-	GPIO_Init(&GPIOBtn);
+	GPIO_Init(&GpioBtn);
 }
 
 

@@ -7,5 +7,5 @@
 ../drivers/src/stm32f407xx_spi_driver.c:189:7:SPI_SSIConfig	2
 ../drivers/src/stm32f407xx_spi_driver.c:218:7:SPI_SSOEConfig	2
 ../drivers/src/stm32f407xx_spi_driver.c:246:6:SPI_ReceiveData	4
-../drivers/src/stm32f407xx_spi_driver.c:274:9:SPI_SendDataIT	1
-../drivers/src/stm32f407xx_spi_driver.c:298:9:SPI_ReceiveDataIT	1
+../drivers/src/stm32f407xx_spi_driver.c:274:9:SPI_SendDataIT	2
+../drivers/src/stm32f407xx_spi_driver.c:298:9:SPI_ReceiveDataIT	2

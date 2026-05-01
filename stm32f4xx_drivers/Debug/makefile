@@ -52,6 +52,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 stm32f4xx_drivers.list \
 
+OBJCOPY_BIN += \
+stm32f4xx_drivers.bin \
+
 
 # All Target
 all: main-build
@@ -75,12 +78,17 @@ stm32f4xx_drivers.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEP
 	@echo 'Finished building: $@'
 	@echo ' '
 
+stm32f4xx_drivers.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "stm32f4xx_drivers.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) default.size.stdout stm32f4xx_drivers.elf stm32f4xx_drivers.list stm32f4xx_drivers.map
+	-$(RM) default.size.stdout stm32f4xx_drivers.bin stm32f4xx_drivers.elf stm32f4xx_drivers.list stm32f4xx_drivers.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

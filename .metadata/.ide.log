@@ -249,3 +249,11 @@
 2026-05-01 09:19:56,336 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.1.1
 2026-05-01 09:19:56,338 [INFO] LoadServerUpdatesThread:375 - End of LoadServerUpdate Thread
 2026-05-01 09:34:28,982 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-05-01 10:16:37,885 [INFO] WebApp:194 - Connection lost
+2026-05-01 10:16:38,878 [INFO] WebApp:191 - Connection restablished
+2026-05-01 17:02:29,660 [INFO] WebApp:194 - Connection lost
+2026-05-01 17:02:34,379 [INFO] WebApp:191 - Connection restablished
+2026-05-01 19:43:13,590 [INFO] WebApp:194 - Connection lost
+2026-05-01 19:43:14,379 [INFO] WebApp:191 - Connection restablished
+2026-05-01 23:30:44,015 [INFO] WebApp:194 - Connection lost
+2026-05-01 23:30:45,041 [INFO] WebApp:191 - Connection restablished

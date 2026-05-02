@@ -346,60 +346,26 @@ void SPI_IRQPriorityConfig(uint8_t IRQNumber,uint32_t IRQPriority)
 }
 
 
-/*********************************************************************
- * @fn      		  - SPI_IRQInterruptConfig
- *
- * @brief             -
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -
- *
- * @Note              -
 
- */
-void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
+
+uint8_t SPI_SendDataIT(SPI_Handle_t *pSPIHandle,uint8_t *pTxBuffer, uint32_t Len)
 {
+	uint8_t state = pSPIHandle->TxState;
 
-	if(EnorDi == ENABLE)
+	if(state != SPI_BUSY_IN_TX)
 	{
-		if(IRQNumber <= 31)
-		{
-			//program ISER0 register
-			*NVIC_ISER0 |= ( 1 << IRQNumber );
+		//1 . Save the Tx buffer address and Len information in some global variables
+		pSPIHandle->pTxBuffer = pTxBuffer;
+		pSPIHandle->TxLen = Len;
+		//2.  Mark the SPI state as busy in transmission so that
+		//    no other code can take over same SPI peripheral until transmission is over
+		pSPIHandle->TxState = SPI_BUSY_IN_TX;
 
-		}else if(IRQNumber > 31 && IRQNumber < 64 ) //32 to 63
-		{
-			//program ISER1 register
-			*NVIC_ISER1 |= ( 1 << (IRQNumber % 32) );
-		}
-		else if(IRQNumber >= 64 && IRQNumber < 96 )
-		{
-			//program ISER2 register //64 to 95
-			*NVIC_ISER3 |= ( 1 << (IRQNumber % 64) );
-		}
-	}else
-	{
-		if(IRQNumber <= 31)
-		{
-			//program ICER0 register
-			*NVIC_ICER0 |= ( 1 << IRQNumber );
-		}else if(IRQNumber > 31 && IRQNumber < 64 )
-		{
-			//program ICER1 register
-			*NVIC_ICER1 |= ( 1 << (IRQNumber % 32) );
-		}
-		else if(IRQNumber >= 6 && IRQNumber < 96 )
-		{
-			//program ICER2 register
-			*NVIC_ICER3 |= ( 1 << (IRQNumber % 64) );
-		}
+		//3. Enable the TXEIE control bit to get interrupt whenever TXE flag is set in SR
+		pSPIHandle->pSPIx->CR2 |= ( 1 << SPI_CR2_TXEIE );
+
 	}
 
+
+	return state;
 }
-
-
-
-

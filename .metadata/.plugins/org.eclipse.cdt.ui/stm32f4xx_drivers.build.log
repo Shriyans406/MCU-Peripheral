@@ -1,6 +1,16 @@
-01:14:25 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+01:31:47 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_spi_driver.d" -MT"drivers/src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_spi_driver.o"
+../drivers/src/stm32f407xx_spi_driver.c: In function 'SPI_IRQHandling':
+../drivers/src/stm32f407xx_spi_driver.c:418:17: warning: implicit declaration of function 'spi_txe_interrupt_handle' [-Wimplicit-function-declaration]
+  418 |                 spi_txe_interrupt_handle(pHandle);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/src/stm32f407xx_spi_driver.c:428:17: warning: implicit declaration of function 'spi_rxne_interrupt_handle' [-Wimplicit-function-declaration]
+  428 |                 spi_rxne_interrupt_handle(pHandle);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/src/stm32f407xx_spi_driver.c:438:17: warning: implicit declaration of function 'spi_ovr_err_interrupt_handle' [-Wimplicit-function-declaration]
+  438 |                 spi_ovr_err_interrupt_handle(pHandle);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f4xx_drivers.elf
  
@@ -16,5 +26,5 @@ Finished building: stm32f4xx_drivers.list
  
  
 
-01:14:27 Build Finished. 0 errors, 0 warnings. (took 2s.136ms)
+01:31:50 Build Finished. 0 errors, 3 warnings. (took 3s.672ms)
 

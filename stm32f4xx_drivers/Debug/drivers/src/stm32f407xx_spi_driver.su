@@ -11,3 +11,4 @@
 ../drivers/src/stm32f407xx_spi_driver.c:298:9:SPI_ReceiveDataIT	32	static
 ../drivers/src/stm32f407xx_spi_driver.c:336:6:SPI_IRQPriorityConfig	24	static
 ../drivers/src/stm32f407xx_spi_driver.c:363:6:SPI_IRQInterruptConfig	16	static
+../drivers/src/stm32f407xx_spi_driver.c:407:6:SPI_IRQHandling	24	static

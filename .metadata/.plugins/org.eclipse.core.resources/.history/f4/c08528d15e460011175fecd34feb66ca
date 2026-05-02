@@ -318,30 +318,3 @@ uint8_t SPI_ReceiveDataIT(SPI_Handle_t *pSPIHandle, uint8_t *pRxBuffer, uint32_t
 
 }
 
-
-/*********************************************************************
- * @fn      		  - SPI_IRQPriorityConfig
- *
- * @brief             -
- *
- * @param[in]         -
- * @param[in]         -
- * @param[in]         -
- *
- * @return            -
- *
- * @Note              -
-
- */
-void SPI_IRQPriorityConfig(uint8_t IRQNumber,uint32_t IRQPriority)
-{
-	//1. first lets find out the ipr register
-	uint8_t iprx = IRQNumber / 4;
-	uint8_t iprx_section  = IRQNumber %4 ;
-
-	uint8_t shift_amount = ( 8 * iprx_section) + ( 8 - NO_PR_BITS_IMPLEMENTED) ;
-
-	*(  NVIC_PR_BASE_ADDR + iprx ) |=  ( IRQPriority << shift_amount );
-
-}
-

@@ -17,3 +17,4 @@
 ../drivers/src/stm32f407xx_spi_driver.c:510:14:spi_ovr_err_interrupt_handle	24	static
 ../drivers/src/stm32f407xx_spi_driver.c:526:6:SPI_CloseTransmisson	16	static
 ../drivers/src/stm32f407xx_spi_driver.c:535:6:SPI_CloseReception	16	static
+../drivers/src/stm32f407xx_spi_driver.c:545:13:SPI_ApplicationEventCallback	16	static

@@ -157,6 +157,6 @@ void SPI_CloseTransmisson(SPI_Handle_t *pSPIHandle);
 void SPI_CloseReception(SPI_Handle_t *pSPIHandle);
 //uint8_t I2C_DeviceMode(I2C_RegDef_t *I2Cx);
 
-void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle, uint8_t AppEv);
+
 
 #endif /* INC_STM32F407XX_SPI_DRIVER_H_ */

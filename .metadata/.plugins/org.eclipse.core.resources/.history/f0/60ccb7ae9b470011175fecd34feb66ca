@@ -447,35 +447,6 @@ void SPI_IRQHandling(SPI_Handle_t *pHandle)
 
 }
 
-static void  spi_txe_interrupt_handle(SPI_Handle_t *pSPIHandle)
-{
-	// check the DFF bit in CR1
-	if( (pSPIHandle->pSPIx->CR1 & ( 1 << SPI_CR1_DFF) ) )
-	{
-		//16 bit DFF
-		//1. load the data in to the DR
-		pSPIHandle->pSPIx->DR =   *((uint16_t*)pSPIHandle->pTxBuffer);
-		pSPIHandle->TxLen--;
-		pSPIHandle->TxLen--;
-		(uint16_t*)pSPIHandle->pTxBuffer++;
-	}else
-	{
-		//8 bit DFF
-		pSPIHandle->pSPIx->DR =   *pSPIHandle->pTxBuffer;
-		pSPIHandle->TxLen--;
-		pSPIHandle->pTxBuffer++;
-	}
 
-	if(! pSPIHandle->TxLen)
-	{
-		//TxLen is zero , so close the spi transmission and inform the application that
-		//TX is over.
-
-		//this prevents interrupts from setting up of TXE flag
-		SPI_CloseTransmisson(pSPIHandle);
-		SPI_ApplicationEventCallback(pSPIHandle,SPI_EVENT_TX_CMPLT);
-	}
-
-}
 
 

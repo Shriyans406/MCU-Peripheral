@@ -1,16 +1,11 @@
-14:59:04 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+15:00:59 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
-arm-none-eabi-gcc "../drivers/src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_gpio_driver.d" -MT"drivers/src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_gpio_driver.o"
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_spi_driver.d" -MT"drivers/src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_spi_driver.o"
-arm-none-eabi-gcc "../Src/008spi_cmd_handling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/008spi_cmd_handling.d" -MT"Src/008spi_cmd_handling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/008spi_cmd_handling.o"
 ../drivers/src/stm32f407xx_spi_driver.c: In function 'spi_txe_interrupt_handle':
 ../drivers/src/stm32f407xx_spi_driver.c:476:17: warning: implicit declaration of function 'SPI_ApplicationEventCallback' [-Wimplicit-function-declaration]
   476 |                 SPI_ApplicationEventCallback(pSPIHandle,SPI_EVENT_TX_CMPLT);
       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_spi_driver.c: At top level:
-../drivers/src/stm32f407xx_spi_driver.c:13:13: warning: 'spi_rxne_interrupt_handle' used but never defined
-   13 | static void spi_rxne_interrupt_handle(SPI_Handle_t *pSPIHandle);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_spi_driver.c:14:13: warning: 'spi_ovr_err_interrupt_handle' used but never defined
    14 | static void spi_ovr_err_interrupt_handle(SPI_Handle_t *pSPIHandle);
       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,6 +20,6 @@ arm-none-eabi-objcopy  -O binary stm32f4xx_drivers.elf  "stm32f4xx_drivers.bin"
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.bin
- 
 Finished building: stm32f4xx_drivers.list
+ 
  

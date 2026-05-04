@@ -14,3 +14,6 @@
 ../drivers/src/stm32f407xx_spi_driver.c:413:6:SPI_IRQHandling	24	static
 ../drivers/src/stm32f407xx_spi_driver.c:450:14:spi_txe_interrupt_handle	16	static
 ../drivers/src/stm32f407xx_spi_driver.c:481:14:spi_rxne_interrupt_handle	16	static
+../drivers/src/stm32f407xx_spi_driver.c:510:14:spi_ovr_err_interrupt_handle	24	static
+../drivers/src/stm32f407xx_spi_driver.c:526:6:SPI_CloseTransmisson	16	static
+../drivers/src/stm32f407xx_spi_driver.c:535:6:SPI_CloseReception	16	static

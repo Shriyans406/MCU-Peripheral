@@ -292,7 +292,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000      0x190 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00000000      0x3d4 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000      0x3f7 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_gpio_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_spi_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_spi_driver.o
@@ -330,7 +330,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0x6a ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_spi_driver.o
- .debug_macro   0x00000000      0x3d4 ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_macro   0x00000000      0x3f7 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xbe ./drivers/src/stm32f407xx_spi_driver.o
  .text          0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-exit.o)
@@ -1176,7 +1176,7 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x00000136       0x8a ./drivers/src/stm32f407xx_spi_driver.o
 
-.debug_macro    0x00000000     0x34aa
+.debug_macro    0x00000000     0x34cd
  .debug_macro   0x00000000      0x1a1 ./Src/009spi_message_rcv_it.o
  .debug_macro   0x000001a1      0xad8 ./Src/009spi_message_rcv_it.o
  .debug_macro   0x00000c79       0x22 ./Src/009spi_message_rcv_it.o
@@ -1208,42 +1208,42 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000018d1      0x103 ./Src/009spi_message_rcv_it.o
  .debug_macro   0x000019d4       0x6a ./Src/009spi_message_rcv_it.o
  .debug_macro   0x00001a3e      0x1df ./Src/009spi_message_rcv_it.o
- .debug_macro   0x00001c1d      0x3d4 ./Src/009spi_message_rcv_it.o
- .debug_macro   0x00001ff1       0xc4 ./Src/009spi_message_rcv_it.o
- .debug_macro   0x000020b5       0xc4 ./Src/009spi_message_rcv_it.o
- .debug_macro   0x00002179      0x274 ./Src/syscalls.o
- .debug_macro   0x000023ed      0x190 ./Src/syscalls.o
- .debug_macro   0x0000257d       0x10 ./Src/syscalls.o
- .debug_macro   0x0000258d       0x10 ./Src/syscalls.o
- .debug_macro   0x0000259d       0x10 ./Src/syscalls.o
- .debug_macro   0x000025ad       0x10 ./Src/syscalls.o
- .debug_macro   0x000025bd       0x1c ./Src/syscalls.o
- .debug_macro   0x000025d9       0x52 ./Src/syscalls.o
- .debug_macro   0x0000262b       0x22 ./Src/syscalls.o
- .debug_macro   0x0000264d       0x10 ./Src/syscalls.o
- .debug_macro   0x0000265d       0x52 ./Src/syscalls.o
- .debug_macro   0x000026af       0xcf ./Src/syscalls.o
- .debug_macro   0x0000277e       0x1c ./Src/syscalls.o
- .debug_macro   0x0000279a       0x3d ./Src/syscalls.o
- .debug_macro   0x000027d7       0x35 ./Src/syscalls.o
- .debug_macro   0x0000280c      0x12c ./Src/syscalls.o
- .debug_macro   0x00002938       0x16 ./Src/syscalls.o
- .debug_macro   0x0000294e       0x16 ./Src/syscalls.o
- .debug_macro   0x00002964       0x29 ./Src/syscalls.o
- .debug_macro   0x0000298d       0x10 ./Src/syscalls.o
- .debug_macro   0x0000299d      0x242 ./Src/syscalls.o
- .debug_macro   0x00002bdf       0x1c ./Src/syscalls.o
- .debug_macro   0x00002bfb       0x10 ./Src/syscalls.o
- .debug_macro   0x00002c0b      0x18a ./Src/syscalls.o
- .debug_macro   0x00002d95       0x16 ./Src/syscalls.o
- .debug_macro   0x00002dab       0xce ./Src/syscalls.o
- .debug_macro   0x00002e79      0x112 ./Src/sysmem.o
- .debug_macro   0x00002f8b      0x23c ./Src/sysmem.o
- .debug_macro   0x000031c7       0xa3 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x0000326a       0x8e ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x000032f8       0x51 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00003349       0xbe ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00003407       0xa3 ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_macro   0x00001c1d      0x3f7 ./Src/009spi_message_rcv_it.o
+ .debug_macro   0x00002014       0xc4 ./Src/009spi_message_rcv_it.o
+ .debug_macro   0x000020d8       0xc4 ./Src/009spi_message_rcv_it.o
+ .debug_macro   0x0000219c      0x274 ./Src/syscalls.o
+ .debug_macro   0x00002410      0x190 ./Src/syscalls.o
+ .debug_macro   0x000025a0       0x10 ./Src/syscalls.o
+ .debug_macro   0x000025b0       0x10 ./Src/syscalls.o
+ .debug_macro   0x000025c0       0x10 ./Src/syscalls.o
+ .debug_macro   0x000025d0       0x10 ./Src/syscalls.o
+ .debug_macro   0x000025e0       0x1c ./Src/syscalls.o
+ .debug_macro   0x000025fc       0x52 ./Src/syscalls.o
+ .debug_macro   0x0000264e       0x22 ./Src/syscalls.o
+ .debug_macro   0x00002670       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002680       0x52 ./Src/syscalls.o
+ .debug_macro   0x000026d2       0xcf ./Src/syscalls.o
+ .debug_macro   0x000027a1       0x1c ./Src/syscalls.o
+ .debug_macro   0x000027bd       0x3d ./Src/syscalls.o
+ .debug_macro   0x000027fa       0x35 ./Src/syscalls.o
+ .debug_macro   0x0000282f      0x12c ./Src/syscalls.o
+ .debug_macro   0x0000295b       0x16 ./Src/syscalls.o
+ .debug_macro   0x00002971       0x16 ./Src/syscalls.o
+ .debug_macro   0x00002987       0x29 ./Src/syscalls.o
+ .debug_macro   0x000029b0       0x10 ./Src/syscalls.o
+ .debug_macro   0x000029c0      0x242 ./Src/syscalls.o
+ .debug_macro   0x00002c02       0x1c ./Src/syscalls.o
+ .debug_macro   0x00002c1e       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002c2e      0x18a ./Src/syscalls.o
+ .debug_macro   0x00002db8       0x16 ./Src/syscalls.o
+ .debug_macro   0x00002dce       0xce ./Src/syscalls.o
+ .debug_macro   0x00002e9c      0x112 ./Src/sysmem.o
+ .debug_macro   0x00002fae      0x23c ./Src/sysmem.o
+ .debug_macro   0x000031ea       0xa3 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x0000328d       0x8e ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x0000331b       0x51 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x0000336c       0xbe ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x0000342a       0xa3 ./drivers/src/stm32f407xx_spi_driver.o
 
 .debug_line     0x00000000     0x29e0
  .debug_line    0x00000000      0x7cf ./Src/009spi_message_rcv_it.o
@@ -1253,14 +1253,14 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x00001674      0x9a3 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_line    0x00002017      0x9c9 ./drivers/src/stm32f407xx_spi_driver.o
 
-.debug_str      0x00000000     0xb827
- .debug_str     0x00000000     0xb827 ./Src/009spi_message_rcv_it.o
-                               0x9521 (size before relaxing)
- .debug_str     0x0000b827     0x99c6 ./Src/syscalls.o
- .debug_str     0x0000b827     0x7764 ./Src/sysmem.o
- .debug_str     0x0000b827       0x90 ./Startup/startup_stm32f407vgtx.o
- .debug_str     0x0000b827     0x5d29 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_str     0x0000b827     0x5da3 ./drivers/src/stm32f407xx_spi_driver.o
+.debug_str      0x00000000     0xb8f8
+ .debug_str     0x00000000     0xb8f8 ./Src/009spi_message_rcv_it.o
+                               0x95f2 (size before relaxing)
+ .debug_str     0x0000b8f8     0x99c6 ./Src/syscalls.o
+ .debug_str     0x0000b8f8     0x7764 ./Src/sysmem.o
+ .debug_str     0x0000b8f8       0x90 ./Startup/startup_stm32f407vgtx.o
+ .debug_str     0x0000b8f8     0x5dfa ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_str     0x0000b8f8     0x5e74 ./drivers/src/stm32f407xx_spi_driver.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/009spi_message_rcv_it.o

@@ -58,9 +58,9 @@
 #define RCC_BASEADDR                     (AHB1PERIPH_BASEADDR + 0x3800)
 
 
-#define I2C1_BASEADDR						(APB1PERIPH_BASEADDR + 0x5400)
-#define I2C2_BASEADDR						(APB1PERIPH_BASEADDR + 0x5800)
-#define I2C3_BASEADDR						(APB1PERIPH_BASEADDR + 0x5C00)
+#define I2C1_BASE        (AHB1PERI_BASEADDR + 0x5400)
+#define I2C2_BASE        (AHB1PERI_BASEADDR + 0x5800)
+#define I2C3_BASE        (AHB1PERI_BASEADDR + 0x5C00)
 
 #define SPI2_BASEADDR        (APB1PERIPH_BASEADDR + 0x3800)
 #define SPI3_BASEADDR        (APB1PERIPH_BASEADDR + 0x3C00)
@@ -212,11 +212,6 @@ typedef struct
 #define SPI2            ((SPI_RegDef_t*)SPI2_BASEADDR)
 #define SPI3            ((SPI_RegDef_t*)SPI3_BASEADDR)
 
-#define I2C1  				((I2C_RegDef_t*)I2C1_BASEADDR)
-#define I2C2  				((I2C_RegDef_t*)I2C2_BASEADDR)
-#define I2C3  				((I2C_RegDef_t*)I2C3_BASEADDR)
-
-
 
 #define GPIOA_PCLK_EN()    	(RCC->AHB1ENR |= (1 << 0))
 #define GPIOB_PCLK_EN()		(RCC->AHB1ENR |= (1 << 1))
@@ -229,12 +224,7 @@ typedef struct
 #define GPIOI_PCLK_EN()		(RCC->AHB1ENR |= (1 << 8))
 
 
-/*
- * Clock Enable Macros for I2Cx peripherals
- */
-#define I2C1_PCLK_EN() (RCC->APB1ENR |= (1 << 21))
-#define I2C2_PCLK_EN() (RCC->APB1ENR |= (1 << 22))
-#define I2C3_PCLK_EN() (RCC->APB1ENR |= (1 << 23))
+#define I2C1_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 21) )
 
 #define SPI1_PCLK_EN() 			(RCC -> AHB2ENR |= (1 << 12) )
 #define SPI2_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 14) )

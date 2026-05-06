@@ -229,12 +229,7 @@ typedef struct
 #define GPIOI_PCLK_EN()		(RCC->AHB1ENR |= (1 << 8))
 
 
-/*
- * Clock Enable Macros for I2Cx peripherals
- */
-#define I2C1_PCLK_EN() (RCC->APB1ENR |= (1 << 21))
-#define I2C2_PCLK_EN() (RCC->APB1ENR |= (1 << 22))
-#define I2C3_PCLK_EN() (RCC->APB1ENR |= (1 << 23))
+#define I2C1_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 21) )
 
 #define SPI1_PCLK_EN() 			(RCC -> AHB2ENR |= (1 << 12) )
 #define SPI2_PCLK_EN() 			(RCC -> AHB1ENR |= (1 << 14) )

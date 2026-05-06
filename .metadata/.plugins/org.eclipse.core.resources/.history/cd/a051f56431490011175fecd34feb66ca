@@ -175,22 +175,6 @@ typedef struct
 	__vo uint32_t I2SPR;      /*!< TODO,     										Address offset: 0x20 */
 } SPI_RegDef_t;
 
-/*
- * peripheral register definition structure for I2C
- */
-typedef struct
-{
-  __vo uint32_t CR1;        /*!< TODO,     										Address offset: 0x00 */
-  __vo uint32_t CR2;        /*!< TODO,     										Address offset: 0x04 */
-  __vo uint32_t OAR1;       /*!< TODO,     										Address offset: 0x08 */
-  __vo uint32_t OAR2;       /*!< TODO,     										Address offset: 0x0C */
-  __vo uint32_t DR;         /*!< TODO,     										Address offset: 0x10 */
-  __vo uint32_t SR1;        /*!< TODO,     										Address offset: 0x14 */
-  __vo uint32_t SR2;        /*!< TODO,     										Address offset: 0x18 */
-  __vo uint32_t CCR;        /*!< TODO,     										Address offset: 0x1C */
-  __vo uint32_t TRISE;      /*!< TODO,     										Address offset: 0x20 */
-  __vo uint32_t FLTR;       /*!< TODO,     										Address offset: 0x24 */
-}I2C_RegDef_t;
 
 
 #define GPIOA 			((GPIO_RegDef_t*)GPIOA_BASEADDR)

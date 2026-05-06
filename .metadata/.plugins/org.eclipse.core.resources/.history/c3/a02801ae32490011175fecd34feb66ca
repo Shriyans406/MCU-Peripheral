@@ -346,36 +346,7 @@ typedef struct
 #define SPI_SR_BSY					 	7
 #define SPI_SR_FRE					 	8
 
-/******************************************************************************************
- *Bit position definitions of I2C peripheral
- ******************************************************************************************/
-/*
- * Bit position definitions I2C_CR1
- */
-#define I2C_CR1_PE						0
-#define I2C_CR1_NOSTRETCH  				7
-#define I2C_CR1_START 					8
-#define I2C_CR1_STOP  				 	9
-#define I2C_CR1_ACK 				 	10
-#define I2C_CR1_SWRST  				 	15
 
-/*
- * Bit position definitions I2C_CR2
- */
-#define I2C_CR2_FREQ				 	0
-#define I2C_CR2_ITERREN				 	8
-#define I2C_CR2_ITEVTEN				 	9
-#define I2C_CR2_ITBUFEN 			    10
-
-/*
- * Bit position definitions I2C_OAR1
- */
-#define I2C_OAR1_ADD0    				 0
-#define I2C_OAR1_ADD71 				 	 1
-#define I2C_OAR1_ADD98  			 	 8
-#define I2C_OAR1_ADDMODE   			 	15
-
-//more are remaining
 
 #include "stm32f407xx_gpio_driver.h"
 #include "stm32f407xx_spi_driver.h"

@@ -1,4 +1,4 @@
-18:22:58 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+15:46:35 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_gpio_driver.d" -MT"drivers/src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_gpio_driver.o"
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_i2c_driver.d" -MT"drivers/src/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_i2c_driver.o"
@@ -52,5 +52,5 @@ Finished building: stm32f4xx_drivers.bin
 Finished building: stm32f4xx_drivers.list
  
 
-18:23:06 Build Finished. 0 errors, 5 warnings. (took 7s.873ms)
+15:46:42 Build Finished. 0 errors, 5 warnings. (took 6s.541ms)
 

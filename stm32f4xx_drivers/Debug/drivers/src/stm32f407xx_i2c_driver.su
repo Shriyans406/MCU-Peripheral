@@ -3,4 +3,4 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:78:10:RCC_GetOutputCLlock	4	static
 ../drivers/src/stm32f407xx_i2c_driver.c:83:10:RCC_GetPCLK1Value	24	static
 ../drivers/src/stm32f407xx_i2c_driver.c:123:6:I2C_Init	24	static
-../drivers/src/stm32f407xx_i2c_driver.c:143:6:I2C_DeInit	16	static
+../drivers/src/stm32f407xx_i2c_driver.c:162:6:I2C_DeInit	16	static

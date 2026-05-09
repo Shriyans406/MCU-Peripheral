@@ -5,6 +5,6 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:127:6:I2C_Init	24	static
 ../drivers/src/stm32f407xx_i2c_driver.c:182:6:I2C_DeInit	16	static
 ../drivers/src/stm32f407xx_i2c_driver.c:188:6:I2C_MasterSendData	24	static
-../drivers/src/stm32f407xx_i2c_driver.c:203:13:I2C_GenerateStartCondition	16	static
-../drivers/src/stm32f407xx_i2c_driver.c:207:9:I2C_GetFlagStatus	16	static
-../drivers/src/stm32f407xx_i2c_driver.c:216:13:I2C_ExecuteAddressPhaseWrite	16	static
+../drivers/src/stm32f407xx_i2c_driver.c:221:13:I2C_GenerateStartCondition	16	static
+../drivers/src/stm32f407xx_i2c_driver.c:225:9:I2C_GetFlagStatus	16	static
+../drivers/src/stm32f407xx_i2c_driver.c:234:13:I2C_ExecuteAddressPhaseWrite	16	static

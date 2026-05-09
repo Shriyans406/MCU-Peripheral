@@ -1,4 +1,4 @@
-00:40:29 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+00:58:09 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_i2c_driver.d" -MT"drivers/src/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_i2c_driver.o"
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetOutputCLlock':
@@ -23,6 +23,9 @@ arm-none-eabi-gcc "../drivers/src/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std
 ../drivers/src/stm32f407xx_i2c_driver.c:198:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'while'
   198 |                 I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/src/stm32f407xx_i2c_driver.c:207:17: warning: implicit declaration of function 'I2C_ClearADDRFlag' [-Wimplicit-function-declaration]
+  207 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                 ^~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetPCLK1Value':
 ../drivers/src/stm32f407xx_i2c_driver.c:98:26: warning: 'SystemClk' may be used uninitialized [-Wmaybe-uninitialized]
    98 |                 SystemClk==RCC_GetPLLOutputClock();
@@ -35,9 +38,9 @@ Finished building target: stm32f4xx_drivers.elf
  
 arm-none-eabi-size  stm32f4xx_drivers.elf 
 arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
-arm-none-eabi-objcopy  -O binary stm32f4xx_drivers.elf  "stm32f4xx_drivers.bin"
    text	   data	    bss	    dec	    hex	filename
    8084	     92	   2444	  10620	   297c	stm32f4xx_drivers.elf
+arm-none-eabi-objcopy  -O binary stm32f4xx_drivers.elf  "stm32f4xx_drivers.bin"
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.bin
@@ -45,5 +48,5 @@ Finished building: stm32f4xx_drivers.list
  
  
 
-00:40:32 Build Finished. 0 errors, 5 warnings. (took 3s.248ms)
+00:58:12 Build Finished. 0 errors, 6 warnings. (took 3s.458ms)
 

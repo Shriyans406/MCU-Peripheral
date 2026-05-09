@@ -199,11 +199,3 @@ static void I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx)
 {
 	pI2Cx->CR1 |= ( 1 << I2C_CR1_START);
 }
-uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx , uint32_t FlagName)
-{
-	if(pI2Cx->SR1 & FlagName)
-	{
-		return FLAG_SET;
-	}
-	return FLAG_RESET;
-}

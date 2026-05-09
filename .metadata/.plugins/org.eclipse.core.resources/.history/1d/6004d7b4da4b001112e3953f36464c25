@@ -212,10 +212,3 @@ uint8_t I2C_GetFlagStatus(I2C_RegDef_t *pI2Cx , uint32_t FlagName)
 	}
 	return FLAG_RESET;
 }
-
-static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
-{
-	SlaveAddr = SlaveAddr << 1;
-	SlaveAddr &= ~(1); //SlaveAddr is Slave address + r/nw bit=0
-	pI2Cx->DR = SlaveAddr;
-}

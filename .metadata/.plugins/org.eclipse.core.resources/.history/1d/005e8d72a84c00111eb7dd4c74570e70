@@ -251,11 +251,11 @@ static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
 	SlaveAddr &= ~(1); //SlaveAddr is Slave address + r/nw bit=0
 	pI2Cx->DR = SlaveAddr;
 }
- void I2C_ClearADDRFlag(I2C_RegDef_t *pI2Cx )
-{
-	uint32_t dummyRead= pI2Cx->SR1;
-	dummyRead= pI2Cx->SR2;
-	(void)dummyRead;
-
-
-}
+//static void I2C_ClearADDRFlag(I2C_RegDef_t *pI2Cx )
+//{
+////	uint32_t dummyRead= pI2Cx->SR1;
+////	uint32_t dummyRead= pI2Cx->SR2;
+////	(void)dummyRead;
+//
+//
+//}

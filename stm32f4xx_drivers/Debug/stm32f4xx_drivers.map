@@ -338,12 +338,14 @@ Discarded input sections
                 0x00000000       0x26 ./drivers/src/stm32f407xx_i2c_driver.o
  .text.I2C_ExecuteAddressPhaseWrite
                 0x00000000       0x2a ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_info    0x00000000      0x6ff ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_abbrev  0x00000000      0x1d3 ./drivers/src/stm32f407xx_i2c_driver.o
+ .text.I2C_ClearADDRFlag
+                0x00000000       0x1e ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_info    0x00000000      0x723 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_abbrev  0x00000000      0x1e3 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_aranges
-                0x00000000       0x70 ./drivers/src/stm32f407xx_i2c_driver.o
+                0x00000000       0x78 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_rnglists
-                0x00000000       0x52 ./drivers/src/stm32f407xx_i2c_driver.o
+                0x00000000       0x58 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xad ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000      0xad8 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000      0x190 ./drivers/src/stm32f407xx_i2c_driver.o
@@ -357,10 +359,10 @@ Discarded input sections
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0x82 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_line    0x00000000      0x7ea ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_str     0x00000000     0x6209 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_line    0x00000000      0x803 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_str     0x00000000     0x6213 ./drivers/src/stm32f407xx_i2c_driver.o
  .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_frame   0x00000000      0x1b4 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_frame   0x00000000      0x1dc ./drivers/src/stm32f407xx_i2c_driver.o
  .ARM.attributes
                 0x00000000       0x2e ./drivers/src/stm32f407xx_i2c_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_spi_driver.o

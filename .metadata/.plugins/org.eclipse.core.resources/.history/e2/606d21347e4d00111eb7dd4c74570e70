@@ -12,9 +12,6 @@ static void  I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx);
 static void  I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr);
  void  I2C_GenerateStopCondition(I2C_RegDef_t *pI2Cx);
 
- static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr);
-
-
 uint16_t AHB_PreScaler[8]={2,4,8,16,64,128,256,512};
 uint16_t APB1_PreScaler[4]={2,4,8,16};
 
@@ -239,7 +236,7 @@ void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t 
 		while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
 
 		//3. Send the address of the slave with r/nw bit set to R(1) (total 8 bits )
-		I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,SlaveAddr);
+		//I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,SlaveAddr);
 
 		//4. wait until address phase is completed by checking the ADDR flag in teh SR1
 		while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_ADDR)   );
@@ -306,11 +303,3 @@ static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
 
 
 }
-
-
- static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
- {
- 	SlaveAddr = SlaveAddr << 1;
- 	SlaveAddr |= 1; //SlaveAddr is Slave address + r/nw bit=1
- 	pI2Cx->DR = SlaveAddr;
- }

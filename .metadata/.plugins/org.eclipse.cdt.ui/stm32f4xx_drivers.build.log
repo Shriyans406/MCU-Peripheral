@@ -1,44 +1,44 @@
-02:41:01 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+02:43:25 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_i2c_driver.d" -MT"drivers/src/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_i2c_driver.o"
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetOutputCLlock':
-../drivers/src/stm32f407xx_i2c_driver.c:83:9: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
-   83 |         return ;
+../drivers/src/stm32f407xx_i2c_driver.c:86:9: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+   86 |         return ;
       |         ^~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:82:10: note: declared here
-   82 | uint32_t RCC_GetOutputCLlock(){
+../drivers/src/stm32f407xx_i2c_driver.c:85:10: note: declared here
+   85 | uint32_t RCC_GetOutputCLlock(){
       |          ^~~~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetPCLK1Value':
-../drivers/src/stm32f407xx_i2c_driver.c:98:28: warning: implicit declaration of function 'RCC_GetPLLOutputClock'; did you mean 'RCC_GetOutputCLlock'? [-Wimplicit-function-declaration]
-   98 |                 SystemClk==RCC_GetPLLOutputClock();
+../drivers/src/stm32f407xx_i2c_driver.c:101:28: warning: implicit declaration of function 'RCC_GetPLLOutputClock'; did you mean 'RCC_GetOutputCLlock'? [-Wimplicit-function-declaration]
+  101 |                 SystemClk==RCC_GetPLLOutputClock();
       |                            ^~~~~~~~~~~~~~~~~~~~~
       |                            RCC_GetOutputCLlock
-../drivers/src/stm32f407xx_i2c_driver.c:98:26: warning: value computed is not used [-Wunused-value]
-   98 |                 SystemClk==RCC_GetPLLOutputClock();
+../drivers/src/stm32f407xx_i2c_driver.c:101:26: warning: value computed is not used [-Wunused-value]
+  101 |                 SystemClk==RCC_GetPLLOutputClock();
       |                 ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'I2C_MasterSendData':
-../drivers/src/stm32f407xx_i2c_driver.c:195:9: warning: this 'while' clause does not guard... [-Wmisleading-indentation]
-  195 |         while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
+../drivers/src/stm32f407xx_i2c_driver.c:198:9: warning: this 'while' clause does not guard... [-Wmisleading-indentation]
+  198 |         while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
       |         ^~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:198:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'while'
-  198 |                 I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+../drivers/src/stm32f407xx_i2c_driver.c:201:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'while'
+  201 |                 I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:207:17: warning: implicit declaration of function 'I2C_ClearADDRFlag' [-Wimplicit-function-declaration]
-  207 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+../drivers/src/stm32f407xx_i2c_driver.c:210:17: warning: implicit declaration of function 'I2C_ClearADDRFlag' [-Wimplicit-function-declaration]
+  210 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
       |                 ^~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_i2c_driver.c: At top level:
-../drivers/src/stm32f407xx_i2c_driver.c:298:7: warning: conflicting types for 'I2C_ClearADDRFlag'; have 'void(I2C_RegDef_t *)'
-  298 |  void I2C_ClearADDRFlag(I2C_RegDef_t *pI2Cx )
+../drivers/src/stm32f407xx_i2c_driver.c:301:7: warning: conflicting types for 'I2C_ClearADDRFlag'; have 'void(I2C_RegDef_t *)'
+  301 |  void I2C_ClearADDRFlag(I2C_RegDef_t *pI2Cx )
       |       ^~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:207:17: note: previous implicit declaration of 'I2C_ClearADDRFlag' with type 'void(I2C_RegDef_t *)'
-  207 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+../drivers/src/stm32f407xx_i2c_driver.c:210:17: note: previous implicit declaration of 'I2C_ClearADDRFlag' with type 'void(I2C_RegDef_t *)'
+  210 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
       |                 ^~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetPCLK1Value':
-../drivers/src/stm32f407xx_i2c_driver.c:98:26: warning: 'SystemClk' may be used uninitialized [-Wmaybe-uninitialized]
-   98 |                 SystemClk==RCC_GetPLLOutputClock();
+../drivers/src/stm32f407xx_i2c_driver.c:101:26: warning: 'SystemClk' may be used uninitialized [-Wmaybe-uninitialized]
+  101 |                 SystemClk==RCC_GetPLLOutputClock();
       |                 ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:88:25: note: 'SystemClk' was declared here
-   88 |         uint32_t pclk1, SystemClk;
+../drivers/src/stm32f407xx_i2c_driver.c:91:25: note: 'SystemClk' was declared here
+   91 |         uint32_t pclk1, SystemClk;
       |                         ^~~~~~~~~
 arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f4xx_drivers.elf
@@ -51,9 +51,9 @@ arm-none-eabi-objcopy  -O binary stm32f4xx_drivers.elf  "stm32f4xx_drivers.bin"
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.bin
- 
 Finished building: stm32f4xx_drivers.list
  
+ 
 
-02:41:11 Build Finished. 0 errors, 7 warnings. (took 10s.234ms)
+02:43:29 Build Finished. 0 errors, 7 warnings. (took 4s.49ms)
 

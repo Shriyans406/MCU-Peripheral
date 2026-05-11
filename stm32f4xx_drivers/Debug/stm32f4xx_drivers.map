@@ -330,6 +330,8 @@ Discarded input sections
                 0x00000000       0x12 ./drivers/src/stm32f407xx_i2c_driver.o
  .text.I2C_MasterSendData
                 0x00000000       0xca ./drivers/src/stm32f407xx_i2c_driver.o
+ .text.I2C_MasterReceiveData
+                0x00000000       0x8c ./drivers/src/stm32f407xx_i2c_driver.o
  .text.I2C_GenerateStartCondition
                 0x00000000       0x1e ./drivers/src/stm32f407xx_i2c_driver.o
  .text.I2C_GenerateStopCondition
@@ -340,12 +342,12 @@ Discarded input sections
                 0x00000000       0x2a ./drivers/src/stm32f407xx_i2c_driver.o
  .text.I2C_ClearADDRFlag
                 0x00000000       0x1e ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_info    0x00000000      0x723 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_abbrev  0x00000000      0x1e3 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_info    0x00000000      0x79c ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_abbrev  0x00000000      0x213 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_aranges
-                0x00000000       0x78 ./drivers/src/stm32f407xx_i2c_driver.o
+                0x00000000       0x80 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_rnglists
-                0x00000000       0x58 ./drivers/src/stm32f407xx_i2c_driver.o
+                0x00000000       0x5f ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xad ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000      0xad8 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000      0x190 ./drivers/src/stm32f407xx_i2c_driver.o
@@ -359,10 +361,10 @@ Discarded input sections
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0x82 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_line    0x00000000      0x803 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_str     0x00000000     0x6213 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_line    0x00000000      0x863 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_str     0x00000000     0x6229 ./drivers/src/stm32f407xx_i2c_driver.o
  .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_frame   0x00000000      0x1dc ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_frame   0x00000000      0x200 ./drivers/src/stm32f407xx_i2c_driver.o
  .ARM.attributes
                 0x00000000       0x2e ./drivers/src/stm32f407xx_i2c_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_spi_driver.o

@@ -350,3 +350,15 @@
 2026-05-11 00:42:43,129 [INFO] UserAuth:484 - Internet connection configuration mode: 1
 2026-05-11 00:53:49,276 [INFO] WebApp:194 - Connection lost
 2026-05-11 00:53:50,937 [INFO] WebApp:191 - Connection restablished
+2026-05-11 05:18:50,410 [INFO] WebApp:194 - Connection lost
+2026-05-11 09:03:53,895 [INFO] WebApp:191 - Connection restablished
+2026-05-11 09:05:26,854 [INFO] WebApp:194 - Connection lost
+2026-05-11 09:21:02,748 [INFO] WebApp:191 - Connection restablished
+2026-05-11 09:21:03,753 [INFO] WebApp:194 - Connection lost
+2026-05-11 09:21:04,141 [INFO] WebApp:191 - Connection restablished
+2026-05-11 09:37:22,384 [INFO] WebApp:194 - Connection lost
+2026-05-11 18:34:39,702 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 18:34:39.332 ERROR Chromium process exit code: -1,073,741,819
+2026-05-11 18:34:39,747 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-05-11 18:34:39,764 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 18:34:39.753 ERROR Crash dump dir: C:\Users\HP\AppData\Local\JxBrowser\7.41.4\CrashReports
+2026-05-11 18:34:39,765 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-05-11 18:34:39,988 [ERROR] WebApp:412 - JxBrowser engine crashed! Exit code: -1073741819

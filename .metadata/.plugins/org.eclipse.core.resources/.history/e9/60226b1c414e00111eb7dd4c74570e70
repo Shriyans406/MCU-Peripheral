@@ -81,7 +81,7 @@ int main(void){
 		while(1)
 			{
 				//wait till button is pressed
-				while( ! GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0) );
+				//while( ! GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0) );
 
 				//to avoid button de-bouncing related issues 200ms of delay
 				delay();

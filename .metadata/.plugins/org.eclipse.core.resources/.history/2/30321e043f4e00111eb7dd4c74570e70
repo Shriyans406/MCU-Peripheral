@@ -82,7 +82,7 @@ void I2C_PeriClockControl(I2C_RegDef_t *pI2Cx, uint8_t EnorDi)
 
 }
 
-uint32_t RCC_GetOutputClock(){
+uint32_t RCC_GetOutputCLlock(){
 	return ;
 }
 
@@ -98,7 +98,7 @@ uint32_t RCC_GetPCLK1Value(void){
 	} else if(clksrc==1){
 		SystemClk=8000000;
 	}else if(clksrc==2){
-		SystemClk==RCC_GetOutputClock();
+		SystemClk==RCC_GetPLLOutputClock();
 	}
 
 	temp=((RCC->CFGR >>4) & 0xF);

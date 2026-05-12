@@ -1,0 +1,11 @@
+void recieveEvent(int bytes)
+{
+while(Wire.available()){
+rx_buffef[cnt++] =Wire.read();
+
+}
+rx_buffer[cnt]="\0";
+cnt=0;
+Serial.print("Recieved:");
+Serial.println((char*)rx_buffer);
+}

@@ -88,9 +88,9 @@ void GPIO_ButtonInit(void)
 int main(void)
 {
 
-	uint8_t commandcode;
+	//uint8_t commandcode;
 
-	uint8_t len;
+	//uint8_t len;
 
 	//initialise_monitor_handles();
 
@@ -118,17 +118,17 @@ int main(void)
 		//to avoid button de-bouncing related issues 200ms of delay
 		delay();
 
-		commandcode = 0x51;
+//		commandcode = 0x51;
 //
-		I2C_MasterSendData(&I2C1Handle,&commandcode,1,SLAVE_ADDR,I2C_ENABLE_SR);
+//		I2C_MasterSendData(&I2C1Handle,&commandcode,1,SLAVE_ADDR,I2C_ENABLE_SR);
 //
-	    I2C_MasterReceiveData(&I2C1Handle,&len,1,SLAVE_ADDR,I2C_ENABLE_SR);
+//		I2C_MasterReceiveData(&I2C1Handle,&len,1,SLAVE_ADDR,I2C_ENABLE_SR);
 //
-		commandcode = 0x52;
-		I2C_MasterSendData(&I2C1Handle,&commandcode,1,SLAVE_ADDR,I2C_ENABLE_SR);
+//		commandcode = 0x52;
+//		I2C_MasterSendData(&I2C1Handle,&commandcode,1,SLAVE_ADDR,I2C_ENABLE_SR);
 //
 //
-		I2C_MasterReceiveData(&I2C1Handle,rcv_buf,len,SLAVE_ADDR,I2C_DISABLE_SR);
+//		I2C_MasterReceiveData(&I2C1Handle,rcv_buf,len,SLAVE_ADDR,I2C_DISABLE_SR);
 //
 //		rcv_buf[len+1] = '\0';
 

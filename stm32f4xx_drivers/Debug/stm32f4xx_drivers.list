@@ -39,15 +39,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00002663  00000000  00000000  00003cbb  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00001a68  00000000  00000000  0000631e  2**0
+ 18 .debug_line   00001a6b  00000000  00000000  0000631e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00009b9a  00000000  00000000  00007d86  2**0
+ 19 .debug_str    00009b9a  00000000  00000000  00007d89  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  00011920  2**0
+ 20 .comment      00000043  00000000  00000000  00011923  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00000500  00000000  00000000  00011964  2**2
+ 21 .debug_frame  00000500  00000000  00000000  00011968  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000074  00000000  00000000  00011e64  2**0
+ 22 .debug_line_str 00000074  00000000  00000000  00011e68  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1728,7 +1728,7 @@ void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t 
 		if(Len == 1)
  8000b80:	79fb      	ldrb	r3, [r7, #7]
  8000b82:	2b01      	cmp	r3, #1
- 8000b84:	d121      	bne.n	8000bca <I2C_MasterReceiveData+0xa0>
+ 8000b84:	d122      	bne.n	8000bcc <I2C_MasterReceiveData+0xa2>
 		{
 			//Disable Acking
 			I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
@@ -1776,106 +1776,108 @@ void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t 
  8000bc6:	68bb      	ldr	r3, [r7, #8]
  8000bc8:	701a      	strb	r2, [r3, #0]
 
+			return;
+ 8000bca:	e03d      	b.n	8000c48 <I2C_MasterReceiveData+0x11e>
+
 		}
 
 
 		  //procedure to read data from slave when Len > 1
 			if(Len > 1)
- 8000bca:	79fb      	ldrb	r3, [r7, #7]
- 8000bcc:	2b01      	cmp	r3, #1
- 8000bce:	d930      	bls.n	8000c32 <I2C_MasterReceiveData+0x108>
+ 8000bcc:	79fb      	ldrb	r3, [r7, #7]
+ 8000bce:	2b01      	cmp	r3, #1
+ 8000bd0:	d930      	bls.n	8000c34 <I2C_MasterReceiveData+0x10a>
 			{
 				//clear the ADDR flag
 				I2C_ClearADDRFlag(pI2CHandle);
- 8000bd0:	68f8      	ldr	r0, [r7, #12]
- 8000bd2:	f000 f882 	bl	8000cda <I2C_ClearADDRFlag>
+ 8000bd2:	68f8      	ldr	r0, [r7, #12]
+ 8000bd4:	f000 f881 	bl	8000cda <I2C_ClearADDRFlag>
 
 				//read the data until Len becomes zero
 				for ( uint32_t i = Len ; i > 0 ; i--)
- 8000bd6:	79fb      	ldrb	r3, [r7, #7]
- 8000bd8:	617b      	str	r3, [r7, #20]
- 8000bda:	e027      	b.n	8000c2c <I2C_MasterReceiveData+0x102>
+ 8000bd8:	79fb      	ldrb	r3, [r7, #7]
+ 8000bda:	617b      	str	r3, [r7, #20]
+ 8000bdc:	e027      	b.n	8000c2e <I2C_MasterReceiveData+0x104>
 				{
 					//wait until RXNE becomes 1
 					while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_RXNE) );
- 8000bdc:	bf00      	nop
- 8000bde:	68fb      	ldr	r3, [r7, #12]
- 8000be0:	681b      	ldr	r3, [r3, #0]
- 8000be2:	2140      	movs	r1, #64	@ 0x40
- 8000be4:	4618      	mov	r0, r3
- 8000be6:	f000 f850 	bl	8000c8a <I2C_GetFlagStatus>
- 8000bea:	4603      	mov	r3, r0
- 8000bec:	2b00      	cmp	r3, #0
- 8000bee:	d0f6      	beq.n	8000bde <I2C_MasterReceiveData+0xb4>
+ 8000bde:	bf00      	nop
+ 8000be0:	68fb      	ldr	r3, [r7, #12]
+ 8000be2:	681b      	ldr	r3, [r3, #0]
+ 8000be4:	2140      	movs	r1, #64	@ 0x40
+ 8000be6:	4618      	mov	r0, r3
+ 8000be8:	f000 f84f 	bl	8000c8a <I2C_GetFlagStatus>
+ 8000bec:	4603      	mov	r3, r0
+ 8000bee:	2b00      	cmp	r3, #0
+ 8000bf0:	d0f6      	beq.n	8000be0 <I2C_MasterReceiveData+0xb6>
 
 					if(i == 2) //if last 2 bytes are remaining
- 8000bf0:	697b      	ldr	r3, [r7, #20]
- 8000bf2:	2b02      	cmp	r3, #2
- 8000bf4:	d10e      	bne.n	8000c14 <I2C_MasterReceiveData+0xea>
+ 8000bf2:	697b      	ldr	r3, [r7, #20]
+ 8000bf4:	2b02      	cmp	r3, #2
+ 8000bf6:	d10e      	bne.n	8000c16 <I2C_MasterReceiveData+0xec>
 					{
 						//Disable Acking
 						I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
- 8000bf6:	68fb      	ldr	r3, [r7, #12]
- 8000bf8:	681b      	ldr	r3, [r3, #0]
- 8000bfa:	2100      	movs	r1, #0
- 8000bfc:	4618      	mov	r0, r3
- 8000bfe:	f000 f890 	bl	8000d22 <I2C_ManageAcking>
+ 8000bf8:	68fb      	ldr	r3, [r7, #12]
+ 8000bfa:	681b      	ldr	r3, [r3, #0]
+ 8000bfc:	2100      	movs	r1, #0
+ 8000bfe:	4618      	mov	r0, r3
+ 8000c00:	f000 f88f 	bl	8000d22 <I2C_ManageAcking>
 
 						//generate STOP condition
 						if(Sr == I2C_DISABLE_SR )
- 8000c02:	f897 3020 	ldrb.w	r3, [r7, #32]
- 8000c06:	2b00      	cmp	r3, #0
- 8000c08:	d104      	bne.n	8000c14 <I2C_MasterReceiveData+0xea>
+ 8000c04:	f897 3020 	ldrb.w	r3, [r7, #32]
+ 8000c08:	2b00      	cmp	r3, #0
+ 8000c0a:	d104      	bne.n	8000c16 <I2C_MasterReceiveData+0xec>
 							I2C_GenerateStopCondition(pI2CHandle->pI2Cx);
- 8000c0a:	68fb      	ldr	r3, [r7, #12]
- 8000c0c:	681b      	ldr	r3, [r3, #0]
- 8000c0e:	4618      	mov	r0, r3
- 8000c10:	f000 f82c 	bl	8000c6c <I2C_GenerateStopCondition>
+ 8000c0c:	68fb      	ldr	r3, [r7, #12]
+ 8000c0e:	681b      	ldr	r3, [r3, #0]
+ 8000c10:	4618      	mov	r0, r3
+ 8000c12:	f000 f82b 	bl	8000c6c <I2C_GenerateStopCondition>
 
 					}
 
 					//read the data from data register in to buffer
 					*pRxBuffer = pI2CHandle->pI2Cx->DR;
- 8000c14:	68fb      	ldr	r3, [r7, #12]
- 8000c16:	681b      	ldr	r3, [r3, #0]
- 8000c18:	691b      	ldr	r3, [r3, #16]
- 8000c1a:	b2da      	uxtb	r2, r3
- 8000c1c:	68bb      	ldr	r3, [r7, #8]
- 8000c1e:	701a      	strb	r2, [r3, #0]
+ 8000c16:	68fb      	ldr	r3, [r7, #12]
+ 8000c18:	681b      	ldr	r3, [r3, #0]
+ 8000c1a:	691b      	ldr	r3, [r3, #16]
+ 8000c1c:	b2da      	uxtb	r2, r3
+ 8000c1e:	68bb      	ldr	r3, [r7, #8]
+ 8000c20:	701a      	strb	r2, [r3, #0]
 
 					//increment the buffer address
 					pRxBuffer++;
- 8000c20:	68bb      	ldr	r3, [r7, #8]
- 8000c22:	3301      	adds	r3, #1
- 8000c24:	60bb      	str	r3, [r7, #8]
+ 8000c22:	68bb      	ldr	r3, [r7, #8]
+ 8000c24:	3301      	adds	r3, #1
+ 8000c26:	60bb      	str	r3, [r7, #8]
 				for ( uint32_t i = Len ; i > 0 ; i--)
- 8000c26:	697b      	ldr	r3, [r7, #20]
- 8000c28:	3b01      	subs	r3, #1
- 8000c2a:	617b      	str	r3, [r7, #20]
- 8000c2c:	697b      	ldr	r3, [r7, #20]
- 8000c2e:	2b00      	cmp	r3, #0
- 8000c30:	d1d4      	bne.n	8000bdc <I2C_MasterReceiveData+0xb2>
+ 8000c28:	697b      	ldr	r3, [r7, #20]
+ 8000c2a:	3b01      	subs	r3, #1
+ 8000c2c:	617b      	str	r3, [r7, #20]
+ 8000c2e:	697b      	ldr	r3, [r7, #20]
+ 8000c30:	2b00      	cmp	r3, #0
+ 8000c32:	d1d4      	bne.n	8000bde <I2C_MasterReceiveData+0xb4>
 				}
 
 			}
 
 			//re-enable ACKing
 			if(pI2CHandle->I2C_Config.I2C_AckControl == I2C_ACK_ENABLE)
- 8000c32:	68fb      	ldr	r3, [r7, #12]
- 8000c34:	7a5b      	ldrb	r3, [r3, #9]
- 8000c36:	2b01      	cmp	r3, #1
- 8000c38:	d105      	bne.n	8000c46 <I2C_MasterReceiveData+0x11c>
+ 8000c34:	68fb      	ldr	r3, [r7, #12]
+ 8000c36:	7a5b      	ldrb	r3, [r3, #9]
+ 8000c38:	2b01      	cmp	r3, #1
+ 8000c3a:	d105      	bne.n	8000c48 <I2C_MasterReceiveData+0x11e>
 			{
 				I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_ENABLE);
- 8000c3a:	68fb      	ldr	r3, [r7, #12]
- 8000c3c:	681b      	ldr	r3, [r3, #0]
- 8000c3e:	2101      	movs	r1, #1
- 8000c40:	4618      	mov	r0, r3
- 8000c42:	f000 f86e 	bl	8000d22 <I2C_ManageAcking>
+ 8000c3c:	68fb      	ldr	r3, [r7, #12]
+ 8000c3e:	681b      	ldr	r3, [r3, #0]
+ 8000c40:	2101      	movs	r1, #1
+ 8000c42:	4618      	mov	r0, r3
+ 8000c44:	f000 f86d 	bl	8000d22 <I2C_ManageAcking>
 			}
 
 }
- 8000c46:	bf00      	nop
  8000c48:	3718      	adds	r7, #24
  8000c4a:	46bd      	mov	sp, r7
  8000c4c:	bd80      	pop	{r7, pc}

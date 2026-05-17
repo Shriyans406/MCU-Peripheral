@@ -130,7 +130,7 @@ int main(void)
 //
 		I2C_MasterReceiveData(&I2C1Handle,rcv_buf,len,SLAVE_ADDR,I2C_DISABLE_SR);
 //
-		rcv_buf[len+1] = '\0';
+//		rcv_buf[len+1] = '\0';
 
 		printf("Data : %s",rcv_buf);
 

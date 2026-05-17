@@ -2,7 +2,7 @@
 
 int LED=13;
 uint8_t active_command=0xff, led_status=0;
-char name_msg[32]="THis is arduino Uno Board\r\n";
+char name_msg[32]="Welome to Organization\n";
 
 uint16_t device_id=0xFF45;
 

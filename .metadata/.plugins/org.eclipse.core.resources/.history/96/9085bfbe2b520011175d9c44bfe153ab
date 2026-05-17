@@ -10,7 +10,7 @@
 #include<string.h>
 #include "stm32f407xx.h"
 
-extern void initialise_monitor_handles();
+//extern void initialise_monitor_handles();
 
 
 
@@ -92,9 +92,9 @@ int main(void)
 
 	uint8_t len;
 
-	initialise_monitor_handles();
+	//initialise_monitor_handles();
 
-	printf("Application is running\n");
+	//printf("Application is running\n");
 
 	GPIO_ButtonInit();
 

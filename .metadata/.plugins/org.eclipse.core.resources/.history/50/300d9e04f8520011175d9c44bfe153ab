@@ -39,12 +39,6 @@ typedef struct
     uint8_t         Sr;			/* !< To store repeated start value  > */
 }I2C_Handle_t;
 
-/*
- * I2C application states
- */
-#define I2C_READY 					0
-#define I2C_BUSY_IN_RX 				1
-#define I2C_BUSY_IN_TX 				2
 
 /*
  * @I2C_SCLSpeed

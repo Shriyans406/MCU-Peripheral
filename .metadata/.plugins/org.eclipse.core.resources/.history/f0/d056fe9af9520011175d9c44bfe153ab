@@ -469,7 +469,7 @@ static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
 								{
 
 								}
-		temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_RXNE);
+		temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_RXE);
 
 		if(temp1 && temp2 && temp3)
 								{

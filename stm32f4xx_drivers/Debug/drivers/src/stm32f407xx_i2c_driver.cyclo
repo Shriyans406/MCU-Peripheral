@@ -13,3 +13,5 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:343:7:I2C_ClearADDRFlag	1
 ../drivers/src/stm32f407xx_i2c_driver.c:353:14:I2C_ExecuteAddressPhaseRead	1
 ../drivers/src/stm32f407xx_i2c_driver.c:362:7:I2C_ManageAcking	2
+../drivers/src/stm32f407xx_i2c_driver.c:376:10:I2C_MasterSendDataIT	1
+../drivers/src/stm32f407xx_i2c_driver.c:380:10:I2C_MasterReceiveDataIT	1

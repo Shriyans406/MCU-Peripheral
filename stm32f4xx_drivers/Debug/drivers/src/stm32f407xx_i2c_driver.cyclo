@@ -15,5 +15,5 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:362:7:I2C_ManageAcking	2
 ../drivers/src/stm32f407xx_i2c_driver.c:376:10:I2C_MasterSendDataIT	3
 ../drivers/src/stm32f407xx_i2c_driver.c:404:10:I2C_MasterReceiveDataIT	3
-../drivers/src/stm32f407xx_i2c_driver.c:433:7:I2C_EV_IRQHandling	5
-../drivers/src/stm32f407xx_i2c_driver.c:491:7:I2C_ER_IRQHandling	1
+../drivers/src/stm32f407xx_i2c_driver.c:433:7:I2C_EV_IRQHandling	13
+../drivers/src/stm32f407xx_i2c_driver.c:517:7:I2C_ER_IRQHandling	1

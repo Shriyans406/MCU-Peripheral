@@ -87,13 +87,6 @@ typedef struct
 #define I2C_ENABLE_SR   	SET
 
 
-/*
- * I2C application events macros
- */
-#define I2C_EV_TX_CMPLT  	 	0
-
-
-
 /******************************************************************************************
  *								APIs supported by this driver
  *		 For more information about the APIs check the function definitions

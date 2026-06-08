@@ -91,6 +91,8 @@ typedef struct
  * I2C application events macros
  */
 #define I2C_EV_TX_CMPLT  	 	0
+#define I2C_EV_RX_CMPLT  	 	1
+#define I2C_EV_STOP       		2
 
 
 

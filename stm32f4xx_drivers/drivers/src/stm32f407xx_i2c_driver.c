@@ -497,6 +497,13 @@ static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
 
 		if(temp1 && temp3)
 						{
+			//STOF flag is set
+			//Clear the STOPF ( i.e 1) read SR1 2) Write to CR1 )
+
+			pI2CHandle->pI2Cx->CR1 |= 0x0000;
+
+			//Notify the application that STOP is detected
+			I2C_ApplicationEventCallback(pI2CHandle,I2C_EV_STOP);
 
 						}
 		temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE);

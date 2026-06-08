@@ -393,15 +393,6 @@ typedef struct
 #define I2C_SR1_OVR 					11
 #define I2C_SR1_TIMEOUT 				14
 
-/*
- * Bit position definitions I2C_SR2
- */
-#define I2C_SR2_MSL						0
-#define I2C_SR2_BUSY 					1
-#define I2C_SR2_TRA 					2
-#define I2C_SR2_GENCALL 				4
-#define I2C_SR2_DUALF 					7
-
 
 
 //more are remaining

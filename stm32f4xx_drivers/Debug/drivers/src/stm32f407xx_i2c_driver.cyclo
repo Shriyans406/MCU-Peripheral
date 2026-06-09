@@ -10,10 +10,10 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:322:7:I2C_GenerateStopCondition	1
 ../drivers/src/stm32f407xx_i2c_driver.c:328:9:I2C_GetFlagStatus	2
 ../drivers/src/stm32f407xx_i2c_driver.c:337:13:I2C_ExecuteAddressPhaseWrite	1
-../drivers/src/stm32f407xx_i2c_driver.c:343:7:I2C_ClearADDRFlag	1
-../drivers/src/stm32f407xx_i2c_driver.c:353:14:I2C_ExecuteAddressPhaseRead	1
-../drivers/src/stm32f407xx_i2c_driver.c:362:7:I2C_ManageAcking	2
-../drivers/src/stm32f407xx_i2c_driver.c:376:10:I2C_MasterSendDataIT	3
-../drivers/src/stm32f407xx_i2c_driver.c:404:10:I2C_MasterReceiveDataIT	3
-../drivers/src/stm32f407xx_i2c_driver.c:433:7:I2C_EV_IRQHandling	22
-../drivers/src/stm32f407xx_i2c_driver.c:550:7:I2C_ER_IRQHandling	1
+../drivers/src/stm32f407xx_i2c_driver.c:343:6:I2C_ClearADDRFlag	4
+../drivers/src/stm32f407xx_i2c_driver.c:387:14:I2C_ExecuteAddressPhaseRead	1
+../drivers/src/stm32f407xx_i2c_driver.c:396:7:I2C_ManageAcking	2
+../drivers/src/stm32f407xx_i2c_driver.c:410:10:I2C_MasterSendDataIT	3
+../drivers/src/stm32f407xx_i2c_driver.c:438:10:I2C_MasterReceiveDataIT	3
+../drivers/src/stm32f407xx_i2c_driver.c:467:7:I2C_EV_IRQHandling	28
+../drivers/src/stm32f407xx_i2c_driver.c:603:7:I2C_ER_IRQHandling	1

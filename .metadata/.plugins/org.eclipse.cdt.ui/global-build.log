@@ -1,9 +1,6 @@
-09:55:29 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+09:40:22 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
-arm-none-eabi-gcc "../drivers/src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_gpio_driver.d" -MT"drivers/src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_gpio_driver.o"
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_i2c_driver.d" -MT"drivers/src/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_i2c_driver.o"
-arm-none-eabi-gcc "../drivers/src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_spi_driver.d" -MT"drivers/src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_spi_driver.o"
-arm-none-eabi-gcc "../Src/011i2c_master_rx_testing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/011i2c_master_rx_testing.d" -MT"Src/011i2c_master_rx_testing.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/011i2c_master_rx_testing.o"
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetOutputClock':
 ../drivers/src/stm32f407xx_i2c_driver.c:86:9: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
    86 |         return ;
@@ -26,35 +23,30 @@ arm-none-eabi-gcc "../Src/011i2c_master_rx_testing.c" -mcpu=cortex-m4 -std=gnu11
   210 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
       |                 ^~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_i2c_driver.c: At top level:
-../drivers/src/stm32f407xx_i2c_driver.c:343:7: warning: conflicting types for 'I2C_ClearADDRFlag'; have 'void(I2C_RegDef_t *)'
-  343 |  void I2C_ClearADDRFlag(I2C_RegDef_t *pI2Cx )
-      |       ^~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:210:17: note: previous implicit declaration of 'I2C_ClearADDRFlag' with type 'void(I2C_RegDef_t *)'
+../drivers/src/stm32f407xx_i2c_driver.c:343:6: warning: conflicting types for 'I2C_ClearADDRFlag'; have 'void(I2C_Handle_t *)'
+  343 | void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |      ^~~~~~~~~~~~~~~~~
+../drivers/src/stm32f407xx_i2c_driver.c:210:17: note: previous implicit declaration of 'I2C_ClearADDRFlag' with type 'void(I2C_Handle_t *)'
   210 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
       |                 ^~~~~~~~~~~~~~~~~
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'I2C_EV_IRQHandling':
-../drivers/src/stm32f407xx_i2c_driver.c:461:43: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
-  461 |                         I2C_ClearADDRFlag(pI2CHandle);
-      |                                           ^~~~~~~~~~
-      |                                           |
-      |                                           I2C_Handle_t *
-../drivers/src/stm32f407xx_i2c_driver.c:343:39: note: expected 'I2C_RegDef_t *' but argument is of type 'I2C_Handle_t *'
-  343 |  void I2C_ClearADDRFlag(I2C_RegDef_t *pI2Cx )
-      |                         ~~~~~~~~~~~~~~^~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:526:83: warning: statement with no effect [-Wunused-value]
-  526 |                                                                         pI2CHandle->pTxBuffer;
+../drivers/src/stm32f407xx_i2c_driver.c:560:83: warning: statement with no effect [-Wunused-value]
+  560 |                                                                         pI2CHandle->pTxBuffer;
       |                                                                         ~~~~~~~~~~^~~~~~~~~~~
+../drivers/src/stm32f407xx_i2c_driver.c:586:41: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  586 |                                         I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f4xx_drivers.elf
  
 arm-none-eabi-size  stm32f4xx_drivers.elf 
 arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
    text	   data	    bss	    dec	    hex	filename
-   7924	    116	   1972	  10012	   271c	stm32f4xx_drivers.elf
+   8004	    116	   1972	  10092	   276c	stm32f4xx_drivers.elf
 arm-none-eabi-objcopy  -O binary stm32f4xx_drivers.elf  "stm32f4xx_drivers.bin"
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.bin
-Finished building: stm32f4xx_drivers.list
  
+Finished building: stm32f4xx_drivers.list
  

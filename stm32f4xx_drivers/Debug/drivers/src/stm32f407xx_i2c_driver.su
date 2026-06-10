@@ -17,4 +17,5 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:438:10:I2C_MasterReceiveDataIT	32	static
 ../drivers/src/stm32f407xx_i2c_driver.c:467:14:I2C_MasterHandleRXNEInterrupt	16	static
 ../drivers/src/stm32f407xx_i2c_driver.c:508:7:I2C_EV_IRQHandling	32	static
-../drivers/src/stm32f407xx_i2c_driver.c:644:7:I2C_ER_IRQHandling	16	static
+../drivers/src/stm32f407xx_i2c_driver.c:644:7:I2C_CloseReceiveData	16	static
+../drivers/src/stm32f407xx_i2c_driver.c:665:7:I2C_ER_IRQHandling	16	static

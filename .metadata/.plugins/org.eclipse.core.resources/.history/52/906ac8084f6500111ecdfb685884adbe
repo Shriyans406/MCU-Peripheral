@@ -10,13 +10,16 @@
 
 static void  I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx);
 static void  I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr);
-void  I2C_GenerateStopCondition(I2C_RegDef_t *pI2Cx);
+ void  I2C_GenerateStopCondition(I2C_RegDef_t *pI2Cx);
 
-static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr);
-static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle );
- //static void I2C_MasterHandleTXEInterrupt(I2C_Handle_t *pI2CHandle )
+ static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr);
+ static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle )
+ static void I2C_MasterHandleTXEInterrupt(I2C_Handle_t *pI2CHandle )
 
-
+ static void I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx)
+ {
+ 	pI2Cx->CR1 |= ( 1 << I2C_CR1_START);
+ }
 
 uint16_t AHB_PreScaler[8]={2,4,8,16,64,128,256,512};
 uint16_t APB1_PreScaler[4]={2,4,8,16};

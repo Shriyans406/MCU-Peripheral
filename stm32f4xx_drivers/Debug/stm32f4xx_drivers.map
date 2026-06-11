@@ -1336,13 +1336,13 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000035d5       0xad ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00003682       0xb2 ./drivers/src/stm32f407xx_i2c_driver.o
 
-.debug_line     0x00000000     0x2bda
+.debug_line     0x00000000     0x2bdb
  .debug_line    0x00000000      0x73f ./Src/011i2c_master_rx_testing.o
  .debug_line    0x0000073f      0x8a7 ./Src/syscalls.o
  .debug_line    0x00000fe6      0x583 ./Src/sysmem.o
  .debug_line    0x00001569       0x7b ./Startup/startup_stm32f407vgtx.o
  .debug_line    0x000015e4      0x9bf ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_line    0x00001fa3      0xc37 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_line    0x00001fa3      0xc38 ./drivers/src/stm32f407xx_i2c_driver.o
 
 .debug_str      0x00000000     0xbe42
  .debug_str     0x00000000     0xbe42 ./Src/011i2c_master_rx_testing.o

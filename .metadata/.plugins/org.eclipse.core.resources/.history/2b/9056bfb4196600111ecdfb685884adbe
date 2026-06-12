@@ -760,31 +760,5 @@ void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
 	 			I2C_ApplicationEventCallback(pI2CHandle,I2C_ERROR_AF);
 	 		}
 
-	 		/***********************Check for Overrun/underrun error************************************/
-	 			temp1 = (pI2CHandle->pI2Cx->SR1) & ( 1 << I2C_SR1_OVR);
-	 			if(temp1  && temp2)
-	 			{
-	 				//This is Overrun/underrun
-
-	 			    //Implement the code to clear the Overrun/underrun error flag
-	 				pI2CHandle->pI2Cx->SR1 &= ~( 1 << I2C_SR1_OVR);
-
-	 				//Implement the code to notify the application about the error
-	 				I2C_ApplicationEventCallback(pI2CHandle,I2C_ERROR_OVR);
-	 			}
-
-	 		/***********************Check for Time out error************************************/
-	 			temp1 = (pI2CHandle->pI2Cx->SR1) & ( 1 << I2C_SR1_TIMEOUT);
-	 			if(temp1  && temp2)
-	 			{
-	 				//This is Time out error
-
-	 			    //Implement the code to clear the Time out error flag
-	 				pI2CHandle->pI2Cx->SR1 &= ~( 1 << I2C_SR1_TIMEOUT);
-
-	 				//Implement the code to notify the application about the error
-	 				I2C_ApplicationEventCallback(pI2CHandle,I2C_ERROR_TIMEOUT);
-	 			}
-
 
  }

@@ -332,7 +332,7 @@ Discarded input sections
  .text.I2C_CloseSendData
                 0x00000000       0x44 ./drivers/src/stm32f407xx_i2c_driver.o
  .text.I2C_ER_IRQHandling
-                0x00000000       0xdc ./drivers/src/stm32f407xx_i2c_driver.o
+                0x00000000      0x13c ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000      0xad8 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000      0x190 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0x22 ./drivers/src/stm32f407xx_i2c_driver.o
@@ -1338,13 +1338,13 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000035f3       0xad ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x000036a0       0xd0 ./drivers/src/stm32f407xx_i2c_driver.o
 
-.debug_line     0x00000000     0x2ca1
+.debug_line     0x00000000     0x2ce5
  .debug_line    0x00000000      0x73f ./Src/011i2c_master_rx_testing.o
  .debug_line    0x0000073f      0x8a7 ./Src/syscalls.o
  .debug_line    0x00000fe6      0x583 ./Src/sysmem.o
  .debug_line    0x00001569       0x7b ./Startup/startup_stm32f407vgtx.o
  .debug_line    0x000015e4      0x9bf ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_line    0x00001fa3      0xcfe ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_line    0x00001fa3      0xd42 ./drivers/src/stm32f407xx_i2c_driver.o
 
 .debug_str      0x00000000     0xbeb4
  .debug_str     0x00000000     0xbeb4 ./Src/011i2c_master_rx_testing.o

@@ -20,4 +20,4 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:647:7:I2C_CloseReceiveData	2
 ../drivers/src/stm32f407xx_i2c_driver.c:667:14:I2C_MasterHandleTXEInterrupt	2
 ../drivers/src/stm32f407xx_i2c_driver.c:685:7:I2C_CloseSendData	1
-../drivers/src/stm32f407xx_i2c_driver.c:700:7:I2C_ER_IRQHandling	9
+../drivers/src/stm32f407xx_i2c_driver.c:700:7:I2C_ER_IRQHandling	13

@@ -106,7 +106,7 @@ int main(void)
 	I2C1_Inits();
 
 	//I2C IRQ configurations
-	//I2C_IRQInterruptConfig(IRQ_NO_I2C1_EV,ENABLE);
+	I2C_IRQInterruptConfig(IRQ_NO_I2C1_EV,ENABLE);
 	//I2C_IRQInterruptConfig(IRQ_NO_I2C1_ER,ENABLE);
 
 	//enable the i2c peripheral

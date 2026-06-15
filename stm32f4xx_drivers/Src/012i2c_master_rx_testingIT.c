@@ -134,10 +134,14 @@ int main(void)
 
 
 				while(I2C_MasterReceiveDataIT(&I2C1Handle,rcv_buf,len,SLAVE_ADDR,I2C_DISABLE_SR)!= I2C_READY);
+		while(rxComplt != SET);
+
 
 		rcv_buf[len+1] = '\0';
 
 		printf("Data : %s",rcv_buf);
+
+		rxComplt=RESET;
 
 	}
 

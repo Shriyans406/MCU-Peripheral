@@ -2791,8 +2791,8 @@ void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
  800116c:	f003 0304 	and.w	r3, r3, #4
  8001170:	2b00      	cmp	r3, #0
  8001172:	d003      	beq.n	800117c <I2C_EV_IRQHandling+0x15e>
-				I2C_ApplicationEventCallback(pI2CHandle, I2C_EV_DATA_REQ);
- 8001174:	2108      	movs	r1, #8
+				I2C_ApplicationEventCallback(pI2CHandle, I2C_EV_DATA_RCV);
+ 8001174:	2109      	movs	r1, #9
  8001176:	6878      	ldr	r0, [r7, #4]
  8001178:	f7ff f972 	bl	8000460 <I2C_ApplicationEventCallback>
 //					    	I2C_ApplicationEventCallback(pI2CHandle,I2C_EV_DATA_REQ);

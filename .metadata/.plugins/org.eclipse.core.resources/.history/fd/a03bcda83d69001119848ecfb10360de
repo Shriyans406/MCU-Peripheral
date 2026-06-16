@@ -608,7 +608,7 @@ void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
 						}
 					}
 			else{
-				I2C_ApplicationEventCallback(pI2CHandle, I2C_EV_DATA_REQ);
+				I2CApplicationEventCallback(pI2CHandle, I2C_EV_DATA_REQ);
 			}
 //					{
 //						//slave

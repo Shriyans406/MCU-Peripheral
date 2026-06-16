@@ -18,8 +18,8 @@
 ../drivers/src/stm32f407xx_i2c_driver.c:470:14:I2C_MasterHandleRXNEInterrupt	6
 ../drivers/src/stm32f407xx_i2c_driver.c:512:7:I2C_SlaveSendData	1
 ../drivers/src/stm32f407xx_i2c_driver.c:515:10:I2C_SlaveReceiveData	1
-../drivers/src/stm32f407xx_i2c_driver.c:519:7:I2C_EV_IRQHandling	28
-../drivers/src/stm32f407xx_i2c_driver.c:655:7:I2C_CloseReceiveData	2
-../drivers/src/stm32f407xx_i2c_driver.c:675:14:I2C_MasterHandleTXEInterrupt	2
-../drivers/src/stm32f407xx_i2c_driver.c:693:7:I2C_CloseSendData	1
-../drivers/src/stm32f407xx_i2c_driver.c:708:7:I2C_ER_IRQHandling	13
+../drivers/src/stm32f407xx_i2c_driver.c:519:7:I2C_EV_IRQHandling	26
+../drivers/src/stm32f407xx_i2c_driver.c:651:7:I2C_CloseReceiveData	2
+../drivers/src/stm32f407xx_i2c_driver.c:671:14:I2C_MasterHandleTXEInterrupt	2
+../drivers/src/stm32f407xx_i2c_driver.c:689:7:I2C_CloseSendData	1
+../drivers/src/stm32f407xx_i2c_driver.c:704:7:I2C_ER_IRQHandling	13

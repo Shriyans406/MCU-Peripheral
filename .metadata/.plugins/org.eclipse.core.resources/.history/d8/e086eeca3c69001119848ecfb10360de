@@ -603,13 +603,17 @@ void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
 						if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
 						{
 							//I2C_MasterHandleTXEInterrupt(pI2CHandle);
-							I2C_MasterHandleTXEInterrupt(pI2CHandle);
+							if(pI2CHandle->TxRxState==I2C_BUSY_IN_TX){
+								if(pI2CHandle->TxLen>0){
+									pI2CHandle->pI2Cx->DR=*(pI2CHandle->pTxBuffer);
 
+									pI2CHandle->TxLen--;
+
+									pI2CHandle->pTxBuffer;
+								}
+							}
 						}
 					}
-			else{
-				I2C_ApplicationEventCallback(pI2CHandle, I2C_EV_DATA_REQ);
-			}
 //					{
 //						//slave
 //						//make sure that the slave is really in transmitter mode

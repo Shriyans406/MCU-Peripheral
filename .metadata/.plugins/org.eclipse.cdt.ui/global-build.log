@@ -1,45 +1,24 @@
-12:28:40 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+10:11:44 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
-arm-none-eabi-gcc "../drivers/src/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_i2c_driver.d" -MT"drivers/src/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_i2c_driver.o"
-../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetOutputClock':
-../drivers/src/stm32f407xx_i2c_driver.c:89:9: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
-   89 |         return ;
-      |         ^~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:88:10: note: declared here
-   88 | uint32_t RCC_GetOutputClock(){
-      |          ^~~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetPCLK1Value':
-../drivers/src/stm32f407xx_i2c_driver.c:104:26: warning: value computed is not used [-Wunused-value]
-  104 |                 SystemClk==RCC_GetOutputClock();
-      |                 ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c: In function 'I2C_MasterSendData':
-../drivers/src/stm32f407xx_i2c_driver.c:201:9: warning: this 'while' clause does not guard... [-Wmisleading-indentation]
-  201 |         while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
-      |         ^~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:204:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'while'
-  204 |                 I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:213:17: warning: implicit declaration of function 'I2C_ClearADDRFlag' [-Wimplicit-function-declaration]
-  213 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
-      |                 ^~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c: At top level:
-../drivers/src/stm32f407xx_i2c_driver.c:346:6: warning: conflicting types for 'I2C_ClearADDRFlag'; have 'void(I2C_Handle_t *)'
-  346 | void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
-      |      ^~~~~~~~~~~~~~~~~
-../drivers/src/stm32f407xx_i2c_driver.c:213:17: note: previous implicit declaration of 'I2C_ClearADDRFlag' with type 'void(I2C_Handle_t *)'
-  213 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
-      |                 ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Src/013i2c_master_tx_string.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/013i2c_master_tx_string.d" -MT"Src/013i2c_master_tx_string.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/013i2c_master_tx_string.o"
+../Src/013i2c_master_tx_string.c: In function 'main':
+../Src/013i2c_master_tx_string.c:94:17: warning: unused variable 'len' [-Wunused-variable]
+   94 |         uint8_t len;
+      |                 ^~~
+../Src/013i2c_master_tx_string.c:92:17: warning: unused variable 'commandcode' [-Wunused-variable]
+   92 |         uint8_t commandcode;
+      |                 ^~~~~~~~~~~
 arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\HP\OneDrive\Desktop\Embedded-C\MCU1-Course\MCU1\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f4xx_drivers.elf
  
 arm-none-eabi-size  stm32f4xx_drivers.elf 
 arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
    text	   data	    bss	    dec	    hex	filename
-   9124	    116	   1980	  11220	   2bd4	stm32f4xx_drivers.elf
+   4044	     24	   1608	   5676	   162c	stm32f4xx_drivers.elf
 arm-none-eabi-objcopy  -O binary stm32f4xx_drivers.elf  "stm32f4xx_drivers.bin"
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.bin
- 
 Finished building: stm32f4xx_drivers.list
+ 
  

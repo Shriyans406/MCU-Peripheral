@@ -128,9 +128,8 @@ void I2C1_ER_IRQHandler (void)
 void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle,uint8_t AppEv)
 {
 	static uint8_t commandCode = 0;
-	static  uint8_t Cnt = 0;
 
-	if(AppEv==I2C_EV_DATA_REQ){
+	if(AppEv==I2C_DATA_REQ){
 
 		if(commandCode == 0x51)
 				{
@@ -144,7 +143,7 @@ void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle,uint8_t AppEv)
 				}
 
 	}
-	else if(AppEv==I2C_EV_DATA_RCV){
+	else if(AppEv==I2C_DATA_RCV){
 		commandCode = I2C_SlaveReceiveData(pI2CHandle->pI2Cx);
 
 	}

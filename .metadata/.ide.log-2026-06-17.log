@@ -1,0 +1,4 @@
+2026-06-18 00:00:48,434 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 0:00:48.021 ERROR Chromium process exit code: -1,073,741,819
+2026-06-18 00:00:48,670 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-06-18 00:00:48,689 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 0:00:48.680 ERROR Crash dump dir: C:\Users\HP\AppData\Local\JxBrowser\7.41.4\CrashReports
+2026-06-18 00:00:48,690 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

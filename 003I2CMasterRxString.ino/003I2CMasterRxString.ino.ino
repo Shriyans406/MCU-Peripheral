@@ -14,5 +14,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  Serial.println("Arduino Master");
+  Serial.println("Send character \"s\" to begin");
+  Serial.println("------------------------------");
 
 }

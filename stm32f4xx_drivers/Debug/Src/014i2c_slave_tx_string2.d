@@ -1,4 +1,4 @@
-Src/013i2c_master_tx_string.o: ../Src/013i2c_master_tx_string.c \
+Src/014i2c_slave_tx_string2.o: ../Src/014i2c_slave_tx_string2.c \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h \
  C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc/stm32f407xx.h \

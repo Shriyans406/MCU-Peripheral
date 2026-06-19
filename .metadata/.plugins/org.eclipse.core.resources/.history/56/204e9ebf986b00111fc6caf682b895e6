@@ -149,8 +149,6 @@ void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle,uint8_t AppEv)
 
 	}
 	else if(AppEv==I2C_ERROR_AF){
-		commandCode = 0xff;
-				Cnt = 0;
 
 	}
 	else if (AppEv == I2C_EV_STOP)

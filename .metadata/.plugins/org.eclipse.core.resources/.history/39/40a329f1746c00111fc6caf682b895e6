@@ -62,30 +62,4 @@ typedef struct
 
 
 
-/*
- *@USART_ParityControl
- *Possible options for USART_ParityControl
- */
-#define USART_PARITY_EN_ODD   2
-#define USART_PARITY_EN_EVEN  1
-#define USART_PARITY_DISABLE   0
-
-/*
- *@USART_WordLength
- *Possible options for USART_WordLength
- */
-#define USART_WORDLEN_8BITS  0
-#define USART_WORDLEN_9BITS  1
-
-/*
- *@USART_NoOfStopBits
- *Possible options for USART_NoOfStopBits
- */
-#define USART_STOPBITS_1     0
-#define USART_STOPBITS_0_5   1
-#define USART_STOPBITS_2     2
-#define USART_STOPBITS_1_5   3
-
-
-
 #endif /* INC_STM32F407XX_USART_DRIVER_H_ */

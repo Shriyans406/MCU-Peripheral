@@ -1,4 +1,4 @@
-10:31:06 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+10:33:54 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-size  stm32f4xx_drivers.elf 
    text	   data	    bss	    dec	    hex	filename

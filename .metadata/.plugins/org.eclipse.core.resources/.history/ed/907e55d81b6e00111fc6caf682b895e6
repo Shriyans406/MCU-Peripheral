@@ -192,21 +192,6 @@ typedef struct
   __vo uint32_t FLTR;       /*!< TODO,     										Address offset: 0x24 */
 }I2C_RegDef_t;
 
-/*
- * peripheral register definition structure for USART
- */
-typedef struct
-{
-	__vo uint32_t SR;         /*!< TODO,     										Address offset: 0x00 */
-	__vo uint32_t DR;         /*!< TODO,     										Address offset: 0x04 */
-	__vo uint32_t BRR;        /*!< TODO,     										Address offset: 0x08 */
-	__vo uint32_t CR1;        /*!< TODO,     										Address offset: 0x0C */
-	__vo uint32_t CR2;        /*!< TODO,     										Address offset: 0x10 */
-	__vo uint32_t CR3;        /*!< TODO,     										Address offset: 0x14 */
-	__vo uint32_t GTPR;       /*!< TODO,     										Address offset: 0x18 */
-} USART_RegDef_t;
-
-
 
 #define GPIOA 			((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define GPIOB 			((GPIO_RegDef_t*)GPIOB_BASEADDR)
@@ -265,13 +250,13 @@ typedef struct
 /*
  * Clock Enable Macros for USARTx peripherals
  */
-//#define USART1_PCCK_EN() (RCC->APB2ENR |= (1 << 4))
-//#define USART2_PCCK_EN() (RCC->APB1ENR |= (1 << 17))
-//#define USART3_PCCK_EN() (RCC->APB1ENR |= (1 << 18))
-//#define UART4_PCCK_EN()  (RCC->APB1ENR |= (1 << 19))
-//#define UART5_PCCK_EN()  (RCC->APB1ENR |= (1 << 20))
-//#define USART6_PCCK_EN() (RCC->APB1ENR |= (1 << 5))
-//
+#define USART1_PCCK_EN() (RCC->APB2ENR |= (1 << 4))
+#define USART2_PCCK_EN() (RCC->APB1ENR |= (1 << 17))
+#define USART3_PCCK_EN() (RCC->APB1ENR |= (1 << 18))
+#define UART4_PCCK_EN()  (RCC->APB1ENR |= (1 << 19))
+#define UART5_PCCK_EN()  (RCC->APB1ENR |= (1 << 20))
+#define USART6_PCCK_EN() (RCC->APB1ENR |= (1 << 5))
+
 
 #define SYSCFG_PCLK_EN()        (RCC->APB2ENR |= (1 << 14))
 

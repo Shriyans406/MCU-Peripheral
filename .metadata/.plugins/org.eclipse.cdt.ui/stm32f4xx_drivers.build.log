@@ -1,8 +1,9 @@
-14:52:43 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+15:04:39 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j12 all 
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_gpio_driver.d" -MT"drivers/src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_gpio_driver.o"
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_i2c_driver.d" -MT"drivers/src/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_i2c_driver.o"
 arm-none-eabi-gcc "../drivers/src/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_spi_driver.d" -MT"drivers/src/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_spi_driver.o"
+arm-none-eabi-gcc "../drivers/src/stm32f407xx_usart_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f407xx_usart_driver.d" -MT"drivers/src/stm32f407xx_usart_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f407xx_usart_driver.o"
 arm-none-eabi-gcc "../Src/014i2c_slave_tx_string2.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/Users/HP/OneDrive/Desktop/Embedded-C/MCU1-Course/MCU1/stm32f4xx_drivers/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/014i2c_slave_tx_string2.d" -MT"Src/014i2c_slave_tx_string2.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/014i2c_slave_tx_string2.o"
 ../drivers/src/stm32f407xx_i2c_driver.c: In function 'RCC_GetOutputClock':
 ../drivers/src/stm32f407xx_i2c_driver.c:89:9: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
@@ -32,6 +33,13 @@ arm-none-eabi-gcc "../Src/014i2c_slave_tx_string2.c" -mcpu=cortex-m4 -std=gnu11 
 ../drivers/src/stm32f407xx_i2c_driver.c:213:17: note: previous implicit declaration of 'I2C_ClearADDRFlag' with type 'void(I2C_Handle_t *)'
   213 |                 I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
       |                 ^~~~~~~~~~~~~~~~~
+../drivers/src/stm32f407xx_usart_driver.c: In function 'USART_SetBaudRate':
+../drivers/src/stm32f407xx_usart_driver.c:43:20: warning: implicit declaration of function 'RCC_GetPCLK2Value' [-Wimplicit-function-declaration]
+   43 |            PCLKx = RCC_GetPCLK2Value();
+      |                    ^~~~~~~~~~~~~~~~~
+../drivers/src/stm32f407xx_usart_driver.c:46:20: warning: implicit declaration of function 'RCC_GetPCLK1Value' [-Wimplicit-function-declaration]
+   46 |            PCLKx = RCC_GetPCLK1Value();
+      |                    ^~~~~~~~~~~~~~~~~
 ../Src/014i2c_slave_tx_string2.c:28:21: warning: initializer-string for array of 'unsigned char' is too long
    28 | uint8_t Tx_buf[32]= "HiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHiHi...123";
       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,10 +60,10 @@ arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
 arm-none-eabi-objcopy  -O binary stm32f4xx_drivers.elf  "stm32f4xx_drivers.bin"
 Finished building: default.size.stdout
  
-Finished building: stm32f4xx_drivers.list
 Finished building: stm32f4xx_drivers.bin
+Finished building: stm32f4xx_drivers.list
  
  
 
-14:52:45 Build Finished. 0 errors, 8 warnings. (took 2s.345ms)
+15:04:46 Build Finished. 0 errors, 10 warnings. (took 6s.419ms)
 

@@ -338,7 +338,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000      0x190 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00000000      0x563 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000      0x578 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000       0xd6 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000       0xb2 ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_gpio_driver.o
@@ -380,7 +380,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0x6a ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_macro   0x00000000      0x563 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_macro   0x00000000      0x578 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xb2 ./drivers/src/stm32f407xx_i2c_driver.o
@@ -455,13 +455,13 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0x6a ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_spi_driver.o
- .debug_macro   0x00000000      0x563 ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_macro   0x00000000      0x578 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xd6 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xb2 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xbe ./drivers/src/stm32f407xx_spi_driver.o
  .debug_line    0x00000000      0xa03 ./drivers/src/stm32f407xx_spi_driver.o
- .debug_str     0x00000000     0x6870 ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_str     0x00000000     0x68a4 ./drivers/src/stm32f407xx_spi_driver.o
  .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_frame   0x00000000      0x318 ./drivers/src/stm32f407xx_spi_driver.o
  .ARM.attributes
@@ -484,12 +484,14 @@ Discarded input sections
  .bss           0x00000000        0x0 ./drivers/src/stm32f407xx_usart_driver.o
  .text.USART_SetBaudRate
                 0x00000000       0xe8 ./drivers/src/stm32f407xx_usart_driver.o
- .debug_info    0x00000000      0x1d9 ./drivers/src/stm32f407xx_usart_driver.o
- .debug_abbrev  0x00000000      0x101 ./drivers/src/stm32f407xx_usart_driver.o
+ .text.USART_Init
+                0x00000000      0x102 ./drivers/src/stm32f407xx_usart_driver.o
+ .debug_info    0x00000000      0x2ba ./drivers/src/stm32f407xx_usart_driver.o
+ .debug_abbrev  0x00000000      0x139 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_aranges
-                0x00000000       0x20 ./drivers/src/stm32f407xx_usart_driver.o
+                0x00000000       0x28 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_rnglists
-                0x00000000       0x14 ./drivers/src/stm32f407xx_usart_driver.o
+                0x00000000       0x1b ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000       0xb7 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000      0xad8 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000      0x190 ./drivers/src/stm32f407xx_usart_driver.o
@@ -499,15 +501,15 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000       0x6a ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000      0x1df ./drivers/src/stm32f407xx_usart_driver.o
- .debug_macro   0x00000000      0x563 ./drivers/src/stm32f407xx_usart_driver.o
+ .debug_macro   0x00000000      0x578 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000       0xd6 ./drivers/src/stm32f407xx_usart_driver.o
  .debug_macro   0x00000000       0xac ./drivers/src/stm32f407xx_usart_driver.o
- .debug_line    0x00000000      0x57b ./drivers/src/stm32f407xx_usart_driver.o
- .debug_str     0x00000000     0x64e4 ./drivers/src/stm32f407xx_usart_driver.o
+ .debug_line    0x00000000      0x603 ./drivers/src/stm32f407xx_usart_driver.o
+ .debug_str     0x00000000     0x65d4 ./drivers/src/stm32f407xx_usart_driver.o
  .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_usart_driver.o
- .debug_frame   0x00000000       0x34 ./drivers/src/stm32f407xx_usart_driver.o
+ .debug_frame   0x00000000       0x58 ./drivers/src/stm32f407xx_usart_driver.o
  .ARM.attributes
                 0x00000000       0x2e ./drivers/src/stm32f407xx_usart_driver.o
  .text          0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-exit.o)
@@ -1179,7 +1181,7 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x000000aa       0xb2 ./drivers/src/stm32f407xx_i2c_driver.o
 
-.debug_macro    0x00000000     0x2885
+.debug_macro    0x00000000     0x289a
  .debug_macro   0x00000000      0x1bb ./Src/014i2c_slave_tx_string2.o
  .debug_macro   0x000001bb      0xad8 ./Src/014i2c_slave_tx_string2.o
  .debug_macro   0x00000c93       0x22 ./Src/014i2c_slave_tx_string2.o
@@ -1211,17 +1213,17 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000018eb      0x103 ./Src/014i2c_slave_tx_string2.o
  .debug_macro   0x000019ee       0x6a ./Src/014i2c_slave_tx_string2.o
  .debug_macro   0x00001a58      0x1df ./Src/014i2c_slave_tx_string2.o
- .debug_macro   0x00001c37      0x563 ./Src/014i2c_slave_tx_string2.o
- .debug_macro   0x0000219a       0xc4 ./Src/014i2c_slave_tx_string2.o
- .debug_macro   0x0000225e       0xc4 ./Src/014i2c_slave_tx_string2.o
- .debug_macro   0x00002322       0xd6 ./Src/014i2c_slave_tx_string2.o
- .debug_macro   0x000023f8       0xb2 ./Src/014i2c_slave_tx_string2.o
- .debug_macro   0x000024aa       0xb7 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00002561       0x8e ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x000025ef       0x51 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00002640       0xbe ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x000026fe       0xb7 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_macro   0x000027b5       0xd0 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_macro   0x00001c37      0x578 ./Src/014i2c_slave_tx_string2.o
+ .debug_macro   0x000021af       0xc4 ./Src/014i2c_slave_tx_string2.o
+ .debug_macro   0x00002273       0xc4 ./Src/014i2c_slave_tx_string2.o
+ .debug_macro   0x00002337       0xd6 ./Src/014i2c_slave_tx_string2.o
+ .debug_macro   0x0000240d       0xb2 ./Src/014i2c_slave_tx_string2.o
+ .debug_macro   0x000024bf       0xb7 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00002576       0x8e ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00002604       0x51 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00002655       0xbe ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00002713       0xb7 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_macro   0x000027ca       0xd0 ./drivers/src/stm32f407xx_i2c_driver.o
 
 .debug_line     0x00000000     0x1fdc
  .debug_line    0x00000000      0x7c1 ./Src/014i2c_slave_tx_string2.o
@@ -1229,12 +1231,12 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0000083c      0x9dd ./drivers/src/stm32f407xx_gpio_driver.o
  .debug_line    0x00001219      0xdc3 ./drivers/src/stm32f407xx_i2c_driver.o
 
-.debug_str      0x00000000     0xa301
- .debug_str     0x00000000     0xa301 ./Src/014i2c_slave_tx_string2.o
-                               0x9fb8 (size before relaxing)
- .debug_str     0x0000a301       0x90 ./Startup/startup_stm32f407vgtx.o
- .debug_str     0x0000a301     0x67f6 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_str     0x0000a301     0x6967 ./drivers/src/stm32f407xx_i2c_driver.o
+.debug_str      0x00000000     0xa335
+ .debug_str     0x00000000     0xa335 ./Src/014i2c_slave_tx_string2.o
+                               0x9fec (size before relaxing)
+ .debug_str     0x0000a335       0x90 ./Startup/startup_stm32f407vgtx.o
+ .debug_str     0x0000a335     0x682a ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_str     0x0000a335     0x699b ./drivers/src/stm32f407xx_i2c_driver.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/014i2c_slave_tx_string2.o

@@ -1,1 +1,2 @@
 ../drivers/src/stm32f407xx_usart_driver.c:26:6:USART_SetBaudRate	5
+../drivers/src/stm32f407xx_usart_driver.c:103:6:USART_Init	9

@@ -2,3 +2,4 @@
 ../drivers/src/stm32f407xx_usart_driver.c:103:6:USART_Init	9
 ../drivers/src/stm32f407xx_usart_driver.c:215:6:USART_SendData	6
 ../drivers/src/stm32f407xx_usart_driver.c:278:6:USART_ReceiveData	6
+../drivers/src/stm32f407xx_usart_driver.c:354:9:USART_SendDataIT	2

@@ -94,6 +94,16 @@ typedef struct
 #define USART_HW_FLOW_CTRL_RTS    	2
 #define USART_HW_FLOW_CTRL_CTS_RTS	3
 
+
+/*
+ * USART flags
+ */
+
+#define USART_FLAG_TXE 			( 1 << USART_SR_TXE)
+#define USART_FLAG_RXNE 		( 1 << USART_SR_RXNE)
+#define USART_FLAG_TC 			( 1 << USART_SR_TC)
+
+
 /*
  * Peripheral Clock setup
  */
@@ -109,10 +119,10 @@ void USART_DeInit(USART_RegDef_t *pUSARTx);
 /*
  * Data Send and Receive
  */
-void USART_SendData(USART_RegDef_t *pUSARTx,uint8_t *pTxBuffer, uint32_t Len);
-void USART_ReceiveData(USART_RegDef_t *pUSARTx, uint8_t *pRxBuffer, uint32_t Len);
+void USART_SendData(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint32_t Len);
+void  USART_ReceiveData(USART_Handle_t *pUSARTHandle,uint8_t *pRxBuffer, uint32_t Len);
 uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len);
-uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len);
+uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pRxBuffer, uint32_t Len);
 
 
 /*

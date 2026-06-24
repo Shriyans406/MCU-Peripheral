@@ -12,5 +12,6 @@
 
 uint32_t RCC_GetPCLK1Value(void);
 uint32_t RCC_GetPCLK2Value(void);
+uint32_t  RCC_GetPLLOutputClock(void);
 
 #endif /* INC_STM32F407XX_RCC_DRIVER_H_ */

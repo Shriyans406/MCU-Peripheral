@@ -384,6 +384,21 @@ Discarded input sections
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xc4 ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_macro   0x00000000       0xd6 ./drivers/src/stm32f407xx_i2c_driver.o
+ .group         0x00000000        0xc ./drivers/src/stm32f407xx_rcc_driver.o
+ .text          0x00000000        0x0 ./drivers/src/stm32f407xx_rcc_driver.o
+ .data          0x00000000        0x0 ./drivers/src/stm32f407xx_rcc_driver.o
+ .bss           0x00000000        0x0 ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_info    0x00000000       0x22 ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_abbrev  0x00000000       0x12 ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_aranges
+                0x00000000       0x18 ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_macro   0x00000000       0x11 ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_macro   0x00000000      0xad8 ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_line    0x00000000       0x48 ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_str     0x00000000     0x2e8a ./drivers/src/stm32f407xx_rcc_driver.o
+ .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_rcc_driver.o
+ .ARM.attributes
+                0x00000000       0x2e ./drivers/src/stm32f407xx_rcc_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_spi_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_spi_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_spi_driver.o
@@ -769,6 +784,7 @@ LOAD ./Src/sysmem.o
 LOAD ./Startup/startup_stm32f407vgtx.o
 LOAD ./drivers/src/stm32f407xx_gpio_driver.o
 LOAD ./drivers/src/stm32f407xx_i2c_driver.o
+LOAD ./drivers/src/stm32f407xx_rcc_driver.o
 LOAD ./drivers/src/stm32f407xx_spi_driver.o
 LOAD ./drivers/src/stm32f407xx_usart_driver.o
 START GROUP

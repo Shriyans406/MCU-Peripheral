@@ -96,12 +96,16 @@ Discarded input sections
                 0x00000000       0x24 ./Src/015uart_tx.o
  .text.USART2_Init
                 0x00000000       0x44 ./Src/015uart_tx.o
- .debug_info    0x00000000      0x25e ./Src/015uart_tx.o
- .debug_abbrev  0x00000000       0xed ./Src/015uart_tx.o
+ .text.USART2_GPIOInit
+                0x00000000       0x44 ./Src/015uart_tx.o
+ .text.GPIO_ButtonInit
+                0x00000000       0x5c ./Src/015uart_tx.o
+ .debug_info    0x00000000      0x40f ./Src/015uart_tx.o
+ .debug_abbrev  0x00000000      0x125 ./Src/015uart_tx.o
  .debug_aranges
-                0x00000000       0x20 ./Src/015uart_tx.o
+                0x00000000       0x30 ./Src/015uart_tx.o
  .debug_rnglists
-                0x00000000       0x13 ./Src/015uart_tx.o
+                0x00000000       0x1f ./Src/015uart_tx.o
  .debug_macro   0x00000000      0x1ba ./Src/015uart_tx.o
  .debug_macro   0x00000000      0xad8 ./Src/015uart_tx.o
  .debug_macro   0x00000000       0x22 ./Src/015uart_tx.o
@@ -138,10 +142,10 @@ Discarded input sections
  .debug_macro   0x00000000       0xc4 ./Src/015uart_tx.o
  .debug_macro   0x00000000       0xd6 ./Src/015uart_tx.o
  .debug_macro   0x00000000       0xd6 ./Src/015uart_tx.o
- .debug_line    0x00000000      0x6a5 ./Src/015uart_tx.o
- .debug_str     0x00000000     0x9eb4 ./Src/015uart_tx.o
+ .debug_line    0x00000000      0x713 ./Src/015uart_tx.o
+ .debug_str     0x00000000     0x9fd8 ./Src/015uart_tx.o
  .comment       0x00000000       0x44 ./Src/015uart_tx.o
- .debug_frame   0x00000000       0x2c ./Src/015uart_tx.o
+ .debug_frame   0x00000000       0x74 ./Src/015uart_tx.o
  .ARM.attributes
                 0x00000000       0x2e ./Src/015uart_tx.o
  .group         0x00000000        0xc ./Src/syscalls.o

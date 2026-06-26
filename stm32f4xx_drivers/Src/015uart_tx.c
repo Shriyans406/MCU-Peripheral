@@ -76,3 +76,37 @@ void GPIO_ButtonInit(void)
 	GPIO_Init(&GpioLed);
 
 }
+
+
+
+void delay(void)
+{
+	for(uint32_t i = 0 ; i < 500000/2 ; i ++);
+}
+
+
+int main(void)
+{
+
+	GPIO_ButtonInit();
+
+	USART2_GPIOInit();
+
+    USART2_Init();
+
+    USART_PeripheralControl(USART2,ENABLE);
+
+    while(1)
+    {
+		//wait till button is pressed
+		while( ! GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0) );
+
+		//to avoid button de-bouncing related issues 200ms of delay
+		delay();
+
+		USART_SendData(&usart2_handle,(uint8_t*)msg,strlen(msg));
+
+    }
+
+	return 0;
+}

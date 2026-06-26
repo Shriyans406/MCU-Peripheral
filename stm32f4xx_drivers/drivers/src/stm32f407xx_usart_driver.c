@@ -224,6 +224,70 @@ void USART_PeripheralControl(USART_RegDef_t *pUSARTx, uint8_t Cmd)
 
 }
 
+/*********************************************************************
+ * @fn      		  - USART_GetFlagStatus
+ *
+ * @brief             -
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -
+ *
+ * @Note              -
+
+ */
+uint8_t USART_GetFlagStatus(USART_RegDef_t *pUSARTx, uint8_t StatusFlagName)
+{
+    if(pUSARTx->SR & StatusFlagName)
+    {
+    	return SET;
+    }
+
+   return RESET;
+}
+
+/*********************************************************************
+ * @fn      		  - I2C_PeriClockControl
+ *
+ * @brief             -
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -
+ *
+ * @Note              -
+
+ */
+void USART_PeriClockControl(USART_RegDef_t *pUSARTx, uint8_t EnorDi)
+{
+	if(EnorDi == ENABLE)
+	{
+		if(pUSARTx == USART1)
+		{
+			USART1_PCCK_EN();
+		}else if (pUSARTx == USART2)
+		{
+			USART2_PCCK_EN();
+		}else if (pUSARTx == USART3)
+		{
+			USART3_PCCK_EN();
+		}
+		else if (pUSARTx == UART4)
+		{
+			UART4_PCCK_EN();
+		}
+	}
+	else
+	{
+		//TODO
+	}
+
+}
+
 
 /*********************************************************************
  * @fn      		  - USART_SendData

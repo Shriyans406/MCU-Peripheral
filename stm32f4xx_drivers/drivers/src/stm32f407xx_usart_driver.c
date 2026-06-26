@@ -199,6 +199,33 @@ void USART_Init(USART_Handle_t *pUSARTHandle)
 
 
 /*********************************************************************
+ * @fn      		  - USART_EnableOrDisable
+ *
+ * @brief             -
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -
+ *
+ * @Note              -
+
+ */
+void USART_PeripheralControl(USART_RegDef_t *pUSARTx, uint8_t Cmd)
+{
+	if(Cmd == ENABLE)
+	{
+		pUSARTx->CR1 |= (1 << 13);
+	}else
+	{
+		pUSARTx->CR1 &= ~(1 << 13);
+	}
+
+}
+
+
+/*********************************************************************
  * @fn      		  - USART_SendData
  *
  * @brief             -

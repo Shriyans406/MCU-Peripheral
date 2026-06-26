@@ -1,5 +1,6 @@
 ../drivers/src/stm32f407xx_usart_driver.c:26:6:USART_SetBaudRate	40	static
 ../drivers/src/stm32f407xx_usart_driver.c:103:6:USART_Init	24	static
-../drivers/src/stm32f407xx_usart_driver.c:215:6:USART_SendData	32	static
-../drivers/src/stm32f407xx_usart_driver.c:278:6:USART_ReceiveData	32	static
-../drivers/src/stm32f407xx_usart_driver.c:354:9:USART_SendDataIT	32	static
+../drivers/src/stm32f407xx_usart_driver.c:215:6:USART_PeripheralControl	16	static
+../drivers/src/stm32f407xx_usart_driver.c:242:6:USART_SendData	32	static
+../drivers/src/stm32f407xx_usart_driver.c:305:6:USART_ReceiveData	32	static
+../drivers/src/stm32f407xx_usart_driver.c:381:9:USART_SendDataIT	32	static

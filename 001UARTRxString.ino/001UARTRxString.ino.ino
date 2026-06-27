@@ -12,5 +12,13 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+    digitalWrite(13, LOW); 
+  //wait until something is received
+  while(! Serial.available());
+  digitalWrite(13, HIGH); 
+  //read the data
+  char in_read=Serial.read();
+  //print the data
+  Serial.print(in_read);
 
 }

@@ -1,3 +1,5 @@
 ../Src/16uart_case.c:31:6:USART2_Init	1
 ../Src/16uart_case.c:43:7:USART2_GPIOInit	1
-../Src/16uart_case.c:62:5:main	1
+../Src/16uart_case.c:62:6:GPIO_ButtonInit	1
+../Src/16uart_case.c:89:6:delay	2
+../Src/16uart_case.c:95:5:main	1

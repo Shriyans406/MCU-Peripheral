@@ -107,5 +107,47 @@ int main(void)
 	    USART_PeripheralControl(USART2,ENABLE);
 
 	    printf("Application is running\n");
+
+	    while(1)
+	    {
+			//wait till button is pressed
+			while( ! GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0) );
+
+			//to avoid button de-bouncing related issues 200ms of delay
+			delay();
+
+			// Next message index ; make sure that cnt value doesn't cross 2
+			cnt = cnt % 3;
+
+			//First lets enable the reception in interrupt mode
+			//this code enables the receive interrupt
+			while ( USART_ReceiveDataIT(&usart2_handle,rx_buf,strlen(msg[cnt])) != USART_READY );
+
+			//Send the msg indexed by cnt in blocking mode
+	    	USART_SendData(&usart2_handle,(uint8_t*)msg[cnt],strlen(msg[cnt]));
+
+	    	printf("Transmitted : %s\n",msg[cnt]);
+
+
+	    	//Now lets wait until all the bytes are received from the arduino .
+	    	//When all the bytes are received rxCmplt will be SET in application callback
+	    	while(rxCmplt != SET);
+
+	    	//just make sure that last byte should be null otherwise %s fails while printing
+	    	rx_buf[strlen(msg[cnt])+ 1] = '\0';
+
+	    	//Print what we received from the arduino
+	    	printf("Received    : %s\n",rx_buf);
+
+	    	//invalidate the flag
+	    	rxCmplt = RESET;
+
+	    	//move on to next message indexed in msg[]
+	    	cnt ++;
+	    }
+
+
+		return 0;
 }
+
 

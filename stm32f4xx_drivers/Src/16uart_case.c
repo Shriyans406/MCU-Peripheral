@@ -94,5 +94,18 @@ void delay(void)
 
 int main(void)
 {
+	uint32_t cnt = 0;
+
+
+		initialise_monitor_handles();
+
+		USART2_GPIOInit();
+	    USART2_Init();
+
+	    USART_IRQInterruptConfig(IRQ_NO_USART2,ENABLE);
+
+	    USART_PeripheralControl(USART2,ENABLE);
+
+	    printf("Application is running\n");
 }
 

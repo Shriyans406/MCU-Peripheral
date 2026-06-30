@@ -9,6 +9,9 @@
 #include<stdio.h>
 #include<string.h>
 #include "stm32f407xx.h"
+//#include "stm32f407xx_usart_driver.c"
+#include "stm32f407xx_usart_driver.h"
+
 
 
 //we have 3 different messages that we transmit to arduino
@@ -150,4 +153,21 @@ int main(void)
 		return 0;
 }
 
+
+void USART2_IRQHandler(void)
+{
+	USART_IRQHandling(&usart2_handle);
+}
+
+void USART_ApplicationEventCallback( USART_Handle_t *pUSARTHandle,uint8_t ApEv)
+{
+   if(ApEv == USART_EVENT_RX_CMPLT)
+   {
+			rxCmplt = SET;
+
+   }else if (ApEv == USART_EVENT_TX_CMPLT)
+   {
+	   ;
+   }
+}
 

@@ -215,3 +215,42 @@ void USART_IRQHandling(USART_Handle_t *pUSARTHandle)
 				}
 			}
 
+
+			/*************************Check for CTS flag ********************************************/
+			//Note : CTS feature is not applicable for UART4 and UART5
+
+				//Implement the code to check the status of CTS bit in the SR
+				TODO
+
+				//Implement the code to check the state of CTSE bit in CR1
+				temp2 = pUSARTHandle->pUSARTx->CR3 & ( 1 << USART_CR3_CTSE);
+
+				//Implement the code to check the state of CTSIE bit in CR3 (This bit is not available for UART4 & UART5.)
+				temp3 = pUSARTHandle->pUSARTx->CR3 & ( 1 << TODO);
+
+
+				if(temp1  && temp2 )
+				{
+					//Implement the code to clear the CTS flag in SR
+					TODO
+
+					//this interrupt is because of cts
+					USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_CTS);
+				}
+
+			/*************************Check for IDLE detection flag ********************************************/
+
+				//Implement the code to check the status of IDLE flag bit in the SR
+				TODO
+
+				//Implement the code to check the state of IDLEIE bit in CR1
+				temp2 = pUSARTHandle->pUSARTx->CR3 & ( 1 << USART_CR3_CTSE);
+
+
+				if(temp1 && temp2)
+				{
+					//Implement the code to clear the IDLE flag. Refer to the RM to understand the clear sequence
+
+					//this interrupt is because of idle
+					USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_IDLE);
+				}

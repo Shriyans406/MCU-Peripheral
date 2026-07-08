@@ -125,3 +125,93 @@ void USART_IRQHandling(USART_Handle_t *pUSARTHandle)
 			}
 		}
 
+
+
+		/*************************Check for RXNE flag ********************************************/
+
+			temp1 = pUSARTHandle->pUSARTx->SR & ( 1 << USART_SR_RXNE);
+			temp2 = pUSARTHandle->pUSARTx->CR1 & ( 1 << USART_CR1_RXNEIE);
+
+
+			if(temp1 && temp2 )
+			{
+				//this interrupt is because of rxne
+				//this interrupt is because of txe
+				if(pUSARTHandle->RxBusyState == USART_BUSY_IN_RX)
+				{
+					//TXE is set so send data
+					if(pUSARTHandle->RxLen > 0)
+					{
+						//Check the USART_WordLength to decide whether we are going to receive 9bit of data in a frame or 8 bit
+						if(pUSARTHandle->USART_Config.USART_WordLength == USART_WORDLEN_9BITS)
+						{
+							//We are going to receive 9bit data in a frame
+
+							//Now, check are we using USART_ParityControl control or not
+							if(pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_DISABLE)
+							{
+								//No parity is used. so, all 9bits will be of user data
+
+								//read only first 9 bits so mask the DR with 0x01FF
+								*((uint16_t*) pRxBuffer) = (pUSARTHandle->pUSARTx->DR  & (uint16_t)0x01FF);
+
+								//Now increment the pRxBuffer two times
+								pRxBuffer++;
+								pRxBuffer++;
+
+								//Implement the code to decrement the length
+								TODO
+							}
+							else
+							{
+								//Parity is used. so, 8bits will be of user data and 1 bit is parity
+								 *pRxBuffer = (pUSARTHandle->pUSARTx->DR  & (uint8_t)0xFF);
+
+								 //Now increment the pRxBuffer
+								 pRxBuffer++;
+
+								 //Implement the code to decrement the length
+								 TODO
+							}
+						}
+						else
+						{
+							//We are going to receive 8bit data in a frame
+
+							//Now, check are we using USART_ParityControl control or not
+							if(pUSARTHandle->USART_Config.USART_ParityControl == USART_PARITY_DISABLE)
+							{
+								//No parity is used , so all 8bits will be of user data
+
+								//read 8 bits from DR
+								 *pRxBuffer = (uint8_t) (pUSARTHandle->pUSARTx->DR  & (uint8_t)0xFF);
+							}
+
+							else
+							{
+								//Parity is used, so , 7 bits will be of user data and 1 bit is parity
+
+								//read only 7 bits , hence mask the DR with 0X7F
+								 *pRxBuffer = (uint8_t) (pUSARTHandle->pUSARTx->DR  & (uint8_t)0x7F);
+
+							}
+
+							//Now , increment the pRxBuffer
+							pRxBuffer++;
+
+							//Implement the code to decrement the length
+						}
+
+
+					}//if of >0
+
+					if(! pUSARTHandle->RxLen)
+					{
+						//disable the rxne
+						pUSARTHandle->pUSARTx->CR1 &= ~( 1 << USART_CR1_RXNEIE );
+						pUSARTHandle->RxBusyState = USART_READY;
+						USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_RX_CMPLT);
+					}
+				}
+			}
+

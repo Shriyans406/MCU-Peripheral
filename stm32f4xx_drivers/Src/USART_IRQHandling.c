@@ -274,3 +274,46 @@ void USART_IRQHandling(USART_Handle_t *pUSARTHandle)
 						//this interrupt is because of Overrun error
 						USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_ORE);
 					}
+
+
+
+
+					/*************************Check for Error Flag ********************************************/
+
+					//Noise Flag, Overrun error and Framing Error in multibuffer communication
+					//We dont discuss multibuffer communication in this course. please refer to the RM
+					//The blow code will get executed in only if multibuffer mode is used.
+
+						temp2 =  pUSARTHandle->pUSARTx->CR3 & ( 1 << USART_CR3_EIE) ;
+
+						if(temp2 )
+						{
+							temp1 = pUSARTHandle->pUSARTx->SR;
+							if(temp1 & ( 1 << USART_SR_FE))
+							{
+								/*
+									This bit is set by hardware when a de-synchronization, excessive noise or a break character
+									is detected. It is cleared by a software sequence (an read to the USART_SR register
+									followed by a read to the USART_DR register).
+								*/
+								USART_ApplicationEventCallback(pUSARTHandle,USART_ERREVENT_FE);
+							}
+
+							if(temp1 & ( 1 << USART_SR_NE) )
+							{
+								/*
+									This bit is set by hardware when noise is detected on a received frame. It is cleared by a
+									software sequence (an read to the USART_SR register followed by a read to the
+									USART_DR register).
+								*/
+								USART_ApplicationEventCallback(pUSARTHandle,USART_ERREVENT_NE);
+							}
+
+							if(temp1 & ( 1 << USART_SR_ORE) )
+							{
+								USART_ApplicationEventCallback(pUSARTHandle,USART_ERREVENT_ORE);
+							}
+						}
+
+
+					}

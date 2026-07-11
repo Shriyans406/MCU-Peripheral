@@ -254,3 +254,23 @@ void USART_IRQHandling(USART_Handle_t *pUSARTHandle)
 					//this interrupt is because of idle
 					USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_IDLE);
 				}
+
+
+
+
+				/*************************Check for Overrun detection flag ********************************************/
+
+					//Implement the code to check the status of ORE flag  in the SR
+					temp1 = pUSARTHandle->pUSARTx->SR & USART_SR_ORE;
+
+					//Implement the code to check the status of RXNEIE  bit in the CR1
+					temp2 = pUSARTHandle->pUSARTx->CR1 & USART_CR1_RXNEIE;
+
+
+					if(temp1  && temp2 )
+					{
+						//Need not to clear the ORE flag here, instead give an api for the application to clear the ORE flag .
+
+						//this interrupt is because of Overrun error
+						USART_ApplicationEventCallback(pUSARTHandle,USART_EVENT_ORE);
+					}

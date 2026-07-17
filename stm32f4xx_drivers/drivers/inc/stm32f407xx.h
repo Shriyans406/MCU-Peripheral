@@ -460,14 +460,14 @@ typedef struct
 /*
  * Bit position definitions USART_CR2
  */
-//#define USART_CR2_ADD   				0
-//#define USART_CR2_LBDL   				5
-//#define USART_CR2_LBDIE  				6
-//#define USART_CR2_LBCL   				8
-//#define USART_CR2_CPHA   				9
-//#define USART_CR2_CPOL   				10
+#define USART_CR2_ADD   				0
+#define USART_CR2_LBDL   				5
+#define USART_CR2_LBDIE  				6
+#define USART_CR2_LBCL   				8
+#define USART_CR2_CPHA   				9
+#define USART_CR2_CPOL   				10
 #define USART_CR2_STOP   				12
-//#define USART_CR2_LINEN   				14
+#define USART_CR2_LINEN   				14
 
 /*
  * Bit position definitions USART_CR3

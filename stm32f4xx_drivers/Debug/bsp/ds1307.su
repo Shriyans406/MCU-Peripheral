@@ -1,0 +1,5 @@
+../bsp/ds1307.c:12:9:ds1307_init	4	static
+../bsp/ds1307.c:17:6:ds1307_set_current_time	16	static
+../bsp/ds1307.c:22:6:ds1307_set_current_date	16	static
+../bsp/ds1307.c:27:6:ds1307_get_current_time	16	static
+../bsp/ds1307.c:32:6:ds1307_get_current_date	16	static

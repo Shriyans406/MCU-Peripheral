@@ -318,9 +318,9 @@ Discarded input sections
  .debug_macro   0x00000000       0xc4 ./bsp/ds1307.o
  .debug_macro   0x00000000       0xd6 ./bsp/ds1307.o
  .debug_macro   0x00000000      0x106 ./bsp/ds1307.o
- .debug_macro   0x00000000       0x70 ./bsp/ds1307.o
+ .debug_macro   0x00000000       0x94 ./bsp/ds1307.o
  .debug_line    0x00000000      0x558 ./bsp/ds1307.o
- .debug_str     0x00000000     0x6a52 ./bsp/ds1307.o
+ .debug_str     0x00000000     0x6afd ./bsp/ds1307.o
  .comment       0x00000000       0x44 ./bsp/ds1307.o
  .debug_frame   0x00000000       0xd0 ./bsp/ds1307.o
  .ARM.attributes

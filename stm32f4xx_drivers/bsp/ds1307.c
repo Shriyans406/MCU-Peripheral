@@ -12,6 +12,9 @@
 
 
 static void ds1307_i2c_pin_config(void);
+static void ds1307_i2c_config(void);
+static uint8_t ds1307_read(uint8_t reg_addr);
+
 I2C_Handle_t g_ds1307I2cHandle;
 
 uint8_t ds1307_init(void)
@@ -27,6 +30,11 @@ uint8_t ds1307_init(void)
 
 	//4. Make clock halt = 0;
 	ds1307_write(0x00,DS1307_ADDR_SEC);
+
+	//5. Read back clock halt bit
+	uint8_t clock_state = ds1307_read(DS1307_ADDR_SEC);
+
+	return ((clock_state >> 7 ) & 0x1);
 
 
 
@@ -100,4 +108,14 @@ void ds1307_write(uint8_t value,uint8_t reg_addr)
 	tx[0] = reg_addr;
 	tx[1] = value;
 	I2C_MasterSendData(&g_ds1307I2cHandle, tx, 2, DS1307_I2C_ADDRESS, 0);
+}
+
+
+static uint8_t ds1307_read(uint8_t reg_addr)
+{
+	uint8_t data;
+    I2C_MasterSendData(&g_ds1307I2cHandle, &reg_addr, 1, DS1307_I2C_ADDRESS, 0);
+    I2C_MasterReceiveData(&g_ds1307I2cHandle, &data, 1, DS1307_I2C_ADDRESS, 0);
+
+    return data;
 }

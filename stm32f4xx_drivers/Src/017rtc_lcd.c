@@ -6,3 +6,10 @@
  */
 
 
+int main(void)
+{
+    // Your code here
+    while(1)
+    {
+    }
+}

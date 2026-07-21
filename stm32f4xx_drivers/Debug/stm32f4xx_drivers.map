@@ -298,12 +298,14 @@ Discarded input sections
                 0x00000000       0x12 ./bsp/ds1307.o
  .text.ds1307_get_current_date
                 0x00000000       0x12 ./bsp/ds1307.o
- .debug_info    0x00000000      0x1b8 ./bsp/ds1307.o
- .debug_abbrev  0x00000000       0xc6 ./bsp/ds1307.o
+ .text.ds1307_i2c_pin_config
+                0x00000000       0x78 ./bsp/ds1307.o
+ .debug_info    0x00000000      0x382 ./bsp/ds1307.o
+ .debug_abbrev  0x00000000      0x13d ./bsp/ds1307.o
  .debug_aranges
-                0x00000000       0x40 ./bsp/ds1307.o
+                0x00000000       0x48 ./bsp/ds1307.o
  .debug_rnglists
-                0x00000000       0x2b ./bsp/ds1307.o
+                0x00000000       0x31 ./bsp/ds1307.o
  .debug_macro   0x00000000       0xc7 ./bsp/ds1307.o
  .debug_macro   0x00000000      0xad8 ./bsp/ds1307.o
  .debug_macro   0x00000000      0x190 ./bsp/ds1307.o
@@ -319,10 +321,10 @@ Discarded input sections
  .debug_macro   0x00000000       0xd6 ./bsp/ds1307.o
  .debug_macro   0x00000000      0x106 ./bsp/ds1307.o
  .debug_macro   0x00000000       0x94 ./bsp/ds1307.o
- .debug_line    0x00000000      0x558 ./bsp/ds1307.o
- .debug_str     0x00000000     0x6afd ./bsp/ds1307.o
+ .debug_line    0x00000000      0x5af ./bsp/ds1307.o
+ .debug_str     0x00000000     0x6c10 ./bsp/ds1307.o
  .comment       0x00000000       0x44 ./bsp/ds1307.o
- .debug_frame   0x00000000       0xd0 ./bsp/ds1307.o
+ .debug_frame   0x00000000       0xf0 ./bsp/ds1307.o
  .ARM.attributes
                 0x00000000       0x2e ./bsp/ds1307.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o

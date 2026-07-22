@@ -11,9 +11,11 @@
 #include "ds1307.h"
 
 
+
 static void ds1307_i2c_pin_config(void);
 static void ds1307_i2c_config(void);
 static uint8_t ds1307_read(uint8_t reg_addr);
+static void ds1307_write(uint8_t value,uint8_t reg_addr);
 
 I2C_Handle_t g_ds1307I2cHandle;
 

@@ -44,6 +44,23 @@ uint8_t ds1307_init(void)
 
 void ds1307_set_current_time(RTC_time_t *rtc_time)
 {
+	uint8_t seconds, hrs;
+	seconds = binary_to_bcd(rtc_time->seconds);
+	seconds &= ~( 1 << 7);
+	ds1307_write(seconds, DS1307_ADDR_SEC);
+
+	ds1307_write(binary_to_bcd(rtc_time->minutes), DS1307_ADDR_MIN);
+
+	hrs = binary_to_bcd(rtc_time->hours);
+
+	if(rtc_time->time_format == TIME_FORMAT_24HRS){
+		hrs &= ~(1 << 6);
+	}else{
+		hrs |= (1 << 6);
+		hrs = (rtc_time->time_format  == TIME_FORMAT_12HRS_PM) ? hrs | ( 1 << 5) :  hrs & ~( 1 << 5) ;
+	}
+
+	ds1307_write(hrs,DS1307_ADDR_HRS);
 
 }
 

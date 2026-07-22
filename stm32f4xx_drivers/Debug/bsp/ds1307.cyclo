@@ -1,9 +1,9 @@
 ../bsp/ds1307.c:22:9:ds1307_init	1
-../bsp/ds1307.c:45:6:ds1307_set_current_time	1
-../bsp/ds1307.c:50:6:ds1307_set_current_date	1
-../bsp/ds1307.c:55:6:ds1307_get_current_time	1
-../bsp/ds1307.c:60:6:ds1307_get_current_date	1
-../bsp/ds1307.c:66:13:ds1307_i2c_pin_config	1
-../bsp/ds1307.c:98:6:ds1307_i2c_config	1
-../bsp/ds1307.c:107:6:ds1307_write	1
-../bsp/ds1307.c:116:16:ds1307_read	1
+../bsp/ds1307.c:45:6:ds1307_set_current_time	3
+../bsp/ds1307.c:67:6:ds1307_set_current_date	1
+../bsp/ds1307.c:72:6:ds1307_get_current_time	1
+../bsp/ds1307.c:77:6:ds1307_get_current_date	1
+../bsp/ds1307.c:83:13:ds1307_i2c_pin_config	1
+../bsp/ds1307.c:115:6:ds1307_i2c_config	1
+../bsp/ds1307.c:124:6:ds1307_write	1
+../bsp/ds1307.c:133:16:ds1307_read	1

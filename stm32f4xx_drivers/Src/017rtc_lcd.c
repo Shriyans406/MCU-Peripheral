@@ -11,6 +11,31 @@
 
 #include "lcd.h"
 
+char* get_day_of_week(uint8_t i)
+{
+	char* days[] = { "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+
+	return days[i-1];
+}
+
+char* time_to_string(RTC_time_t *rtc_time)
+{
+	static char buf[9];
+
+	buf[2]= ':';
+	buf[5]= ':';
+
+	number_to_string(rtc_time->hours,buf);
+	number_to_string(rtc_time->minutes,&buf[3]);
+	number_to_string(rtc_time->seconds,&buf[6]);
+
+	buf[8] = '\0';
+
+	return buf;
+
+}
+
+
 int main(void)
 {
     // Your code here
@@ -46,6 +71,13 @@ int main(void)
 		am_pm = (current_time.time_format) ? "PM" : "AM";
 		printf("Current time = %s %s\n",time_to_string(&current_time),am_pm);
 	}
+	else{
+		printf("Current time = %s\n",time_to_string(&current_time));
+	}
+
+	printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
 
     return 0;
 }
+
+

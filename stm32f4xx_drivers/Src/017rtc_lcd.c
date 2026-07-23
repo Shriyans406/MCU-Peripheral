@@ -18,6 +18,37 @@ char* get_day_of_week(uint8_t i)
 	return days[i-1];
 }
 
+void number_to_string(uint8_t num , char* buf)
+{
+
+	if(num < 10){
+		buf[0] = '0';
+		buf[1] = num+48;
+	}else if(num >= 10 && num < 99)
+	{
+		buf[0] = (num/10) + 48;
+		buf[1]= (num % 10) + 48;
+	}
+}
+
+char* date_to_string(RTC_date_t *rtc_date)
+{
+	static char buf[9];
+
+	buf[2]= '/';
+	buf[5]= '/';
+
+	number_to_string(rtc_date->date,buf);
+	number_to_string(rtc_date->month,&buf[3]);
+	number_to_string(rtc_date->year,&buf[6]);
+
+	buf[8]= '\0';
+
+	return buf;
+
+}
+
+
 char* time_to_string(RTC_time_t *rtc_time)
 {
 	static char buf[9];

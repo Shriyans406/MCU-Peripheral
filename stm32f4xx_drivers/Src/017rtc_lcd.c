@@ -135,7 +135,28 @@ int main(void)
 
 	printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
 
+	while(1);
     return 0;
 }
 
 
+void SysTick_Handler(void){
+
+	RTC_time_t current_time;
+	RTC_date_t current_date;
+
+	ds1307_get_current_time(&current_time);
+
+	char *am_pm;
+	if(current_time.time_format != TIME_FORMAT_24HRS){
+		am_pm = (current_time.time_format) ? "PM" : "AM";
+		printf("Current time = %s %s\n",time_to_string(&current_time),am_pm);
+	}
+	else{
+		printf("Current time = %s\n",time_to_string(&current_time));
+	}
+
+	ds1307_get_current_time(&current_time);
+	printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
+
+}

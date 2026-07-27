@@ -56,4 +56,19 @@ void lcd_init(void){
 	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_RW, GPIO_PIN_RESET);
 
 	write_4_bits(0x3);
+
+	mdelay(5);
+
+	write_4_bits(0x3);
+
+	udelay(150);
+}
+
+void write_4_bits(uint8_t value){
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT,LCD_GPIO_D4, ((value >> 0) & 0x1) );
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT,LCD_GPIO_D5, ((value >> 1) & 0x1) );
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT,LCD_GPIO_D6, ((value >> 2) & 0x1) );
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT,LCD_GPIO_D7, ((value >> 3) & 0x1) );
+
+	lcd_enable();
 }

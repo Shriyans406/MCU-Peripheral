@@ -1,1 +1,2 @@
 ../bsp/lcd.c:12:6:lcd_init	1
+../bsp/lcd.c:67:6:write_4_bits	1

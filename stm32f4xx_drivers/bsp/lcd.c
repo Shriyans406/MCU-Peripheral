@@ -123,6 +123,19 @@ void write_4_bits(uint8_t value){
 	lcd_enable();
 }
 
+
+
+void lcd_print_string(char *message)
+{
+
+      do
+      {
+          lcd_print_char((uint8_t)*message++);
+      }
+      while (*message != '\0');
+
+}
+
 void lcd_display_clear(void)
 {
 	//Display clear

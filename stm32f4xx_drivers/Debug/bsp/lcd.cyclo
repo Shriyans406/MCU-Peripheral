@@ -2,7 +2,8 @@
 ../bsp/lcd.c:35:6:lcd_print_char	1
 ../bsp/lcd.c:48:6:lcd_init	1
 ../bsp/lcd.c:117:6:write_4_bits	1
-../bsp/lcd.c:126:6:lcd_display_clear	1
-../bsp/lcd.c:139:13:lcd_enable	1
-../bsp/lcd.c:149:13:mdelay	2
-../bsp/lcd.c:154:13:udelay	2
+../bsp/lcd.c:128:6:lcd_print_string	2
+../bsp/lcd.c:139:6:lcd_display_clear	1
+../bsp/lcd.c:152:13:lcd_enable	1
+../bsp/lcd.c:162:13:mdelay	2
+../bsp/lcd.c:167:13:udelay	2

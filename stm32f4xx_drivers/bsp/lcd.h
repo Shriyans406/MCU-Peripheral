@@ -13,6 +13,9 @@
 
 /* bsp exposed apis */
 void lcd_init(void);
+void lcd_send_command(uint8_t cmd);
+void lcd_print_char(uint8_t data);
+void lcd_display_clear(void);
 
 /*Application configurable items */
 

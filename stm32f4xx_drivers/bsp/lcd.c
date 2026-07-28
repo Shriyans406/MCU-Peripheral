@@ -10,6 +10,8 @@
 
 static void write_4_bits(uint8_t value);
 static void lcd_enable(void);
+static void mdelay(uint32_t cnt);
+static void udelay(uint32_t cnt);
 
 void lcd_send_command(uint8_t cmd)
 {
@@ -140,4 +142,16 @@ static void lcd_enable(void)
 	udelay(10);
 	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_EN, GPIO_PIN_RESET);
 	udelay(100);/* execution time > 37 micro seconds */
+}
+
+
+
+static void mdelay(uint32_t cnt)
+{
+	for(uint32_t i=0 ; i < (cnt * 1000); i++);
+}
+
+static void udelay(uint32_t cnt)
+{
+	for(uint32_t i=0 ; i < (cnt * 1); i++);
 }

@@ -338,16 +338,20 @@ Discarded input sections
  .text          0x00000000        0x0 ./bsp/lcd.o
  .data          0x00000000        0x0 ./bsp/lcd.o
  .bss           0x00000000        0x0 ./bsp/lcd.o
+ .text.lcd_send_command
+                0x00000000       0x44 ./bsp/lcd.o
  .text.lcd_init
                 0x00000000       0xf4 ./bsp/lcd.o
  .text.write_4_bits
                 0x00000000       0x70 ./bsp/lcd.o
- .debug_info    0x00000000      0x2bc ./bsp/lcd.o
- .debug_abbrev  0x00000000      0x137 ./bsp/lcd.o
+ .text.lcd_enable
+                0x00000000       0x2c ./bsp/lcd.o
+ .debug_info    0x00000000      0x2d7 ./bsp/lcd.o
+ .debug_abbrev  0x00000000      0x162 ./bsp/lcd.o
  .debug_aranges
-                0x00000000       0x28 ./bsp/lcd.o
+                0x00000000       0x38 ./bsp/lcd.o
  .debug_rnglists
-                0x00000000       0x1a ./bsp/lcd.o
+                0x00000000       0x26 ./bsp/lcd.o
  .debug_macro   0x00000000       0xc7 ./bsp/lcd.o
  .debug_macro   0x00000000      0xad8 ./bsp/lcd.o
  .debug_macro   0x00000000      0x190 ./bsp/lcd.o
@@ -363,10 +367,10 @@ Discarded input sections
  .debug_macro   0x00000000       0xd6 ./bsp/lcd.o
  .debug_macro   0x00000000      0x106 ./bsp/lcd.o
  .debug_macro   0x00000000       0x34 ./bsp/lcd.o
- .debug_line    0x00000000      0x57a ./bsp/lcd.o
- .debug_str     0x00000000     0x6a4d ./bsp/lcd.o
+ .debug_line    0x00000000      0x5af ./bsp/lcd.o
+ .debug_str     0x00000000     0x6a5e ./bsp/lcd.o
  .comment       0x00000000       0x44 ./bsp/lcd.o
- .debug_frame   0x00000000       0x58 ./bsp/lcd.o
+ .debug_frame   0x00000000       0x98 ./bsp/lcd.o
  .ARM.attributes
                 0x00000000       0x2e ./bsp/lcd.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o

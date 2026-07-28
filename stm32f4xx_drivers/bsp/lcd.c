@@ -8,6 +8,21 @@
 
 #include "lcd.h"
 
+static void write_4_bits(uint8_t value);
+static void lcd_enable(void);
+
+void lcd_send_command(uint8_t cmd)
+{
+	/* RS=0 for LCD command */
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_RS, GPIO_PIN_RESET);
+
+	/*R/nW = 0, for write */
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_RW, GPIO_PIN_RESET);
+
+	write_4_bits(cmd >> 4);
+	write_4_bits(cmd & 0x0F);
+
+}
 
 void lcd_init(void){
 	GPIO_Handle_t lcd_signal;
@@ -71,4 +86,12 @@ void write_4_bits(uint8_t value){
 	GPIO_WriteToOutputPin(LCD_GPIO_PORT,LCD_GPIO_D7, ((value >> 3) & 0x1) );
 
 	lcd_enable();
+}
+
+static void lcd_enable(void)
+{
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_EN, GPIO_PIN_SET);
+	udelay(10);
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_EN, GPIO_PIN_RESET);
+	udelay(100);/* execution time > 37 micro seconds */
 }

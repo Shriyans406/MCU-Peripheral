@@ -340,18 +340,22 @@ Discarded input sections
  .bss           0x00000000        0x0 ./bsp/lcd.o
  .text.lcd_send_command
                 0x00000000       0x44 ./bsp/lcd.o
+ .text.lcd_print_char
+                0x00000000       0x44 ./bsp/lcd.o
  .text.lcd_init
-                0x00000000       0xf4 ./bsp/lcd.o
+                0x00000000      0x114 ./bsp/lcd.o
  .text.write_4_bits
                 0x00000000       0x70 ./bsp/lcd.o
+ .text.lcd_display_clear
+                0x00000000       0x14 ./bsp/lcd.o
  .text.lcd_enable
                 0x00000000       0x2c ./bsp/lcd.o
- .debug_info    0x00000000      0x2d7 ./bsp/lcd.o
- .debug_abbrev  0x00000000      0x162 ./bsp/lcd.o
+ .debug_info    0x00000000      0x328 ./bsp/lcd.o
+ .debug_abbrev  0x00000000      0x165 ./bsp/lcd.o
  .debug_aranges
-                0x00000000       0x38 ./bsp/lcd.o
+                0x00000000       0x48 ./bsp/lcd.o
  .debug_rnglists
-                0x00000000       0x26 ./bsp/lcd.o
+                0x00000000       0x32 ./bsp/lcd.o
  .debug_macro   0x00000000       0xc7 ./bsp/lcd.o
  .debug_macro   0x00000000      0xad8 ./bsp/lcd.o
  .debug_macro   0x00000000      0x190 ./bsp/lcd.o
@@ -366,11 +370,11 @@ Discarded input sections
  .debug_macro   0x00000000       0xc4 ./bsp/lcd.o
  .debug_macro   0x00000000       0xd6 ./bsp/lcd.o
  .debug_macro   0x00000000      0x106 ./bsp/lcd.o
- .debug_macro   0x00000000       0x34 ./bsp/lcd.o
- .debug_line    0x00000000      0x5af ./bsp/lcd.o
- .debug_str     0x00000000     0x6a5e ./bsp/lcd.o
+ .debug_macro   0x00000000       0x52 ./bsp/lcd.o
+ .debug_line    0x00000000      0x5e8 ./bsp/lcd.o
+ .debug_str     0x00000000     0x6afc ./bsp/lcd.o
  .comment       0x00000000       0x44 ./bsp/lcd.o
- .debug_frame   0x00000000       0x98 ./bsp/lcd.o
+ .debug_frame   0x00000000       0xd8 ./bsp/lcd.o
  .ARM.attributes
                 0x00000000       0x2e ./bsp/lcd.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_gpio_driver.o
@@ -1537,7 +1541,7 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x0000022d       0x21 ./drivers/src/stm32f407xx_rcc_driver.o
 
-.debug_macro    0x00000000     0x3d92
+.debug_macro    0x00000000     0x3db0
  .debug_macro   0x00000000      0x1a8 ./Src/017rtc_lcd.o
  .debug_macro   0x000001a8      0xad8 ./Src/017rtc_lcd.o
  .debug_macro   0x00000c80       0x22 ./Src/017rtc_lcd.o
@@ -1572,47 +1576,47 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0000238b       0xd6 ./Src/017rtc_lcd.o
  .debug_macro   0x00002461      0x106 ./Src/017rtc_lcd.o
  .debug_macro   0x00002567       0x94 ./Src/017rtc_lcd.o
- .debug_macro   0x000025fb       0x3a ./Src/017rtc_lcd.o
- .debug_macro   0x00002635      0x274 ./Src/syscalls.o
- .debug_macro   0x000028a9      0x190 ./Src/syscalls.o
- .debug_macro   0x00002a39       0x10 ./Src/syscalls.o
- .debug_macro   0x00002a49       0x3c ./Src/syscalls.o
- .debug_macro   0x00002a85       0x10 ./Src/syscalls.o
- .debug_macro   0x00002a95       0x10 ./Src/syscalls.o
- .debug_macro   0x00002aa5       0x10 ./Src/syscalls.o
- .debug_macro   0x00002ab5       0x1c ./Src/syscalls.o
- .debug_macro   0x00002ad1       0x52 ./Src/syscalls.o
- .debug_macro   0x00002b23       0x22 ./Src/syscalls.o
- .debug_macro   0x00002b45       0x10 ./Src/syscalls.o
- .debug_macro   0x00002b55       0x52 ./Src/syscalls.o
- .debug_macro   0x00002ba7       0xcf ./Src/syscalls.o
- .debug_macro   0x00002c76       0x1c ./Src/syscalls.o
- .debug_macro   0x00002c92       0x3d ./Src/syscalls.o
- .debug_macro   0x00002ccf       0x35 ./Src/syscalls.o
- .debug_macro   0x00002d04      0x12c ./Src/syscalls.o
- .debug_macro   0x00002e30       0x16 ./Src/syscalls.o
- .debug_macro   0x00002e46       0x16 ./Src/syscalls.o
- .debug_macro   0x00002e5c       0x29 ./Src/syscalls.o
- .debug_macro   0x00002e85       0x10 ./Src/syscalls.o
- .debug_macro   0x00002e95      0x242 ./Src/syscalls.o
- .debug_macro   0x000030d7       0x1c ./Src/syscalls.o
- .debug_macro   0x000030f3       0x10 ./Src/syscalls.o
- .debug_macro   0x00003103      0x18a ./Src/syscalls.o
- .debug_macro   0x0000328d       0x16 ./Src/syscalls.o
- .debug_macro   0x000032a3       0xce ./Src/syscalls.o
- .debug_macro   0x00003371      0x112 ./Src/sysmem.o
- .debug_macro   0x00003483      0x23c ./Src/sysmem.o
- .debug_macro   0x000036bf      0x195 ./bsp/ds1307.o
- .debug_macro   0x00003854       0x8e ./bsp/ds1307.o
- .debug_macro   0x000038e2       0x51 ./bsp/ds1307.o
- .debug_macro   0x00003933       0x61 ./bsp/ds1307.o
- .debug_macro   0x00003994       0x10 ./bsp/ds1307.o
- .debug_macro   0x000039a4       0x20 ./bsp/ds1307.o
- .debug_macro   0x000039c4       0xc2 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00003a86       0xbe ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_macro   0x00003b44       0xc2 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_macro   0x00003c06       0xd0 ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_macro   0x00003cd6       0xbc ./drivers/src/stm32f407xx_rcc_driver.o
+ .debug_macro   0x000025fb       0x58 ./Src/017rtc_lcd.o
+ .debug_macro   0x00002653      0x274 ./Src/syscalls.o
+ .debug_macro   0x000028c7      0x190 ./Src/syscalls.o
+ .debug_macro   0x00002a57       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002a67       0x3c ./Src/syscalls.o
+ .debug_macro   0x00002aa3       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002ab3       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002ac3       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002ad3       0x1c ./Src/syscalls.o
+ .debug_macro   0x00002aef       0x52 ./Src/syscalls.o
+ .debug_macro   0x00002b41       0x22 ./Src/syscalls.o
+ .debug_macro   0x00002b63       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002b73       0x52 ./Src/syscalls.o
+ .debug_macro   0x00002bc5       0xcf ./Src/syscalls.o
+ .debug_macro   0x00002c94       0x1c ./Src/syscalls.o
+ .debug_macro   0x00002cb0       0x3d ./Src/syscalls.o
+ .debug_macro   0x00002ced       0x35 ./Src/syscalls.o
+ .debug_macro   0x00002d22      0x12c ./Src/syscalls.o
+ .debug_macro   0x00002e4e       0x16 ./Src/syscalls.o
+ .debug_macro   0x00002e64       0x16 ./Src/syscalls.o
+ .debug_macro   0x00002e7a       0x29 ./Src/syscalls.o
+ .debug_macro   0x00002ea3       0x10 ./Src/syscalls.o
+ .debug_macro   0x00002eb3      0x242 ./Src/syscalls.o
+ .debug_macro   0x000030f5       0x1c ./Src/syscalls.o
+ .debug_macro   0x00003111       0x10 ./Src/syscalls.o
+ .debug_macro   0x00003121      0x18a ./Src/syscalls.o
+ .debug_macro   0x000032ab       0x16 ./Src/syscalls.o
+ .debug_macro   0x000032c1       0xce ./Src/syscalls.o
+ .debug_macro   0x0000338f      0x112 ./Src/sysmem.o
+ .debug_macro   0x000034a1      0x23c ./Src/sysmem.o
+ .debug_macro   0x000036dd      0x195 ./bsp/ds1307.o
+ .debug_macro   0x00003872       0x8e ./bsp/ds1307.o
+ .debug_macro   0x00003900       0x51 ./bsp/ds1307.o
+ .debug_macro   0x00003951       0x61 ./bsp/ds1307.o
+ .debug_macro   0x000039b2       0x10 ./bsp/ds1307.o
+ .debug_macro   0x000039c2       0x20 ./bsp/ds1307.o
+ .debug_macro   0x000039e2       0xc2 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00003aa4       0xbe ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00003b62       0xc2 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_macro   0x00003c24       0xd0 ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_macro   0x00003cf4       0xbc ./drivers/src/stm32f407xx_rcc_driver.o
 
 .debug_line     0x00000000     0x3cb1
  .debug_line    0x00000000      0x860 ./Src/017rtc_lcd.o
@@ -1624,16 +1628,16 @@ LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x00002950      0xd6a ./drivers/src/stm32f407xx_i2c_driver.o
  .debug_line    0x000036ba      0x5f7 ./drivers/src/stm32f407xx_rcc_driver.o
 
-.debug_str      0x00000000     0xcc85
- .debug_str     0x00000000     0xcc85 ./Src/017rtc_lcd.o
-                               0xa464 (size before relaxing)
- .debug_str     0x0000cc85     0x99c6 ./Src/syscalls.o
- .debug_str     0x0000cc85     0x7764 ./Src/sysmem.o
- .debug_str     0x0000cc85       0x90 ./Startup/startup_stm32f407vgtx.o
- .debug_str     0x0000cc85     0x9fa5 ./bsp/ds1307.o
- .debug_str     0x0000cc85     0x6c02 ./drivers/src/stm32f407xx_gpio_driver.o
- .debug_str     0x0000cc85     0x6d2f ./drivers/src/stm32f407xx_i2c_driver.o
- .debug_str     0x0000cc85     0x6a42 ./drivers/src/stm32f407xx_rcc_driver.o
+.debug_str      0x00000000     0xccfd
+ .debug_str     0x00000000     0xccfd ./Src/017rtc_lcd.o
+                               0xa4dc (size before relaxing)
+ .debug_str     0x0000ccfd     0x99c6 ./Src/syscalls.o
+ .debug_str     0x0000ccfd     0x7764 ./Src/sysmem.o
+ .debug_str     0x0000ccfd       0x90 ./Startup/startup_stm32f407vgtx.o
+ .debug_str     0x0000ccfd     0x9fa5 ./bsp/ds1307.o
+ .debug_str     0x0000ccfd     0x6c02 ./drivers/src/stm32f407xx_gpio_driver.o
+ .debug_str     0x0000ccfd     0x6d2f ./drivers/src/stm32f407xx_i2c_driver.o
+ .debug_str     0x0000ccfd     0x6a42 ./drivers/src/stm32f407xx_rcc_driver.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/017rtc_lcd.o

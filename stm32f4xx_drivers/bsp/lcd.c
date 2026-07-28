@@ -24,6 +24,25 @@ void lcd_send_command(uint8_t cmd)
 
 }
 
+/*
+ *This function sends a character to the LCD
+ *Here we used 4 bit parallel data transmission.
+ *First higher nibble of the data will be sent on to the data lines D4,D5,D6,D7
+ *Then lower nibble of the data will be set on to the data lines D4,D5,D6,D7
+ */
+void lcd_print_char(uint8_t data)
+{
+	/* RS=1 for LCD user data */
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_RS, GPIO_PIN_SET);
+
+	/*R/nW = 0, for write */
+	GPIO_WriteToOutputPin(LCD_GPIO_PORT, LCD_GPIO_RW, GPIO_PIN_RESET);
+
+	write_4_bits(data >> 4);  /*Higher nibble*/
+	write_4_bits(data & 0x0F); /*Lower nibble*/
+
+}
+
 void lcd_init(void){
 	GPIO_Handle_t lcd_signal;
 
@@ -77,6 +96,20 @@ void lcd_init(void){
 	write_4_bits(0x3);
 
 	udelay(150);
+
+	write_4_bits(0x3);
+	write_4_bits(0x2);
+
+	//function set command
+	lcd_send_command(LCD_CMD_4DL_2N_5X8F);
+
+	//disply ON and cursor ON
+	lcd_send_command(LCD_CMD_DON_CURON);
+
+	lcd_display_clear();
+
+	//entry mode set
+	lcd_send_command(LCD_CMD_INCADD);
 }
 
 void write_4_bits(uint8_t value){
@@ -86,6 +119,19 @@ void write_4_bits(uint8_t value){
 	GPIO_WriteToOutputPin(LCD_GPIO_PORT,LCD_GPIO_D7, ((value >> 3) & 0x1) );
 
 	lcd_enable();
+}
+
+void lcd_display_clear(void)
+{
+	//Display clear
+	lcd_send_command(LCD_CMD_DIS_CLEAR);
+
+	/*
+	 * check page number 24 of datasheet.
+	 * display clear command execution wait time is around 2ms
+	 */
+
+	mdelay(2);
 }
 
 static void lcd_enable(void)

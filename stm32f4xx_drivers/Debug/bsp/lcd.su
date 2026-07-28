@@ -1,4 +1,6 @@
 ../bsp/lcd.c:14:6:lcd_send_command	16	static
-../bsp/lcd.c:27:6:lcd_init	24	static
-../bsp/lcd.c:82:6:write_4_bits	16	static
-../bsp/lcd.c:91:13:lcd_enable	8	static
+../bsp/lcd.c:33:6:lcd_print_char	16	static
+../bsp/lcd.c:46:6:lcd_init	24	static
+../bsp/lcd.c:115:6:write_4_bits	16	static
+../bsp/lcd.c:124:6:lcd_display_clear	8	static
+../bsp/lcd.c:137:13:lcd_enable	8	static

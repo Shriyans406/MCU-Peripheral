@@ -4,4 +4,4 @@
 ../Src/017rtc_lcd.c:61:7:date_to_string	1
 ../Src/017rtc_lcd.c:79:7:time_to_string	1
 ../Src/017rtc_lcd.c:97:5:main	4
-../Src/017rtc_lcd.c:147:6:SysTick_Handler	3
+../Src/017rtc_lcd.c:152:6:SysTick_Handler	3

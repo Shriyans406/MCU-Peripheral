@@ -103,6 +103,10 @@ int main(void)
 
 	printf("RTC test\n");
 
+	lcd_init();
+
+	lcd_print_string("RTC Test...");
+
 	if(ds1307_init()){
 			printf("RTC init has failed\n");
 			while(1);

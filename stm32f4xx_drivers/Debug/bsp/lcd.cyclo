@@ -1,9 +1,10 @@
 ../bsp/lcd.c:16:6:lcd_send_command	1
 ../bsp/lcd.c:35:6:lcd_print_char	1
-../bsp/lcd.c:48:6:lcd_init	1
-../bsp/lcd.c:117:6:write_4_bits	1
-../bsp/lcd.c:128:6:lcd_print_string	2
-../bsp/lcd.c:139:6:lcd_display_clear	1
-../bsp/lcd.c:152:13:lcd_enable	1
-../bsp/lcd.c:162:13:mdelay	2
-../bsp/lcd.c:167:13:udelay	2
+../bsp/lcd.c:50:6:lcd_init	1
+../bsp/lcd.c:119:6:write_4_bits	1
+../bsp/lcd.c:130:6:lcd_print_string	2
+../bsp/lcd.c:141:6:lcd_display_clear	1
+../bsp/lcd.c:159:6:lcd_set_cursor	3
+../bsp/lcd.c:179:13:lcd_enable	1
+../bsp/lcd.c:189:13:mdelay	2
+../bsp/lcd.c:194:13:udelay	2

@@ -45,6 +45,8 @@ void lcd_print_char(uint8_t data)
 
 }
 
+
+
 void lcd_init(void){
 	GPIO_Handle_t lcd_signal;
 
@@ -148,6 +150,31 @@ void lcd_display_clear(void)
 
 	mdelay(2);
 }
+
+/**
+  *   Set Lcd to a specified location given by row and column information
+  *   Row Number (1 to 2)
+  *   Column Number (1 to 16) Assuming a 2 X 16 characters display
+  */
+void lcd_set_cursor(uint8_t row, uint8_t column)
+{
+  column--;
+  switch (row)
+  {
+    case 1:
+      /* Set cursor to 1st row address and add index*/
+      lcd_send_command((column |= 0x80));
+      break;
+    case 2:
+      /* Set cursor to 2nd row address and add index*/
+        lcd_send_command((column |= 0xC0));
+      break;
+    default:
+      break;
+  }
+}
+
+
 
 static void lcd_enable(void)
 {

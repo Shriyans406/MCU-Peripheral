@@ -93,6 +93,11 @@ char* time_to_string(RTC_time_t *rtc_time)
 
 }
 
+static void mdelay(uint32_t cnt)
+{
+	for(uint32_t i=0 ; i < (cnt * 1000); i++);
+}
+
 
 int main(void)
 {
@@ -106,6 +111,11 @@ int main(void)
 	lcd_init();
 
 	lcd_print_string("RTC Test...");
+
+	mdelay(2000);
+
+	lcd_display_clear();
+	lcd_display_return_home();
 
 	if(ds1307_init()){
 			printf("RTC init has failed\n");

@@ -115,7 +115,7 @@ int main(void)
 	mdelay(2000);
 
 	lcd_display_clear();
-	lcd_display_return_home();
+	//lcd_display_return_home();
 
 	if(ds1307_init()){
 			printf("RTC init has failed\n");

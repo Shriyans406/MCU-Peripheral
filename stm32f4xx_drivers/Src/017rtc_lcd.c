@@ -174,10 +174,13 @@ void SysTick_Handler(void){
 	}
 	else{
 		printf("Current time = %s\n",time_to_string(&current_time));
+		lcd_print_string(time_to_string(&current_time));
+		lcd_print_char('d');
+		lcd_print_string(time_to_string(&current_time));
 		//lcd_print_string(time_to_string(&current_time));
 	}
 
 	ds1307_get_current_time(&current_time);
-	printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
+	//printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
 
 }

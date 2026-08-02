@@ -169,7 +169,9 @@ void SysTick_Handler(void){
 	char *am_pm;
 	if(current_time.time_format != TIME_FORMAT_24HRS){
 		am_pm = (current_time.time_format) ? "PM" : "AM";
-		printf("Current time = %s %s\n",time_to_string(&current_time),am_pm);
+		lcd_print_string(time_to_string(&current_time));
+		lcd_print_string(am_pm);
+		//printf("Current time = %s %s\n",time_to_string(&current_time),am_pm);
 
 	}
 	else{
@@ -177,6 +179,7 @@ void SysTick_Handler(void){
 		lcd_print_string(time_to_string(&current_time));
 		lcd_print_char('d');
 		lcd_print_string(time_to_string(&current_time));
+		lcd_print_char('c');
 		//lcd_print_string(time_to_string(&current_time));
 	}
 

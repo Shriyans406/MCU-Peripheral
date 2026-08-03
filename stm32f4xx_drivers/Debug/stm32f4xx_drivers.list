@@ -7,19 +7,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00002504  08000190  08000190  00001190  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000000dc  08002694  08002694  00003694  2**2
+  2 .rodata       000000b4  08002694  08002694  00003694  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08002770  08002770  00004070  2**0
+  3 .ARM.extab    00000000  08002748  08002748  00004070  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  08002770  08002770  00003770  2**2
+  4 .ARM          00000008  08002748  08002748  00003748  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08002778  08002778  00004070  2**0
+  5 .preinit_array 00000000  08002750  08002750  00004070  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08002778  08002778  00003778  2**2
+  6 .init_array   00000004  08002750  08002750  00003750  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  0800277c  0800277c  0000377c  2**2
+  7 .fini_array   00000004  08002754  08002754  00003754  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000070  20000000  08002780  00004000  2**2
+  8 .data         00000070  20000000  08002758  00004000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .ccmram       00000000  10000000  10000000  00004070  2**0
                   CONTENTS
@@ -446,11 +446,11 @@ int main(void)
 	while(1);
  800043c:	bf00      	nop
  800043e:	e7fd      	b.n	800043c <main+0xd4>
- 8000440:	080026f4 	.word	0x080026f4
- 8000444:	08002700 	.word	0x08002700
- 8000448:	0800270c 	.word	0x0800270c
- 800044c:	08002720 	.word	0x08002720
- 8000450:	08002724 	.word	0x08002724
+ 8000440:	080026cc 	.word	0x080026cc
+ 8000444:	080026d8 	.word	0x080026d8
+ 8000448:	080026e4 	.word	0x080026e4
+ 800044c:	080026f8 	.word	0x080026f8
+ 8000450:	080026fc 	.word	0x080026fc
 
 08000454 <SysTick_Handler>:
     return 0;
@@ -549,9 +549,9 @@ void SysTick_Handler(void){
  80004f2:	3710      	adds	r7, #16
  80004f4:	46bd      	mov	sp, r7
  80004f6:	bd80      	pop	{r7, pc}
- 80004f8:	08002720 	.word	0x08002720
- 80004fc:	08002724 	.word	0x08002724
- 8000500:	08002728 	.word	0x08002728
+ 80004f8:	080026f8 	.word	0x080026f8
+ 80004fc:	080026fc 	.word	0x080026fc
+ 8000500:	08002700 	.word	0x08002700
 
 08000504 <_read>:
   _kill(status, -1);
@@ -897,7 +897,7 @@ LoopForever:
   ldr r1, =_edata
  8000684:	20000070 	.word	0x20000070
   ldr r2, =_sidata
- 8000688:	08002780 	.word	0x08002780
+ 8000688:	08002758 	.word	0x08002758
   ldr r2, =_sbss
  800068c:	20000070 	.word	0x20000070
   ldr r4, =_ebss
@@ -4331,10 +4331,10 @@ uint32_t  RCC_GetPLLOutputClock()
  8001c5e:	4798      	blx	r3
  8001c60:	3601      	adds	r6, #1
  8001c62:	e7f2      	b.n	8001c4a <__libc_init_array+0x1e>
- 8001c64:	08002778 	.word	0x08002778
- 8001c68:	08002778 	.word	0x08002778
- 8001c6c:	08002778 	.word	0x08002778
- 8001c70:	0800277c 	.word	0x0800277c
+ 8001c64:	08002750 	.word	0x08002750
+ 8001c68:	08002750 	.word	0x08002750
+ 8001c6c:	08002750 	.word	0x08002750
+ 8001c70:	08002754 	.word	0x08002754
 
 08001c74 <__retarget_lock_init_recursive>:
  8001c74:	4770      	bx	lr
@@ -4833,9 +4833,9 @@ uint32_t  RCC_GetPLLOutputClock()
  80020d0:	4630      	mov	r0, r6
  80020d2:	f000 f879 	bl	80021c8 <_printf_i>
  80020d6:	e7e4      	b.n	80020a2 <_vfiprintf_r+0x1e6>
- 80020d8:	0800273b 	.word	0x0800273b
- 80020dc:	08002741 	.word	0x08002741
- 80020e0:	08002745 	.word	0x08002745
+ 80020d8:	08002713 	.word	0x08002713
+ 80020dc:	08002719 	.word	0x08002719
+ 80020e0:	0800271d 	.word	0x0800271d
  80020e4:	00000000 	.word	0x00000000
  80020e8:	08001e97 	.word	0x08001e97
 
@@ -5166,8 +5166,8 @@ uint32_t  RCC_GetPLLOutputClock()
  80023f4:	2500      	movs	r5, #0
  80023f6:	f104 0619 	add.w	r6, r4, #25
  80023fa:	e7f5      	b.n	80023e8 <_printf_i+0x220>
- 80023fc:	0800274c 	.word	0x0800274c
- 8002400:	0800275d 	.word	0x0800275d
+ 80023fc:	08002724 	.word	0x08002724
+ 8002400:	08002735 	.word	0x08002735
 
 08002404 <__sflush_r>:
  8002404:	f9b1 200c 	ldrsh.w	r2, [r1, #12]

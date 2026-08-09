@@ -159,35 +159,14 @@ int main(void)
 }
 
 
-void SysTick_Handler(void){
-
+void SysTick_Handler(void)
+{
 	RTC_time_t current_time;
 	RTC_date_t current_date;
 
 	ds1307_get_current_time(&current_time);
 
-
-	lcd_set_cursor(1, 1);
 	char *am_pm;
-//	if(current_time.time_format != TIME_FORMAT_24HRS){
-//		am_pm = (current_time.time_format) ? "PM" : "AM";
-//		lcd_print_string(time_to_string(&current_time));
-//		lcd_print_string(am_pm);
-//		printf("Current time = %s %s\n",time_to_string(&current_time),am_pm);
-//
-//	}
-//	else{
-//		printf("Current time = %s\n",time_to_string(&current_time));
-//		lcd_print_string(time_to_string(&current_time));
-//		lcd_set_cursor(2, 1);
-//		lcd_print_char('d');
-//		lcd_print_string(time_to_string(&current_time));
-//		lcd_print_char('c');
-//		lcd_print_string(time_to_string(&current_time));
-//	}
-//
-//	ds1307_get_current_time(&current_time);
-	//printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
 	if(current_time.time_format != TIME_FORMAT_24HRS){
 		am_pm = (current_time.time_format) ? "PM" : "AM";
 #ifndef PRINT_LCD
@@ -209,7 +188,6 @@ void SysTick_Handler(void){
 
 	ds1307_get_current_date(&current_date);
 
-
 #ifndef PRINT_LCD
 	printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
 #else
@@ -220,5 +198,5 @@ void SysTick_Handler(void){
 	lcd_print_char('>');
 #endif
 
-}
 
+}

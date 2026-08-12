@@ -534,14 +534,16 @@ Discarded input sections
                 0x00000000       0x34 ./drivers/src/stm32f407xx_spi_driver.o
  .text.SPI_CloseReception
                 0x00000000       0x34 ./drivers/src/stm32f407xx_spi_driver.o
+ .text.SPI_ClearOVRFlag
+                0x00000000       0x1e ./drivers/src/stm32f407xx_spi_driver.o
  .text.SPI_ApplicationEventCallback
                 0x00000000       0x16 ./drivers/src/stm32f407xx_spi_driver.o
- .debug_info    0x00000000      0x878 ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_info    0x00000000      0x8ad ./drivers/src/stm32f407xx_spi_driver.o
  .debug_abbrev  0x00000000      0x1dc ./drivers/src/stm32f407xx_spi_driver.o
  .debug_aranges
-                0x00000000       0xb8 ./drivers/src/stm32f407xx_spi_driver.o
+                0x00000000       0xc0 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_rnglists
-                0x00000000       0x8a ./drivers/src/stm32f407xx_spi_driver.o
+                0x00000000       0x90 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xc2 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000      0xad8 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000      0x190 ./drivers/src/stm32f407xx_spi_driver.o
@@ -556,10 +558,10 @@ Discarded input sections
  .debug_macro   0x00000000       0xd6 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000      0x106 ./drivers/src/stm32f407xx_spi_driver.o
  .debug_macro   0x00000000       0xbe ./drivers/src/stm32f407xx_spi_driver.o
- .debug_line    0x00000000      0xa1f ./drivers/src/stm32f407xx_spi_driver.o
- .debug_str     0x00000000     0x6c7c ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_line    0x00000000      0xa40 ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_str     0x00000000     0x6c8d ./drivers/src/stm32f407xx_spi_driver.o
  .comment       0x00000000       0x44 ./drivers/src/stm32f407xx_spi_driver.o
- .debug_frame   0x00000000      0x318 ./drivers/src/stm32f407xx_spi_driver.o
+ .debug_frame   0x00000000      0x340 ./drivers/src/stm32f407xx_spi_driver.o
  .ARM.attributes
                 0x00000000       0x2e ./drivers/src/stm32f407xx_spi_driver.o
  .group         0x00000000        0xc ./drivers/src/stm32f407xx_usart_driver.o

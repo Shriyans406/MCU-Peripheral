@@ -541,6 +541,14 @@ void SPI_CloseReception(SPI_Handle_t *pSPIHandle)
 
 }
 
+void SPI_ClearOVRFlag(SPI_RegDef_t *pSPIx)
+{
+	uint8_t temp;
+	temp = pSPIx->DR;
+	temp = pSPIx->SR;
+	(void)temp;
+
+}
 
 
 __weak void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle,uint8_t AppEv)

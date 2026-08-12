@@ -433,7 +433,12 @@ typedef struct
 #define I2C_SR2_TRA 					2
 #define I2C_SR2_GENCALL 				4
 #define I2C_SR2_DUALF 					7
-
+/*
+ * Bit position definitions I2C_CCR
+ */
+#define I2C_CCR_CCR 					 0
+#define I2C_CCR_DUTY 					14
+#define I2C_CCR_FS  				 	15
 
 
 

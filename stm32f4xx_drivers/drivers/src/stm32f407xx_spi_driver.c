@@ -542,6 +542,7 @@ void SPI_CloseReception(SPI_Handle_t *pSPIHandle)
 }
 
 
+
 __weak void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle,uint8_t AppEv)
 {
 

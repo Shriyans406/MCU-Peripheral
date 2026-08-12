@@ -269,8 +269,8 @@ typedef struct
 #define USART2_PCCK_EN() (RCC->APB1ENR |= (1 << 17))
 #define USART3_PCCK_EN() (RCC->APB1ENR |= (1 << 18))
 #define UART4_PCCK_EN()  (RCC->APB1ENR |= (1 << 19))
-//#define UART5_PCCK_EN()  (RCC->APB1ENR |= (1 << 20))
-//#define USART6_PCCK_EN() (RCC->APB1ENR |= (1 << 5))
+#define UART5_PCCK_EN()  (RCC->APB1ENR |= (1 << 20))
+#define USART6_PCCK_EN() (RCC->APB1ENR |= (1 << 5))
 //
 
 #define SYSCFG_PCLK_EN()        (RCC->APB2ENR |= (1 << 14))

@@ -474,6 +474,7 @@ typedef struct
 #define USART_CR2_STOP   				12
 #define USART_CR2_LINEN   				14
 
+
 /*
  * Bit position definitions USART_CR3
  */
@@ -490,9 +491,6 @@ typedef struct
 #define USART_CR3_CTSIE   				10
 #define USART_CR3_ONEBIT   				11
 
-
-
-
 /*
  * Bit position definitions USART_SR
  */
@@ -508,12 +506,11 @@ typedef struct
 #define USART_SR_LBD        			8
 #define USART_SR_CTS        			9
 
-//more are remaining
-
 #include "stm32f407xx_gpio_driver.h"
 #include "stm32f407xx_spi_driver.h"
 #include "stm32f407xx_i2c_driver.h"
 #include "stm32f407xx_usart_driver.h"
 #include "stm32f407xx_rcc_driver.h"
+
 
 #endif /* INC_STM32F407XX_H_ */

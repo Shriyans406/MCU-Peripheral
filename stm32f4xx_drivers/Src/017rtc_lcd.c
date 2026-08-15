@@ -1,9 +1,3 @@
-/*
- * 017rtc_lcd.c
- *
- *  Created on: Jul 19, 2026
- *      Author: HP
- */
 
 
 #include<stdio.h>
@@ -12,6 +6,10 @@
 #include "lcd.h"
 
 #define SYSTICK_TIM_CLK   16000000UL
+
+/* Enable this macro if you want to test RTC on LCD */
+//#define PRINT_LCD
+
 
 void init_systick_timer(uint32_t tick_hz)
 {
@@ -37,13 +35,13 @@ void init_systick_timer(uint32_t tick_hz)
 }
 
 
-
 char* get_day_of_week(uint8_t i)
 {
-	char* days[] = { "Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
+	char* days[] = { "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
 
 	return days[i-1];
 }
+
 
 void number_to_string(uint8_t num , char* buf)
 {
@@ -58,24 +56,9 @@ void number_to_string(uint8_t num , char* buf)
 	}
 }
 
-char* date_to_string(RTC_date_t *rtc_date)
-{
-	static char buf[9];
-
-	buf[2]= '/';
-	buf[5]= '/';
-
-	number_to_string(rtc_date->date,buf);
-	number_to_string(rtc_date->month,&buf[3]);
-	number_to_string(rtc_date->year,&buf[6]);
-
-	buf[8]= '\0';
-
-	return buf;
-
-}
 
 
+//hh:mm:ss
 char* time_to_string(RTC_time_t *rtc_time)
 {
 	static char buf[9];
@@ -93,34 +76,55 @@ char* time_to_string(RTC_time_t *rtc_time)
 
 }
 
+//dd/mm/yy
+char* date_to_string(RTC_date_t *rtc_date)
+{
+	static char buf[9];
+
+	buf[2]= '/';
+	buf[5]= '/';
+
+	number_to_string(rtc_date->date,buf);
+	number_to_string(rtc_date->month,&buf[3]);
+	number_to_string(rtc_date->year,&buf[6]);
+
+	buf[8]= '\0';
+
+	return buf;
+
+}
+
 static void mdelay(uint32_t cnt)
 {
 	for(uint32_t i=0 ; i < (cnt * 1000); i++);
 }
 
-
 int main(void)
 {
-    // Your code here
 
 	RTC_time_t current_time;
 	RTC_date_t current_date;
 
+#ifndef PRINT_LCD
 	printf("RTC test\n");
-
+#else
 	lcd_init();
 
 	lcd_print_string("RTC Test...");
 
+
 	mdelay(2000);
 
 	lcd_display_clear();
-	//lcd_display_return_home();
+	lcd_display_return_home();
+#endif
 
 	if(ds1307_init()){
-			printf("RTC init has failed\n");
-			while(1);
+		printf("RTC init has failed\n");
+		while(1);
 	}
+
+	init_systick_timer(1);
 
 	current_date.day = FRIDAY;
 	current_date.date = 15;
@@ -141,21 +145,31 @@ int main(void)
 	char *am_pm;
 	if(current_time.time_format != TIME_FORMAT_24HRS){
 		am_pm = (current_time.time_format) ? "PM" : "AM";
-		//printf("Current time = %s %s\n",time_to_string(&current_time),am_pm);
+#ifndef PRINT_LCD
+		printf("Current time = %s %s\n",time_to_string(&current_time),am_pm); // 04:25:41 PM
+#else
 		lcd_print_string(time_to_string(&current_time));
 		lcd_print_string(am_pm);
-	}
-	else{
-		//printf("Current time = %s\n",time_to_string(&current_time));
+#endif
+	}else{
+#ifndef PRINT_LCD
+		printf("Current time = %s\n",time_to_string(&current_time)); // 04:25:41
+#else
 		lcd_print_string(time_to_string(&current_time));
+#endif
 	}
 
-	//printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
+#ifndef PRINT_LCD
+	printf("Current date = %s <%s>\n",date_to_string(&current_date), get_day_of_week(current_date.day));
+#else
 	lcd_set_cursor(2, 1);
-	lcd_print_string(time_to_string(&current_time));
+	lcd_print_string(date_to_string(&current_date));
+#endif
+
 
 	while(1);
-    return 0;
+
+	return 0;
 }
 
 

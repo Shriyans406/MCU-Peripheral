@@ -88,4 +88,29 @@ typedef struct
 }gpio_pin_conf_t;
 
 
+/**
+* @brief  Interrupt Edge selection enum
+*/
+typedef enum
+{
+	INT_RISING_EDGE,
+	INT_FALLING_EDGE,
+	INT_RISING_FALLING_EDGE
+}int_edge_sel_t;
+
+
+/******************************************************************************/
+/*                                                                            */
+/*                      Driver exposed APIs                                   */
+/*                                                                            */
+/******************************************************************************/
+/**
+	* @brief  Initializes the gpio pin
+	* @param  *GPIOx : GPIO Port Base address
+	* @param  *gpio_pin_conf :Pointer to the pin conf structure sent by application
+	* @retval None
+	*/
+void hal_gpio_init(GPIO_TypeDef *GPIOx, gpio_pin_conf_t *gpio_pin_conf);
+
+
 #endif /* HAL_GPIO_DRIVER_H_ */

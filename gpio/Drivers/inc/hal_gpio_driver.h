@@ -144,21 +144,21 @@ void hal_gpio_set_alt_function(GPIO_TypeDef *GPIOx,uint16_t pin_no,uint16_t alt_
 	* @param  edge_sel   :  Triggering edge slection value of type "int_edge_sel_t"
 	* @retval None
 	*/
-//void hal_gpio_configure_interrupt(uint16_t pin_no, int_edge_sel_t edge_sel);
-//
-///**
-//	* @brief  Enable the interrupt for a give pin number and irq number
-//	* @param  pin_no : GPIO pin number
-//	* @param  irq_no   :  irq_number to be enabled in NVIC
-//	* @retval None
-//	*/
-//void hal_gpio_enable_interrupt(uint16_t pin_no, IRQn_Type irq_no);
-//
-///**
-//	* @brief  Clear the sticky interrupt pending bit if set
-//	* @param  pin_no : GPIO pin number
-//	* @retval None
-//	*/
-//void 	hal_gpio_clear_interrupt(uint16_t pin);
+void hal_gpio_configure_interrupt(uint16_t pin_no, int_edge_sel_t edge_sel);
+
+/**
+	* @brief  Enable the interrupt for a give pin number and irq number
+	* @param  pin_no : GPIO pin number
+	* @param  irq_no   :  irq_number to be enabled in NVIC
+	* @retval None
+	*/
+void hal_gpio_enable_interrupt(uint16_t pin_no, IRQn_Type irq_no);
+
+/**
+	* @brief  Clear the sticky interrupt pending bit if set
+	* @param  pin_no : GPIO pin number
+	* @retval None
+	*/
+void 	hal_gpio_clear_interrupt(uint16_t pin);
 
 #endif /* HAL_GPIO_DRIVER_H_ */

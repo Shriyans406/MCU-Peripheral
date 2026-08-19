@@ -27,4 +27,14 @@
 #define LED_RED       							GPIOD_PIN_14
 #define LED_BLUE      							GPIOD_PIN_15
 
+
+ void led_init(void);
+
+ void led_turn_on(GPIO_TypeDef *GPIOx, uint16_t pin);
+
+ void led_turn_off(GPIO_TypeDef *GPIOx, uint16_t pin);
+
+ void led_toggle(GPIO_TypeDef *GPIOx, uint16_t pin);
+
+
 #endif /* LED_H_ */

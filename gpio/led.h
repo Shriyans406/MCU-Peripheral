@@ -1,0 +1,30 @@
+/*
+ * led.h
+ *
+ *  Created on: Aug 19, 2026
+ *      Author: HP
+ */
+
+#ifndef LED_H_
+#define LED_H_
+
+#include "hal_gpio_driver.h"
+
+#define EXTIx_IRQn                  EXTI0_IRQn
+#define EXTIx_IRQHandler            EXTI0_IRQHandler
+
+#define GPIO_BUTTON_PIN   				  0
+#define GPIO_BUTTON_PORT  				  GPIOA
+
+
+#define GPIOD_PIN_12  						  12
+#define GPIOD_PIN_13  						  13
+#define GPIOD_PIN_14  						  14
+#define GPIOD_PIN_15  						  15
+
+#define LED_GREEN     							GPIOD_PIN_12
+#define LED_ORANGE    							GPIOD_PIN_13
+#define LED_RED       							GPIOD_PIN_14
+#define LED_BLUE      							GPIOD_PIN_15
+
+#endif /* LED_H_ */

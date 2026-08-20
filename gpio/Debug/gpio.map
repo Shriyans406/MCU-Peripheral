@@ -2090,21 +2090,62 @@ Discarded input sections
  .debug_frame   0x00000000      0x180 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o
  .ARM.attributes
                 0x00000000       0x2c ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o
- .group         0x00000000        0xc ./Drivers/hal_gpio_driver.o
- .text          0x00000000        0x0 ./Drivers/hal_gpio_driver.o
- .data          0x00000000        0x0 ./Drivers/hal_gpio_driver.o
- .bss           0x00000000        0x0 ./Drivers/hal_gpio_driver.o
- .debug_info    0x00000000       0x22 ./Drivers/hal_gpio_driver.o
- .debug_abbrev  0x00000000       0x12 ./Drivers/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .group         0x00000000        0xc ./Drivers/src/hal_gpio_driver.o
+ .text          0x00000000        0x0 ./Drivers/src/hal_gpio_driver.o
+ .data          0x00000000        0x0 ./Drivers/src/hal_gpio_driver.o
+ .bss           0x00000000        0x0 ./Drivers/src/hal_gpio_driver.o
+ .text.hal_gpio_configure_pin_mode
+                0x00000000       0x48 ./Drivers/src/hal_gpio_driver.o
+ .text.hal_gpio_configure_pin_speed
+                0x00000000       0x30 ./Drivers/src/hal_gpio_driver.o
+ .text.hal_gpio_configure_pin_otype
+                0x00000000       0x2e ./Drivers/src/hal_gpio_driver.o
+ .text.hal_gpio_configure_pin_pupd
+                0x00000000       0x30 ./Drivers/src/hal_gpio_driver.o
+ .debug_info    0x00000000      0x252 ./Drivers/src/hal_gpio_driver.o
+ .debug_abbrev  0x00000000       0xe9 ./Drivers/src/hal_gpio_driver.o
  .debug_aranges
-                0x00000000       0x18 ./Drivers/hal_gpio_driver.o
- .debug_macro   0x00000000       0x11 ./Drivers/hal_gpio_driver.o
- .debug_macro   0x00000000      0xaae ./Drivers/hal_gpio_driver.o
- .debug_line    0x00000000       0x3d ./Drivers/hal_gpio_driver.o
- .debug_str     0x00000000     0x2d94 ./Drivers/hal_gpio_driver.o
- .comment       0x00000000       0x44 ./Drivers/hal_gpio_driver.o
+                0x00000000       0x38 ./Drivers/src/hal_gpio_driver.o
+ .debug_rnglists
+                0x00000000       0x25 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0xd2 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000      0xaae ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0x22 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0x8e ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0x51 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000      0x103 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0x6a ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000      0x1df ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000      0x190 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000      0x674 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0x22 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0x1c ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0x22 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0xaf ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000      0x391 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000     0xfe73 ./Drivers/src/hal_gpio_driver.o
+ .debug_macro   0x00000000       0xb2 ./Drivers/src/hal_gpio_driver.o
+ .debug_line    0x00000000      0x57e ./Drivers/src/hal_gpio_driver.o
+ .debug_str     0x00000000    0x5c5ab ./Drivers/src/hal_gpio_driver.o
+ .comment       0x00000000       0x44 ./Drivers/src/hal_gpio_driver.o
+ .debug_frame   0x00000000       0x90 ./Drivers/src/hal_gpio_driver.o
  .ARM.attributes
-                0x00000000       0x2c ./Drivers/hal_gpio_driver.o
+                0x00000000       0x2c ./Drivers/src/hal_gpio_driver.o
  .text          0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
  .data          0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
  .bss           0x00000000        0x0 C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-exit.o)
@@ -2365,7 +2406,7 @@ LOAD ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o
 LOAD ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o
 LOAD ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o
 LOAD ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o
-LOAD ./Drivers/hal_gpio_driver.o
+LOAD ./Drivers/src/hal_gpio_driver.o
 START GROUP
 LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a
 LOAD C:/ST/STM32CubeIDE_1.18.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a

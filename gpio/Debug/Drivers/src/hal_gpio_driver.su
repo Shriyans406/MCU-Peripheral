@@ -1,4 +1,4 @@
-../Drivers/src/hal_gpio_driver.c:11:6:hal_gpio_configure_pin_mode	24	static
-../Drivers/src/hal_gpio_driver.c:25:6:hal_gpio_configure_pin_speed	24	static
-../Drivers/src/hal_gpio_driver.c:38:6:hal_gpio_configure_pin_otype	24	static
-../Drivers/src/hal_gpio_driver.c:53:6:hal_gpio_configure_pin_pupd	24	static
+../Drivers/src/hal_gpio_driver.c:14:6:hal_gpio_configure_pin_mode	24	static
+../Drivers/src/hal_gpio_driver.c:28:6:hal_gpio_configure_pin_speed	24	static
+../Drivers/src/hal_gpio_driver.c:41:6:hal_gpio_configure_pin_otype	24	static
+../Drivers/src/hal_gpio_driver.c:56:6:hal_gpio_configure_pin_pupd	24	static

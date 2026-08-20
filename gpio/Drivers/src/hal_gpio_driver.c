@@ -1,6 +1,9 @@
 #include <stdint.h>
 #include "hal_gpio_driver.h"
 
+//#include "stm32f0xx_hal.h"
+
+
 /**
 	* @brief  Configures the mode of a pin : input, output, alt or analog mode
 	* @param  *GPIOx : GPIO Port Base address

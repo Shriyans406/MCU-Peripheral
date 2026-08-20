@@ -1,2 +1,17 @@
 .metadata/
 *.log
+
+
+# Ignore build directories
+Debug/
+Release/
+bin/
+obj/
+
+# Ignore specific binary extensions
+*.o
+*.elf
+*.hex
+*.bin
+*.su
+*.d

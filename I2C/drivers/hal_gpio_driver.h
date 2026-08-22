@@ -52,3 +52,60 @@
 	#define _HAL_RCC_GPIOF_CLK_ENABLE()       (RCC->AHB1ENR |=  (1 << 5) )
 	#define _HAL_RCC_GPIOG_CLK_ENABLE()       (RCC->AHB1ENR |=  (1 << 6) )
 	#define _HAL_RCC_GPIOH_CLK_ENABLE()       (RCC->AHB1ENR |=  (1 << 7) )
+
+/******************************************************************************/
+	/*                                                                            */
+	/*                      Data Structure for GPIO pin Initialization            */
+	/*                                                                            */
+	/******************************************************************************/
+
+	/* GPIO pin configuration structure
+	 * This structure will be filled and passed to driver by the applications to
+	 * initialize the gpio pin
+	 */
+	typedef struct
+	{
+		uint32_t pin;            /*Specifies the GPIO pins to be configured */
+
+		uint32_t mode;           /*Specifies the operating mode for the selected pins */
+
+		uint32_t op_type;        /*Specifies the output type for the selected pins*/
+
+		uint32_t pull;           /*Specifies the Pull-up or Pull-Down activation for the selected pins */
+
+		uint32_t speed;          /* Specifies the speed for the selected pins */
+
+		uint32_t alternate;      /*Specifies the alternate function value,
+															 if the mode is set for alt function mode */
+	}gpio_pin_conf_t;
+
+	typedef void (*INT_CALLBCK) (void);
+
+	typedef enum
+{
+	INT_RISING_EDGE,
+	INT_FALLING_EDGE,
+	INT_RISING_FALLING_EDGE
+}int_edge_sel_t;
+	/******************************************************************************/
+	/*                                                                            */
+	/*                      Driver exposed APIs                                   */
+	/*                                                                            */
+	/******************************************************************************/
+
+	void hal_gpio_init(GPIO_TypeDef *GPIOx, gpio_pin_conf_t *gpio_pin_conf);
+
+	uint8_t hal_gpio_read_from_pin(GPIO_TypeDef *GPIOx,uint16_t pin_no);
+
+	void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx,uint16_t pin_no, uint8_t val);
+
+  void hal_gpio_set_alt_function(GPIO_TypeDef *GPIOx,uint16_t pin_no,uint16_t alt_fun_value);
+
+	void hal_gpio_configure_interrupt(uint16_t pin_no, int_edge_sel_t edge_sel, INT_CALLBCK isr);
+
+	void hal_gpio_enable_interrupt(uint16_t pin_no);
+
+	void 	hal_gpio_clear_interrupt(uint16_t pin);
+
+	#endif
+

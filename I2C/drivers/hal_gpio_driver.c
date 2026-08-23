@@ -94,3 +94,21 @@ void hal_gpio_configure_interrupt(uint16_t pin_no, int_edge_sel_t edge_sel, INT_
 	}
 
 }
+void hal_gpio_enable_interrupt(uint16_t pin_no)
+{
+	EXTI->IMR |= 1 << pin_no;
+	NVIC_EnableIRQ(EXTI0_IRQn);
+}
+
+void 	hal_gpio_clear_interrupt(uint16_t pin)
+{
+	EXTI->PR |= 1 << pin;
+
+}
+
+void EXTI0_IRQHandler(void)
+{
+	if(callback_ptr)
+
+	callback_ptr();
+}

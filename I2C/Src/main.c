@@ -20,9 +20,9 @@
 #include <string.h>
 
 //#include "hal_i2c_driver.h"
-#include "hal_gpio_driver.h"
-#include "i2c_main.h"
-#include "led.h"
+//#include "hal_gpio_driver.h"
+//#include "i2c_main.h"
+//#include "led.h"
 
 /* Uncomment to build as I2C master */
 //#define I2C_MASTER_MODE_EN

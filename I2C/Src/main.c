@@ -49,9 +49,82 @@ uint8_t master_read_req;
 
 uint8_t slave_rcv_cmd;
 
+
+extern void  hal_i2c_enable_peripheral(I2C_TypeDef *i2cx);
+extern void  hal_gpio_driver_set_alternate_function(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint16_t alt_fun_value);
+extern void  HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin);
+extern void  HAL_NVIC_SetPriority(IRQn_Type IRQn, uint32_t PreemptPriority, uint32_t SubPriority);
+extern void  HAL_NVIC_EnableIRQ(IRQn_Type IRQn);
+
+
+
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
+
+
+
+void delay_gen(void)
+{
+    uint32_t cnt = 500000;
+    while (cnt--);
+}
+
+i2c_handle_t i2c_handle;
+int TestReady = 0;
+
+void i2c_gpio_init()
+{
+    gpio_pin_conf_t i2c_scl, i2c_sda;
+
+    _HAL_RCC_GPIOB_CLK_ENABLE();
+
+    i2c_scl.pin = I2C1_SCL_LINE;
+    i2c_scl.mode = GPIO_PIN_ALT_FUN_MODE;
+    i2c_scl.op_type = GPIO_PIN_OP_TYPE_OPEN_DRAIN;
+    i2c_scl.pull = GPIO_PIN_PULL_UP;
+    i2c_scl.speed = GPIO_PIN_SPEED_HIGH;
+
+    hal_gpio_set_alt_function(GPIOB, I2C1_SCL_LINE, GPIO_PIN_AF4_I2C123);
+    hal_gpio_init(GPIOB, &i2c_scl);
+
+    i2c_sda.pin = I2C1_SDA_LINE;
+    i2c_sda.mode = GPIO_PIN_ALT_FUN_MODE;
+    i2c_sda.op_type = GPIO_PIN_OP_TYPE_OPEN_DRAIN;
+    i2c_sda.pull = GPIO_PIN_PULL_UP;
+    i2c_sda.speed = GPIO_PIN_SPEED_HIGH;
+
+    hal_gpio_set_alt_function(GPIOB, I2C1_SDA_LINE, GPIO_PIN_AF4_I2C123);
+    hal_gpio_init(GPIOB, &i2c_sda);
+}
+
+/**
+  * @brief  Compares two buffers.
+  * @param  pBuffer1, pBuffer2: buffers to be compared.
+  * @param  BufferLength: buffer's length
+  * @retval 0  : pBuffer1 identical to pBuffer2
+  *         >0 : pBuffer1 differs from pBuffer2
+  */
+static uint16_t Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength)
+{
+  while (BufferLength--)
+  {
+    if ((*pBuffer1) != *pBuffer2)
+    {
+      return BufferLength;
+    }
+    pBuffer1++;
+    pBuffer2++;
+  }
+
+  return 0;
+}
+
+void gpio_btn_interrupt_handler(void)
+{
+    hal_gpio_clear_interrupt(0);
+    TestReady = SET;
+}
 
 int main(void)
 {

@@ -128,6 +128,44 @@ void gpio_btn_interrupt_handler(void)
 
 int main(void)
 {
+    uint32_t val;
+    led_init();
+
+    i2c_gpio_init();
+
+    /* Configure USER Button */
+#ifdef I2C_MASTER_MODE_EN
+    hal_gpio_configure_interrupt(0, INT_FALLING_EDGE, gpio_btn_interrupt_handler);
+#endif
+
+    _HAL_RCC_I2C1_CLK_ENABLE();
+        i2c_handle.Instance = I2C_1;
+        i2c_handle.Init.ack_enable = I2C_ACK_ENABLE;
+        i2c_handle.Init.AddressingMode = I2C_ADDRMODE_7BIT;
+        i2c_handle.Init.ClockSpeed = 100000;
+        i2c_handle.Init.DutyCycle = I2C_FM_DUTY_2; //care needs to taken
+        i2c_handle.Init.GeneralCallMode = 0;
+        i2c_handle.Init.NoStretchMode = I2C_ENABLE_CLK_STRETCH;
+        i2c_handle.Init.OwnAddress1 = SLAVE_OWN_ADDRESS;
+
+        NVIC_EnableIRQ(I2Cx_ER_IRQn);
+        NVIC_EnableIRQ(I2Cx_EV_IRQn);
+
+        hal_i2c_init(&i2c_handle);
+        hal_i2c_enable_peripheral(i2c_handle.Instance);
+
+        hal_gpio_enable_interrupt(0);
+
+        i2c_handle.State = HAL_I2C_STATE_READY;
+
+#ifdef I2C_MASTER_MODE_EN
+    /* Wait for user Button press before starting the communication. Toggles LED3 until then */
+    while (TestReady != SET)
+    {
+        led_toggle(GPIOD, LED_ORANGE); // LED3 (orange)
+        delay_gen();
+    }
+
     /* Loop forever */
 	for(;;);
 }

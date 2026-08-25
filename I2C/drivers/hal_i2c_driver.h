@@ -53,3 +53,52 @@
 #define I2C_PERIPHERAL_CLK_FREQ_8MHZ     ((uint32_t)8 )
 #define I2C_PERIPHERAL_CLK_FREQ_9MHZ     ((uint32_t)9 )
 #define I2C_PERIPHERAL_CLK_FREQ_10MHZ     ((uint32_t)10 )
+
+
+
+/*******************  Bit definition for I2C_OAR1 register  ********************/
+#define I2C_REG_OAR1_ADDRMODE        ((uint32_t) 1 << 15 )
+#define I2C_ADDRMODE_7BIT          0
+#define I2C_ADDRMODE_10BI          1
+
+#define I2C_REG_OAR1_14TH_BIT              ((uint32_t) 1 << 14 )
+#define I2C_REG_OAR1_7BIT_ADDRESS_POS       1
+
+
+
+/*******************  Bit definition for I2C_SR1 register  ********************/
+#define I2C_REG_SR1_TIMEOUT_FLAG              ( (uint32_t) 1 << 14)
+#define I2C_REG_SR1_OVR_FLAG              ( (uint32_t) 1 << 11)
+#define I2C_REG_SR1_AF_FAILURE_FLAG            ( (uint32_t) 1 << 10)
+#define I2C_REG_SR1_ARLO_FLAG            ( (uint32_t) 1 << 9)
+#define I2C_REG_SR1_BUS_ERROR_FLAG            ( (uint32_t) 1 << 8)
+#define I2C_REG_SR1_TXE_FLAG                  ( (uint32_t) 1 << 7)
+#define I2C_REG_SR1_RXNE_FLAG                ( (uint32_t) 1 << 6)
+#define I2C_REG_SR1_STOP_DETECTION_FLAG       ( (uint32_t) 1 << 4) /*  for slave */
+#define I2C_REG_SR1_BTF_FLAG                 ( (uint32_t) 1 << 2)
+#define I2C_REG_SR1_ADDR_FLAG                 ( (uint32_t) 1 << 1)
+#define I2C_REG_SR1_ADDR_SENT_FLAG         ( (uint32_t)1 << 1 )   //For master
+#define I2C_REG_SR1_ADDR_MATCHED_FLAG           ( (uint32_t)1 << 1 ) //For SLAVE
+#define I2C_REG_SR1_SB_FLAG                 ( (uint32_t) 1 << 0)
+
+/*******************  Bit definition for I2C_SR2 register  ********************/
+#define I2C_REG_SR2_BUS_BUSY_FLAG             ( (uint32_t) 1 << 1)
+#define I2C_BUS_IS_BUSY                       1
+#define I2C_BUS_IS_FREE                       0
+
+#define I2C_REG_SR2_MSL_FLAG           ( (uint32_t) 1 << 0)
+#define I2C_MASTER_MODE                1
+#define I2C_SLAVE_MODE                 0
+
+#define I2C_REG_SR2_TRA_FLAG          ( (uint32_t) 1 << 2)
+#define I2C_RX_MODE                   0
+#define I2C_TX_MODE                   1
+
+/*******************  Bit definition for I2C_CCR register  ********************/
+#define I2C_REG_CCR_ENABLE_FM             ( (uint32_t) 1 << 15)
+#define I2C_ENABLE_SM                     0
+#define I2C_ENABLE_FM                     1
+
+#define I2C_REG_CCR_DUTY                   ( (uint32_t) 1 << 14)
+#define I2C_FM_DUTY_16BY9                  1
+#define I2C_FM_DUTY_2                      0

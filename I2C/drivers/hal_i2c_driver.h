@@ -160,3 +160,74 @@ typedef struct
 	uint8_t master;
 
 }i2c_init_t;
+
+
+
+/**
+  * @brief  I2C handle Structure definition
+  */
+
+typedef struct
+{
+	I2C_TypeDef                *Instance;  /*!< I2C registers base address     */
+
+	i2c_init_t                  Init;       /*!< I2C communication parameters   */
+
+	uint8_t                    *pBuffPtr;  /*!< Pointer to I2C transfer buffer */
+
+	uint32_t                   XferSize;   /*!< I2C transfer size              */
+
+	__IO uint32_t              XferCount;  /*!< I2C transfer counter           */
+
+	hal_i2c_state_t            State;      /*!< I2C communication state        */
+	uint32_t ErrorCode;
+
+}i2c_handle_t;
+
+#define  RESET  0
+#define  SET  !RESET
+
+/*
+Sm mode or SMBus:
+Thigh = CCR * TPCLK1
+Tlow = CCR * TPCLK1
+TPCLK1  = 1/FREQR
+Thigh = (1/sm_mode_freq ) / 2
+so caclulate CCR
+*/
+
+
+/**
+  * @brief  HAL Status structures definition
+  */
+typedef enum
+{
+  HAL_OK       = 0x00,
+  HAL_ERROR    = 0x01,
+  HAL_BUSY     = 0x02,
+  HAL_TIMEOUT  = 0x03
+} HAL_StatusTypeDef;
+
+#define UNUSED(x) ((void)(x))
+
+/******************************************************************************/
+/*                                                                            */
+/*                      Driver exposed APIs                                   */
+/*                                                                            */
+/******************************************************************************/
+
+
+void hal_i2c_init(i2c_handle_t *handle);
+
+void hal_i2c_manage_ack(I2C_TypeDef *i2cx, uint32_t ack_noack);
+
+void hal_i2c_master_tx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buffer, uint32_t len);
+void hal_i2c_master_rx(i2c_handle_t *handle, uint8_t slave_adr, uint8_t *buffer, uint32_t len);
+
+void hal_i2c_slave_tx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len);
+void hal_i2c_slave_rx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len);
+
+void HAL_I2C_EV_IRQHandler(i2c_handle_t *hi2c);
+void HAL_I2C_ER_IRQHandler(i2c_handle_t *hi2c);
+
+#endif

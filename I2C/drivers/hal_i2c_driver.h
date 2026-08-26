@@ -66,6 +66,7 @@
 
 
 
+
 /*******************  Bit definition for I2C_SR1 register  ********************/
 #define I2C_REG_SR1_TIMEOUT_FLAG              ( (uint32_t) 1 << 14)
 #define I2C_REG_SR1_OVR_FLAG              ( (uint32_t) 1 << 11)
@@ -102,3 +103,60 @@
 #define I2C_REG_CCR_DUTY                   ( (uint32_t) 1 << 14)
 #define I2C_FM_DUTY_16BY9                  1
 #define I2C_FM_DUTY_2                      0
+
+
+/******************************************************************************/
+/*                                                                            */
+/*                      Data Structures used by I2C Driver                    */
+/*                                                                            */
+/******************************************************************************/
+
+/**
+  * @brief  HAL I2C State structure definition
+  */
+typedef enum
+{
+  HAL_I2C_STATE_RESET             = 0x00,  /*!< I2C not yet initialized or disabled         */
+  HAL_I2C_STATE_READY             = 0x01,  /*!< I2C initialized and ready for use           */
+  HAL_I2C_STATE_BUSY              = 0x02,  /*!< I2C internal process is ongoing             */
+  HAL_I2C_STATE_BUSY_TX           = 0x12,  /*!< Data Transmission process is ongoing        */
+  HAL_I2C_STATE_BUSY_RX           = 0x22,  /*!< Data Reception process is ongoing           */
+  HAL_I2C_STATE_MEM_BUSY_TX       = 0x32,  /*!< Memory Data Transmission process is ongoing */
+  HAL_I2C_STATE_MEM_BUSY_RX       = 0x42,  /*!< Memory Data Reception process is ongoing    */
+  HAL_I2C_STATE_TIMEOUT           = 0x03,  /*!< I2C timeout state                           */
+  HAL_I2C_STATE_ERROR             = 0x04   /*!< I2C error state                             */
+}hal_i2c_state_t;
+
+/**
+  * @brief  I2C Configuration Structure definition
+  */
+typedef struct
+{
+	uint32_t ClockSpeed;       /*!< Specifies the clock frequency.
+													This parameter must be set to a value lower than 400kHz */
+
+	uint32_t DutyCycle;        /*!< Specifies the I2C fast mode duty cycle.
+													This parameter can be a value of @ref I2C_duty_cycle_in_fast_mode */
+
+	uint32_t OwnAddress1;      /*!< Specifies the first device own address.
+													This parameter can be a 7-bit or 10-bit address. */
+
+	uint32_t AddressingMode;   /*!< Specifies if 7-bit or 10-bit addressing mode is selected.
+													This parameter can be a value of @ref I2C_addressing_mode */
+
+	uint32_t DualAddressMode;  /*!< Specifies if dual addressing mode is selected.
+													This parameter can be a value of @ref I2C_dual_addressing_mode */
+
+	uint32_t OwnAddress2;      /*!< Specifies the second device own address if dual addressing mode is selected
+													This parameter can be a 7-bit address. */
+
+	uint32_t GeneralCallMode;  /*!< Specifies if general call mode is selected.
+													This parameter can be a value of @ref I2C_general_call_addressing_mode */
+
+	uint32_t NoStretchMode;    /*!< Specifies if nostretch mode is selected.
+													This parameter can be a value of @ref I2C_nostretch_mode */
+	uint32_t ack_enable;
+
+	uint8_t master;
+
+}i2c_init_t;

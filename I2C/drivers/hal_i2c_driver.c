@@ -157,3 +157,118 @@ void hal_i2c_configure_error_interrupt(I2C_TypeDef *i2cx, uint32_t val)
 		i2cx->CR2 &= ~I2C_REG_CR2_ERR_INT_ENABLE;
 
 }
+
+
+void 	hal_i2c_configure_evt_interrupt(I2C_TypeDef *i2cx, uint32_t val)
+{
+		if(val)
+			i2cx->CR2 |= I2C_REG_CR2_EVT_INT_ENABLE;
+	  else
+		  i2cx->CR2 &= ~I2C_REG_CR2_EVT_INT_ENABLE;
+
+}
+
+uint8_t is_bus_busy(I2C_TypeDef *i2cx)
+{
+	if(i2cx->SR2 & I2C_REG_SR2_BUS_BUSY_FLAG )
+		return 1;
+	else
+		return 0;
+}
+
+uint8_t i2c_wait_untill_sb_set(I2C_TypeDef *i2cx)
+{
+	//EV5: SB=1, cleared by reading SR1 register followed by writing DR register with Address.
+
+	if (i2cx->SR1 & I2C_REG_SR1_SB_FLAG )
+	{
+		return 1 ;
+	}
+	return 0;
+}
+
+
+uint8_t i2c_wait_untill_addr_set(I2C_TypeDef *i2cx)
+{
+	//EV6: ADDR=1, cleared by reading SR1 register followed by reading SR2.
+
+	if (i2cx->SR1 & I2C_REG_SR1_ADDR_SENT_FLAG )
+	{
+		return 1 ;
+	}
+	return 0;
+}
+
+
+void hal_i2c_init(i2c_handle_t *handle)
+{
+	hal_i2c_clk_init(handle->Instance, handle->Init.ClockSpeed,handle->Init.DutyCycle);
+	hal_i2c_set_addressing_mode(handle->Instance, handle->Init.AddressingMode);
+	hal_i2c_manage_ack(handle->Instance, handle->Init.ack_enable);
+	hal_i2c_manage_clock_stretch(handle->Instance,handle->Init.NoStretchMode);
+	hal_i2c_set_own_address1(handle->Instance,handle->Init.OwnAddress1);
+
+}
+
+void hal_i2c_send_addr_first(I2C_TypeDef *i2cx, uint8_t address)
+{
+
+	i2cx->DR = address;
+
+}
+
+
+
+void clear_addr_flag(I2C_TypeDef *i2cx)
+{
+	uint16_t val;
+
+	val = i2cx->SR1;
+	val = i2cx->SR2;
+
+}
+
+
+void hal_i2c_master_tx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buffer, uint32_t len)
+{
+
+	hal_i2c_enable_peripheral(handle->Instance);
+
+	/* doesnt care for PE = 0 */
+	while(is_bus_busy(handle->Instance) ); //need to include timeout
+
+
+
+	 /* Disable Pos */
+    handle->Instance->CR1 &= ~I2C_CR1_POS;
+
+	handle->State = HAL_I2C_STATE_BUSY_TX;
+
+	handle->pBuffPtr = buffer;
+	handle->XferCount = len;
+	handle->XferSize = len;
+
+
+
+  hal_i2c_generate_start_condition(handle->Instance);
+
+	/* wait till sb is set */
+
+	while(! i2c_wait_untill_sb_set(handle->Instance) );
+
+	//clear_sb_flag(); ???
+
+	hal_i2c_send_addr_first(handle->Instance,slave_address);
+
+
+	while ( ! i2c_wait_untill_addr_set(handle->Instance) );
+
+	clear_addr_flag(handle->Instance); // IS THIS really needed ??
+
+	/* enable the buff, err , event interrupts */
+	hal_i2c_configure_tx_rx_interrupt(handle->Instance,1);
+	hal_i2c_configure_error_interrupt(handle->Instance,1);
+	hal_i2c_configure_evt_interrupt(handle->Instance,1);
+
+
+}

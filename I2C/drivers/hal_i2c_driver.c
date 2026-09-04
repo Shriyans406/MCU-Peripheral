@@ -271,4 +271,58 @@ void hal_i2c_master_tx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buf
 	hal_i2c_configure_evt_interrupt(handle->Instance,1);
 
 
+	void hal_i2c_slave_tx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len)
+	{
+		hal_i2c_enable_peripheral(handle->Instance);
+
+		//while(is_bus_busy(handle->Instance) );
+
+		handle->Instance->CR1 &= ~I2C_CR1_POS;
+
+		handle->State = HAL_I2C_STATE_BUSY_TX;
+
+		handle->pBuffPtr = buffer;
+		handle->XferCount = len;
+		handle->XferSize = len;
+
+		 /* Enable Address Acknowledge */
+		handle->Instance->CR1 |= I2C_CR1_ACK;
+
+				/* ENABLE the buff, err , event interrupts */
+		hal_i2c_configure_tx_rx_interrupt(handle->Instance,1);
+		hal_i2c_configure_error_interrupt(handle->Instance,1);
+		hal_i2c_configure_evt_interrupt(handle->Instance,1);
+
+	}
+	void hal_i2c_slave_rx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len)
+	{
+		uint32_t val;
+
+		hal_i2c_enable_peripheral(handle->Instance);
+
+		//while(is_bus_busy(handle->Instance) );
+
+		handle->Instance->CR1 &= ~I2C_CR1_POS;
+		handle->State = HAL_I2C_STATE_BUSY_RX;
+
+		handle->pBuffPtr = buffer;
+		handle->XferCount = len;
+		handle->XferSize = len;
+
+
+
+		handle->Instance->CR1 |= I2C_CR1_ACK;
+
+			/* disable the buff, err , event interrupts */
+		hal_i2c_configure_tx_rx_interrupt(handle->Instance,1);
+		hal_i2c_configure_error_interrupt(handle->Instance,1);
+		hal_i2c_configure_evt_interrupt(handle->Instance,1);
+
+	#if 0
+		val = handle->Instance->CR2;
+		val = handle->Instance->CR1;
+			val = handle->Instance->OAR1;
+	#endif
+
+
 }

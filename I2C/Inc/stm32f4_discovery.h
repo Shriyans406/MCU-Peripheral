@@ -223,3 +223,63 @@ typedef enum
 /**
   * @}
   */
+
+
+
+/*############################### AUDIO ######################################*/
+/**
+  * @brief  AUDIO I2C Interface pins
+  */
+#define AUDIO_I2C_ADDRESS                     0x94
+
+  /* Audio Reset Pin definition */
+#define AUDIO_RESET_GPIO_CLK_ENABLE()         __GPIOD_CLK_ENABLE()
+#define AUDIO_RESET_PIN                       GPIO_PIN_4
+#define AUDIO_RESET_GPIO                      GPIOD
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+/** @defgroup STM32F4_DISCOVERY_LOW_LEVEL_Exported_Macros
+  * @{
+  */
+/**
+  * @}
+  */
+
+/** @defgroup STM32F4_DISCOVERY_LOW_LEVEL_Exported_Functions
+  * @{
+  */
+uint32_t BSP_GetVersion(void);
+void     BSP_LED_Init(Led_TypeDef Led);
+void     BSP_LED_On(Led_TypeDef Led);
+void     BSP_LED_Off(Led_TypeDef Led);
+void     BSP_LED_Toggle(Led_TypeDef Led);
+void     BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef Mode);
+uint32_t BSP_PB_GetState(Button_TypeDef Button);
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __STM32F4_DISCOVERY_H */

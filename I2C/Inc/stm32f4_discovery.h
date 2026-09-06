@@ -166,3 +166,60 @@ typedef enum
 #ifndef BSP_I2C_SPEED
  #define BSP_I2C_SPEED                            100000
 #endif /* BSP_I2C_SPEED */
+
+
+
+
+/* I2C peripheral configuration defines (control interface of the audio codec) */
+#define DISCOVERY_I2Cx                            I2C1
+#define DISCOVERY_I2Cx_CLK_ENABLE()               __I2C1_CLK_ENABLE()
+#define DISCOVERY_I2Cx_SCL_SDA_GPIO_CLK_ENABLE()  __GPIOB_CLK_ENABLE()
+#define DISCOVERY_I2Cx_SCL_SDA_AF                 GPIO_AF4_I2C1
+#define DISCOVERY_I2Cx_SCL_SDA_GPIO_PORT          GPIOB
+#define DISCOVERY_I2Cx_SCL_PIN                    GPIO_PIN_6
+#define DISCOVERY_I2Cx_SDA_PIN                    GPIO_PIN_9
+
+#define DISCOVERY_I2Cx_FORCE_RESET()              __I2C1_FORCE_RESET()
+#define DISCOVERY_I2Cx_RELEASE_RESET()            __I2C1_RELEASE_RESET()
+
+/* I2C interrupt requests */
+#define DISCOVERY_I2Cx_EV_IRQn                    I2C1_EV_IRQn
+#define DISCOVERY_I2Cx_ER_IRQn                    I2C1_ER_IRQn
+
+/* Maximum Timeout values for flags waiting loops. These timeouts are not based
+   on accurate values, they just guarantee that the application will not remain
+   stuck if the SPI communication is corrupted.
+   You may modify these timeout values depending on CPU frequency and application
+   conditions (interrupts routines ...). */
+#define I2Cx_TIMEOUT_MAX    0x1000 /*<! The value of the maximal timeout for BUS waiting loops */
+
+
+/*############################# ACCELEROMETER ################################*/
+/* Read/Write command */
+#define READWRITE_CMD                     ((uint8_t)0x80)
+/* Multiple byte read/write command */
+#define MULTIPLEBYTE_CMD                  ((uint8_t)0x40)
+/* Dummy Byte Send by the SPI Master device in order to generate the Clock to the Slave device */
+#define DUMMY_BYTE                        ((uint8_t)0x00)
+
+/* Chip Select macro definition */
+#define ACCELERO_CS_LOW()       HAL_GPIO_WritePin(ACCELERO_CS_GPIO_PORT, ACCELERO_CS_PIN, GPIO_PIN_RESET)
+#define ACCELERO_CS_HIGH()      HAL_GPIO_WritePin(ACCELERO_CS_GPIO_PORT, ACCELERO_CS_PIN, GPIO_PIN_SET)
+
+/**
+  * @brief  ACCELEROMETER Interface pins
+  */
+#define ACCELERO_CS_PIN                        GPIO_PIN_3                 /* PE.03 */
+#define ACCELERO_CS_GPIO_PORT                  GPIOE                      /* GPIOE */
+#define ACCELERO_CS_GPIO_CLK_ENABLE()          __GPIOE_CLK_ENABLE()
+#define ACCELERO_CS_GPIO_CLK_DISABLE()         __GPIOE_CLK_DISABLE()
+#define ACCELERO_INT_GPIO_PORT                 GPIOE                      /* GPIOE */
+#define ACCELERO_INT_GPIO_CLK_ENABLE()         __GPIOE_CLK_ENABLE()
+#define ACCELERO_INT_GPIO_CLK_DISABLE()        __GPIOE_CLK_DISABLE()
+#define ACCELERO_INT1_PIN                      GPIO_PIN_0                 /* PE.00 */
+#define ACCELERO_INT1_EXTI_IRQn                EXTI0_IRQn
+#define ACCELERO_INT2_PIN                      GPIO_PIN_1                 /* PE.01 */
+#define ACCELERO_INT2_EXTI_IRQn                EXTI1_IRQn
+/**
+  * @}
+  */

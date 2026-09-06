@@ -111,3 +111,58 @@ typedef enum
   * @}
   */
 
+/**
+  * @}
+  */
+
+/** @addtogroup STM32F4_DISCOVERY_LOW_LEVEL_BUTTON
+  * @{
+  */
+#define BUTTONn                          1
+
+/**
+ * @brief Wakeup push-button
+ */
+#define KEY_BUTTON_PIN                GPIO_PIN_0
+#define KEY_BUTTON_GPIO_PORT          GPIOA
+#define KEY_BUTTON_GPIO_CLK_ENABLE()  __GPIOA_CLK_ENABLE()
+#define KEY_BUTTON_GPIO_CLK_DISABLE() __GPIOA_CLK_DISABLE()
+#define KEY_BUTTON_EXTI_IRQn          EXTI0_IRQn
+
+#define BUTTONx_GPIO_CLK_ENABLE(__INDEX__)    do{if((__INDEX__) == 0) KEY_BUTTON_GPIO_CLK_ENABLE(); \
+                                                }while(0)
+
+#define BUTTONx_GPIO_CLK_DISABLE(__INDEX__)    do{if((__INDEX__) == 0) KEY_BUTTON_GPIO_CLK_DISABLE(); \
+                                                 }while(0)
+/**
+  * @}
+  */
+
+/** @addtogroup STM32F4_DISCOVERY_LOW_LEVEL_BUS
+  * @{
+  */
+
+/*############################### SPI1 #######################################*/
+#define DISCOVERY_SPIx                              SPI1
+#define DISCOVERY_SPIx_CLK_ENABLE()                 __SPI1_CLK_ENABLE()
+#define DISCOVERY_SPIx_GPIO_PORT                    GPIOA                      /* GPIOA */
+#define DISCOVERY_SPIx_AF                           GPIO_AF5_SPI1
+#define DISCOVERY_SPIx_GPIO_CLK_ENABLE()            __GPIOA_CLK_ENABLE()
+#define DISCOVERY_SPIx_GPIO_CLK_DISABLE()           __GPIOA_CLK_DISABLE()
+#define DISCOVERY_SPIx_SCK_PIN                      GPIO_PIN_5                 /* PA.05 */
+#define DISCOVERY_SPIx_MISO_PIN                     GPIO_PIN_6                 /* PA.06 */
+#define DISCOVERY_SPIx_MOSI_PIN                     GPIO_PIN_7                 /* PA.07 */
+
+/* Maximum Timeout values for flags waiting loops. These timeouts are not based
+   on accurate values, they just guarantee that the application will not remain
+   stuck if the SPI communication is corrupted.
+   You may modify these timeout values depending on CPU frequency and application
+   conditions (interrupts routines ...). */
+#define SPIx_TIMEOUT_MAX                            0x1000 /*<! The value of the maximal timeout for BUS waiting loops */
+
+
+/*############################# I2C1 #########################################*/
+/* I2C clock speed configuration (in Hz) */
+#ifndef BSP_I2C_SPEED
+ #define BSP_I2C_SPEED                            100000
+#endif /* BSP_I2C_SPEED */

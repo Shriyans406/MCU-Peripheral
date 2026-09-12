@@ -12,10 +12,10 @@
    conditionally. These headers are expected to be provided by your
    toolchain (CMSIS / STM32 HAL include paths). */
 #if defined(STM32F0)
-#include "stm32f0xx.h"
+#include "stm32f407xx.h"
 #include "stm32f0xx_hal.h"
-#include "stm32f0xx_hal_i2c.h"
-#include "stm32f0xx_hal_gpio.h"
+#include "hal_i2c_driver.h"
+#include "hal_gpio_driver.h"
 #elif defined(STM32F4)
 #include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"

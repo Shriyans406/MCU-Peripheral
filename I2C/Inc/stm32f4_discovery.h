@@ -5,12 +5,7 @@
  *      Author: HP
  */
 
-#ifndef STM32F4_DISCOVERY_H_
-#define STM32F4_DISCOVERY_H_
 
-
-
-#endif /* STM32F4_DISCOVERY_H_ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F4_DISCOVERY_H

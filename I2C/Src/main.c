@@ -13,7 +13,7 @@
    toolchain (CMSIS / STM32 HAL include paths). */
 #if defined(STM32F0)
 #include "stm32f407xx.h"
-#include "stm32f0xx_hal.h"
+//#include "stm32f0xx_hal.h"
 #include "hal_i2c_driver.h"
 #include "hal_gpio_driver.h"
 #elif defined(STM32F4)

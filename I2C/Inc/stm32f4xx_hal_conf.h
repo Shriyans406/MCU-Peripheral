@@ -168,4 +168,82 @@
  #define PHY_BCR                         ((uint16_t)0x00)    /*!< Transceiver Basic Control Register   */
  #define PHY_BSR                         ((uint16_t)0x01)    /*!< Transceiver Basic Status Register    */
 
+
+#define PHY_RESET                       ((uint16_t)0x8000)  /*!< PHY Reset */
+#define PHY_LOOPBACK                    ((uint16_t)0x4000)  /*!< Select loop-back mode */
+#define PHY_FULLDUPLEX_100M             ((uint16_t)0x2100)  /*!< Set the full-duplex mode at 100 Mb/s */
+#define PHY_HALFDUPLEX_100M             ((uint16_t)0x2000)  /*!< Set the half-duplex mode at 100 Mb/s */
+#define PHY_FULLDUPLEX_10M              ((uint16_t)0x0100)  /*!< Set the full-duplex mode at 10 Mb/s  */
+#define PHY_HALFDUPLEX_10M              ((uint16_t)0x0000)  /*!< Set the half-duplex mode at 10 Mb/s  */
+#define PHY_AUTONEGOTIATION             ((uint16_t)0x1000)  /*!< Enable auto-negotiation function     */
+#define PHY_RESTART_AUTONEGOTIATION     ((uint16_t)0x0200)  /*!< Restart auto-negotiation function    */
+#define PHY_POWERDOWN                   ((uint16_t)0x0800)  /*!< Select the power down mode           */
+#define PHY_ISOLATE                     ((uint16_t)0x0400)  /*!< Isolate PHY from MII                 */
+
+#define PHY_AUTONEGO_COMPLETE           ((uint16_t)0x0020)  /*!< Auto-Negotiation process completed   */
+#define PHY_LINKED_STATUS               ((uint16_t)0x0004)  /*!< Valid link established               */
+#define PHY_JABBER_DETECTION            ((uint16_t)0x0002)  /*!< Jabber condition detected            */
+
+/* Section 4: Extended PHY Registers */
+
+#define PHY_SR                          ((uint16_t)0x10)    /*!< PHY status register Offset                      */
+#define PHY_MICR                        ((uint16_t)0x11)    /*!< MII Interrupt Control Register                  */
+#define PHY_MISR                        ((uint16_t)0x12)    /*!< MII Interrupt Status and Misc. Control Register */
+
+#define PHY_LINK_STATUS                 ((uint16_t)0x0001)  /*!< PHY Link mask                                   */
+#define PHY_SPEED_STATUS                ((uint16_t)0x0002)  /*!< PHY Speed mask                                  */
+#define PHY_DUPLEX_STATUS               ((uint16_t)0x0004)  /*!< PHY Duplex mask                                 */
+
+#define PHY_MICR_INT_EN                 ((uint16_t)0x0002)  /*!< PHY Enable interrupts                           */
+#define PHY_MICR_INT_OE                 ((uint16_t)0x0001)  /*!< PHY Enable output interrupt events              */
+
+#define PHY_MISR_LINK_INT_EN            ((uint16_t)0x0020)  /*!< Enable Interrupt on change of link status       */
+#define PHY_LINK_INTERRUPT              ((uint16_t)0x2000)  /*!< PHY link status interrupt mask                  */
+
+
+ /* Includes ------------------------------------------------------------------*/
+ /**
+   * @brief Include module's header file
+   */
+
+ #ifdef HAL_RCC_MODULE_ENABLED
+   #include "stm32f4xx_hal_rcc.h"
+ #endif /* HAL_RCC_MODULE_ENABLED */
+
+ #ifdef HAL_GPIO_MODULE_ENABLED
+   #include "stm32f4xx_hal_gpio.h"
+ #endif /* HAL_GPIO_MODULE_ENABLED */
+
+ #ifdef HAL_DMA_MODULE_ENABLED
+   #include "stm32f4xx_hal_dma.h"
+ #endif /* HAL_DMA_MODULE_ENABLED */
+
+ #ifdef HAL_CORTEX_MODULE_ENABLED
+   #include "stm32f4xx_hal_cortex.h"
+ #endif /* HAL_CORTEX_MODULE_ENABLED */
+
+ #ifdef HAL_ADC_MODULE_ENABLED
+   #include "stm32f4xx_hal_adc.h"
+ #endif /* HAL_ADC_MODULE_ENABLED */
+
+#ifdef HAL_CAN_MODULE_ENABLED
+  #include "stm32f4xx_hal_can.h"
+#endif /* HAL_CAN_MODULE_ENABLED */
+
+#ifdef HAL_CRC_MODULE_ENABLED
+  #include "stm32f4xx_hal_crc.h"
+#endif /* HAL_CRC_MODULE_ENABLED */
+
+#ifdef HAL_CRYP_MODULE_ENABLED
+  #include "stm32f4xx_hal_cryp.h"
+#endif /* HAL_CRYP_MODULE_ENABLED */
+
+#ifdef HAL_DMA2D_MODULE_ENABLED
+  #include "stm32f4xx_hal_dma2d.h"
+#endif /* HAL_DMA2D_MODULE_ENABLED */
+
+#ifdef HAL_DAC_MODULE_ENABLED
+  #include "stm32f4xx_hal_dac.h"
+#endif /* HAL_DAC_MODULE_ENABLED */
+
 #endif /* STM32F4XX_HAL_CONF_H_ */

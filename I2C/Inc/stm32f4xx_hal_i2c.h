@@ -252,5 +252,69 @@
        UNUSED(tmpreg);                             \
      } while(0)
 
+   /** @brief  Clears the I2C STOPF pending flag.
+     * @param  __HANDLE__: specifies the I2C Handle.
+     *         This parameter can be I2C where x: 1, 2, or 3 to select the I2C peripheral.
+     * @retval None
+     */
+   #define __HAL_I2C_CLEAR_STOPFLAG(__HANDLE__)    \
+     do{                                           \
+       __IO uint32_t tmpreg = 0x00;                \
+       tmpreg = (__HANDLE__)->Instance->SR1;       \
+       (__HANDLE__)->Instance->CR1 |= I2C_CR1_PE;  \
+       UNUSED(tmpreg);                             \
+     } while(0)
+
+   #define __HAL_I2C_ENABLE(__HANDLE__)                             ((__HANDLE__)->Instance->CR1 |=  I2C_CR1_PE)
+   #define __HAL_I2C_DISABLE(__HANDLE__)                            ((__HANDLE__)->Instance->CR1 &=  ~I2C_CR1_PE)
+
+   /**
+     * @}
+     */
+
+
+
+   /**
+     * @}
+     */
+
+   /**
+     * @}
+     */
+   /* Private types -------------------------------------------------------------*/
+   /* Private variables ---------------------------------------------------------*/
+   /* Private constants ---------------------------------------------------------*/
+   /** @defgroup I2C_Private_Constants I2C Private Constants
+     * @{
+     */
+   #define I2C_FLAG_MASK  ((uint32_t)0x0000FFFF)
+   /**
+     * @}
+     */
+
+   /* Private macros ------------------------------------------------------------*/
+   /** @defgroup I2C_Private_Macros I2C Private Macros
+     * @{
+     */
+
+   #define I2C_FREQRANGE(__PCLK__)                            ((__PCLK__)/1000000)
+   #define I2C_RISE_TIME(__FREQRANGE__, __SPEED__)            (((__SPEED__) <= 100000) ? ((__FREQRANGE__) + 1) : ((((__FREQRANGE__) * 300) / 1000) + 1))
+   #define I2C_SPEED_STANDARD(__PCLK__, __SPEED__)            (((((__PCLK__)/((__SPEED__) << 1)) & I2C_CCR_CCR) < 4)? 4:((__PCLK__) / ((__SPEED__) << 1)))
+   #define I2C_SPEED_FAST(__PCLK__, __SPEED__, __DUTYCYCLE__) (((__DUTYCYCLE__) == I2C_DUTYCYCLE_2)? ((__PCLK__) / ((__SPEED__) * 3)) : (((__PCLK__) / ((__SPEED__) * 25)) | I2C_DUTYCYCLE_16_9))
+   #define I2C_SPEED(__PCLK__, __SPEED__, __DUTYCYCLE__)      (((__SPEED__) <= 100000)? (I2C_SPEED_STANDARD((__PCLK__), (__SPEED__))) : \
+                                                                     ((I2C_SPEED_FAST((__PCLK__), (__SPEED__), (__DUTYCYCLE__)) & I2C_CCR_CCR) == 0)? 1 : \
+                                                                     ((I2C_SPEED_FAST((__PCLK__), (__SPEED__), (__DUTYCYCLE__))) | I2C_CCR_FS))
+
+   #define I2C_7BIT_ADD_WRITE(__ADDRESS__)                    ((uint8_t)((__ADDRESS__) & (~I2C_OAR1_ADD0)))
+   #define I2C_7BIT_ADD_READ(__ADDRESS__)                     ((uint8_t)((__ADDRESS__) | I2C_OAR1_ADD0))
+
+   #define I2C_10BIT_ADDRESS(__ADDRESS__)                     ((uint8_t)((uint16_t)((__ADDRESS__) & (uint16_t)(0x00FF))))
+   #define I2C_10BIT_HEADER_WRITE(__ADDRESS__)                ((uint8_t)((uint16_t)((uint16_t)(((uint16_t)((__ADDRESS__) & (uint16_t)(0x0300))) >> 7) | (uint16_t)(0xF0))))
+   #define I2C_10BIT_HEADER_READ(__ADDRESS__)                 ((uint8_t)((uint16_t)((uint16_t)(((uint16_t)((__ADDRESS__) & (uint16_t)(0x0300))) >> 7) | (uint16_t)(0xF1))))
+
+   #define I2C_MEM_ADD_MSB(__ADDRESS__)                       ((uint8_t)((uint16_t)(((uint16_t)((__ADDRESS__) & (uint16_t)(0xFF00))) >> 8)))
+   #define I2C_MEM_ADD_LSB(__ADDRESS__)                       ((uint8_t)((uint16_t)((__ADDRESS__) & (uint16_t)(0x00FF))))
+
+
 
 #endif /* STM32F4XX_HAL_I2C_H_ */

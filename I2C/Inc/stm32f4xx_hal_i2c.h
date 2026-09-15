@@ -122,6 +122,49 @@
    * @}
    */
 
+   /** @defgroup I2C_Flag_definition I2C Flag definition
+     * @{
+     */
+   #define I2C_FLAG_SMBALERT               ((uint32_t)0x00018000)
+   #define I2C_FLAG_TIMEOUT                ((uint32_t)0x00014000)
+   #define I2C_FLAG_PECERR                 ((uint32_t)0x00011000)
+   #define I2C_FLAG_OVR                    ((uint32_t)0x00010800)
+   #define I2C_FLAG_AF                     ((uint32_t)0x00010400)
+   #define I2C_FLAG_ARLO                   ((uint32_t)0x00010200)
+   #define I2C_FLAG_BERR                   ((uint32_t)0x00010100)
+   #define I2C_FLAG_TXE                    ((uint32_t)0x00010080)
+   #define I2C_FLAG_RXNE                   ((uint32_t)0x00010040)
+   #define I2C_FLAG_STOPF                  ((uint32_t)0x00010010)
+   #define I2C_FLAG_ADD10                  ((uint32_t)0x00010008)
+   #define I2C_FLAG_BTF                    ((uint32_t)0x00010004)
+   #define I2C_FLAG_ADDR                   ((uint32_t)0x00010002)
+   #define I2C_FLAG_SB                     ((uint32_t)0x00010001)
+   #define I2C_FLAG_DUALF                  ((uint32_t)0x00100080)
+   #define I2C_FLAG_SMBHOST                ((uint32_t)0x00100040)
+   #define I2C_FLAG_SMBDEFAULT             ((uint32_t)0x00100020)
+   #define I2C_FLAG_GENCALL                ((uint32_t)0x00100010)
+   #define I2C_FLAG_TRA                    ((uint32_t)0x00100004)
+   #define I2C_FLAG_BUSY                   ((uint32_t)0x00100002)
+   #define I2C_FLAG_MSL                    ((uint32_t)0x00100001)
+   /**
+     * @}
+     */
+
+   /**
+     * @}
+     */
+
+   /* Exported macro ------------------------------------------------------------*/
+   /** @defgroup I2C_Exported_Macros I2C Exported Macros
+     * @{
+     */
+
+   /** @brief Reset I2C handle state
+     * @param  __HANDLE__: specifies the I2C Handle.
+     *         This parameter can be I2C where x: 1, 2, or 3 to select the I2C peripheral.
+     * @retval None
+     */
+   #define __HAL_I2C_RESET_HANDLE_STATE(__HANDLE__) ((__HANDLE__)->State = HAL_I2C_STATE_RESET)
 
 
 #endif /* STM32F4XX_HAL_I2C_H_ */

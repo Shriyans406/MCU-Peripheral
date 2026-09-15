@@ -166,5 +166,91 @@
      */
    #define __HAL_I2C_RESET_HANDLE_STATE(__HANDLE__) ((__HANDLE__)->State = HAL_I2C_STATE_RESET)
 
+   /** @brief  Enable or disable the specified I2C interrupts.
+     * @param  __HANDLE__: specifies the I2C Handle.
+     *         This parameter can be I2C where x: 1, 2, or 3 to select the I2C peripheral.
+     * @param  __INTERRUPT__: specifies the interrupt source to enable or disable.
+     *         This parameter can be one of the following values:
+     *            @arg I2C_IT_BUF: Buffer interrupt enable
+     *            @arg I2C_IT_EVT: Event interrupt enable
+     *            @arg I2C_IT_ERR: Error interrupt enable
+     * @retval None
+     */
+   #define __HAL_I2C_ENABLE_IT(__HANDLE__, __INTERRUPT__)   ((__HANDLE__)->Instance->CR2 |= (__INTERRUPT__))
+   #define __HAL_I2C_DISABLE_IT(__HANDLE__, __INTERRUPT__)  ((__HANDLE__)->Instance->CR2 &= (~(__INTERRUPT__)))
+
+   /** @brief  Checks if the specified I2C interrupt source is enabled or disabled.
+     * @param  __HANDLE__: specifies the I2C Handle.
+     *         This parameter can be I2C where x: 1, 2, or 3 to select the I2C peripheral.
+     * @param  __INTERRUPT__: specifies the I2C interrupt source to check.
+     *          This parameter can be one of the following values:
+     *            @arg I2C_IT_BUF: Buffer interrupt enable
+     *            @arg I2C_IT_EVT: Event interrupt enable
+     *            @arg I2C_IT_ERR: Error interrupt enable
+     * @retval The new state of __INTERRUPT__ (TRUE or FALSE).
+     */
+   #define __HAL_I2C_GET_IT_SOURCE(__HANDLE__, __INTERRUPT__) ((((__HANDLE__)->Instance->CR2 & (__INTERRUPT__)) == (__INTERRUPT__)) ? SET : RESET)
+
+   /** @brief  Checks whether the specified I2C flag is set or not.
+     * @param  __HANDLE__: specifies the I2C Handle.
+     *         This parameter can be I2C where x: 1, 2, or 3 to select the I2C peripheral.
+     * @param  __FLAG__: specifies the flag to check.
+     *         This parameter can be one of the following values:
+     *            @arg I2C_FLAG_SMBALERT: SMBus Alert flag
+     *            @arg I2C_FLAG_TIMEOUT: Timeout or Tlow error flag
+     *            @arg I2C_FLAG_PECERR: PEC error in reception flag
+     *            @arg I2C_FLAG_OVR: Overrun/Underrun flag
+     *            @arg I2C_FLAG_AF: Acknowledge failure flag
+     *            @arg I2C_FLAG_ARLO: Arbitration lost flag
+     *            @arg I2C_FLAG_BERR: Bus error flag
+     *            @arg I2C_FLAG_TXE: Data register empty flag
+     *            @arg I2C_FLAG_RXNE: Data register not empty flag
+     *            @arg I2C_FLAG_STOPF: Stop detection flag
+     *            @arg I2C_FLAG_ADD10: 10-bit header sent flag
+     *            @arg I2C_FLAG_BTF: Byte transfer finished flag
+     *            @arg I2C_FLAG_ADDR: Address sent flag
+     *                                Address matched flag
+     *            @arg I2C_FLAG_SB: Start bit flag
+     *            @arg I2C_FLAG_DUALF: Dual flag
+     *            @arg I2C_FLAG_SMBHOST: SMBus host header
+     *            @arg I2C_FLAG_SMBDEFAULT: SMBus default header
+     *            @arg I2C_FLAG_GENCALL: General call header flag
+     *            @arg I2C_FLAG_TRA: Transmitter/Receiver flag
+     *            @arg I2C_FLAG_BUSY: Bus busy flag
+     *            @arg I2C_FLAG_MSL: Master/Slave flag
+     * @retval The new state of __FLAG__ (TRUE or FALSE).
+     */
+   #define __HAL_I2C_GET_FLAG(__HANDLE__, __FLAG__) ((((uint8_t)((__FLAG__) >> 16)) == 0x01)?((((__HANDLE__)->Instance->SR1) & ((__FLAG__) & I2C_FLAG_MASK)) == ((__FLAG__) & I2C_FLAG_MASK)): \
+                                                    ((((__HANDLE__)->Instance->SR2) & ((__FLAG__) & I2C_FLAG_MASK)) == ((__FLAG__) & I2C_FLAG_MASK)))
+
+   /** @brief  Clears the I2C pending flags which are cleared by writing 0 in a specific bit.
+     * @param  __HANDLE__: specifies the I2C Handle.
+     *         This parameter can be I2C where x: 1, 2, or 3 to select the I2C peripheral.
+     * @param  __FLAG__: specifies the flag to clear.
+     *         This parameter can be any combination of the following values:
+     *            @arg I2C_FLAG_SMBALERT: SMBus Alert flag
+     *            @arg I2C_FLAG_TIMEOUT: Timeout or Tlow error flag
+     *            @arg I2C_FLAG_PECERR: PEC error in reception flag
+     *            @arg I2C_FLAG_OVR: Overrun/Underrun flag (Slave mode)
+     *            @arg I2C_FLAG_AF: Acknowledge failure flag
+     *            @arg I2C_FLAG_ARLO: Arbitration lost flag (Master mode)
+     *            @arg I2C_FLAG_BERR: Bus error flag
+     * @retval None
+     */
+   #define __HAL_I2C_CLEAR_FLAG(__HANDLE__, __FLAG__) ((__HANDLE__)->Instance->SR1 = ~((__FLAG__) & I2C_FLAG_MASK))
+
+   /** @brief  Clears the I2C ADDR pending flag.
+     * @param  __HANDLE__: specifies the I2C Handle.
+     *         This parameter can be I2C where x: 1, 2, or 3 to select the I2C peripheral.
+     * @retval None
+     */
+   #define __HAL_I2C_CLEAR_ADDRFLAG(__HANDLE__)    \
+     do{                                           \
+       __IO uint32_t tmpreg = 0x00;                \
+       tmpreg = (__HANDLE__)->Instance->SR1;       \
+       tmpreg = (__HANDLE__)->Instance->SR2;       \
+       UNUSED(tmpreg);                             \
+     } while(0)
+
 
 #endif /* STM32F4XX_HAL_I2C_H_ */

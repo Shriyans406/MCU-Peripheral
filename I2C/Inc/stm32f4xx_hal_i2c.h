@@ -315,6 +315,25 @@
    #define I2C_MEM_ADD_MSB(__ADDRESS__)                       ((uint8_t)((uint16_t)(((uint16_t)((__ADDRESS__) & (uint16_t)(0xFF00))) >> 8)))
    #define I2C_MEM_ADD_LSB(__ADDRESS__)                       ((uint8_t)((uint16_t)((__ADDRESS__) & (uint16_t)(0x00FF))))
 
+   /** @defgroup I2C_IS_RTC_Definitions I2C Private macros to check input parameters
+     * @{
+     */
+   #define IS_I2C_DUTY_CYCLE(CYCLE) (((CYCLE) == I2C_DUTYCYCLE_2) || \
+                                     ((CYCLE) == I2C_DUTYCYCLE_16_9))
+   #define IS_I2C_ADDRESSING_MODE(ADDRESS) (((ADDRESS) == I2C_ADDRESSINGMODE_7BIT) || \
+                                            ((ADDRESS) == I2C_ADDRESSINGMODE_10BIT))
+   #define IS_I2C_DUAL_ADDRESS(ADDRESS) (((ADDRESS) == I2C_DUALADDRESS_DISABLE) || \
+                                         ((ADDRESS) == I2C_DUALADDRESS_ENABLE))
+   #define IS_I2C_GENERAL_CALL(CALL) (((CALL) == I2C_GENERALCALL_DISABLE) || \
+                                      ((CALL) == I2C_GENERALCALL_ENABLE))
+   #define IS_I2C_NO_STRETCH(STRETCH) (((STRETCH) == I2C_NOSTRETCH_DISABLE) || \
+                                       ((STRETCH) == I2C_NOSTRETCH_ENABLE))
+   #define IS_I2C_MEMADD_SIZE(SIZE) (((SIZE) == I2C_MEMADD_SIZE_8BIT) || \
+                                     ((SIZE) == I2C_MEMADD_SIZE_16BIT))
+   #define IS_I2C_CLOCK_SPEED(SPEED) (((SPEED) > 0) && ((SPEED) <= 400000))
+   #define IS_I2C_OWN_ADDRESS1(ADDRESS1) (((ADDRESS1) & (uint32_t)(0xFFFFFC00)) == 0)
+   #define IS_I2C_OWN_ADDRESS2(ADDRESS2) (((ADDRESS2) & (uint32_t)(0xFFFFFF01)) == 0)
+
 
 
 #endif /* STM32F4XX_HAL_I2C_H_ */

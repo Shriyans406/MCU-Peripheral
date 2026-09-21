@@ -2,8 +2,15 @@
 #define __HAL_I2C_DRIVER_H
 
 #include "stm32f407xx.h"
-#include  <stdint.h>
+#include <stdint.h>
 
+#ifndef RESET
+#define RESET 0U
+#endif
+
+#ifndef SET
+#define SET 1U
+#endif
 
 /* I2C device base address */
 #define I2C_1 I2C1

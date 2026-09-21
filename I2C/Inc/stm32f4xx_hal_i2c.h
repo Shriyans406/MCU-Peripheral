@@ -334,6 +334,35 @@
    #define IS_I2C_OWN_ADDRESS1(ADDRESS1) (((ADDRESS1) & (uint32_t)(0xFFFFFC00)) == 0)
    #define IS_I2C_OWN_ADDRESS2(ADDRESS2) (((ADDRESS2) & (uint32_t)(0xFFFFFF01)) == 0)
 
+   /**
+     * @}
+     */
+
+   /**
+     * @}
+     */
+
+   /* Private functions ---------------------------------------------------------*/
+   /** @defgroup I2C_Private_Functions I2C Private Functions
+     * @{
+     */
+
+   /**
+     * @}
+     */
+
+   /**
+     * @}
+     */
+
+   /**
+     * @}
+     */
+
+   #ifdef __cplusplus
+   }
+   #endif
+
 
 
 #endif /* STM32F4XX_HAL_I2C_H_ */

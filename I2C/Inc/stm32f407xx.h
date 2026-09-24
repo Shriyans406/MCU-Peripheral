@@ -79,6 +79,9 @@
 #define SYSCFG_BASEADDR        				(APB2PERIPH_BASEADDR + 0x3800)
 #define USART1_BASEADDR						(APB2PERIPH_BASEADDR + 0x1000)
 #define USART6_BASEADDR						(APB2PERIPH_BASEADDR + 0x1400)
+
+#define I2C_CR1_POS 11U
+
 typedef struct
 {
 	__vo uint32_t MODER;
@@ -506,11 +509,53 @@ typedef struct
 #define USART_SR_LBD        			8
 #define USART_SR_CTS        			9
 
+
+#ifndef __IO
+#define __IO __vo
+#endif
+
+typedef GPIO_RegDef_t GPIO_TypeDef;
+typedef I2C_RegDef_t I2C_TypeDef;
+
+typedef int32_t IRQn_Type;
+
+#define EXTI0_IRQn       ((IRQn_Type)IRQ_NO_EXTI0)
+#define I2C1_EV_IRQn     ((IRQn_Type)IRQ_NO_I2C1_EV)
+#define I2C1_ER_IRQn     ((IRQn_Type)IRQ_NO_I2C1_ER)
+
 //#include "stm32f407xx_gpio_driver.h"
 //#include "stm32f407xx_spi_driver.h"
 //#include "stm32f407xx_i2c_driver.h"
 //#include "stm32f407xx_usart_driver.h"
 //#include "stm32f407xx_rcc_driver.h"
 
+static inline void NVIC_EnableIRQ(IRQn_Type IRQn)
+{
+    uint32_t irq_number;
+
+    if (IRQn < 0)
+    {
+        return;
+    }
+
+    irq_number = (uint32_t)IRQn;
+
+    if (irq_number < 32U)
+    {
+        *NVIC_ISER0 |= (1UL << irq_number);
+    }
+    else if (irq_number < 64U)
+    {
+        *NVIC_ISER1 |= (1UL << (irq_number - 32U));
+    }
+    else if (irq_number < 96U)
+    {
+        *NVIC_ISER2 |= (1UL << (irq_number - 64U));
+    }
+    else
+    {
+        *NVIC_ISER3 |= (1UL << (irq_number - 96U));
+    }
+}
 
 #endif /* INC_STM32F407XX_H_ */

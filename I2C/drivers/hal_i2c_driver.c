@@ -1,417 +1,248 @@
-//#include "hal_i2c_driver.h"
-//#include "led.h"
-//
-//void hal_i2c_enable_peripheral(I2C_TypeDef *i2cx)
-//{
-//	i2cx->CR1 |= I2C_REG_CR1_ENABLE_I2C;
-//}
-//
-//void hal_i2c_disable_peripheral(I2C_TypeDef *i2cx)
-//{
-//	i2cx->CR1 &= ~I2C_REG_CR1_ENABLE_I2C;
-//
-//}
-//
-//
-//
-//void hal_i2c_set_own_address1(I2C_TypeDef *i2cx, uint32_t own_address)
-//{
-//	i2cx->OAR1 &= ~( 0x7f << 1);
-//	i2cx->OAR1 |=  (own_address << 1);
-//}
-//
-//
-//void hal_i2c_manage_clock_stretch(I2C_TypeDef *i2cx, uint32_t no_stretch)
-//{
-//	if(no_stretch)
-//	{
-//		i2cx->CR1 |= I2C_REG_CR1_NOSTRETCH;
-//	}else
-//	{
-//		i2cx->CR1 &= ~I2C_REG_CR1_NOSTRETCH;
-//	}
-//}
-//
-//
-//void hal_i2c_configure_ccr(I2C_TypeDef *i2cx, uint32_t pclk, uint32_t clkspeed, uint32_t duty_cycle)
-//{
-//
-//
-//	double Thigh, Tlow,  Tpclk;
-//	uint32_t ccr;
-//	if(clkspeed <= 100000)
-//	{
-//		/* configure ccr for standard mode */
-//		ccr = ( pclk * 1000000) / (clkspeed << 1);
-//
-//	}else
-//	{
-//		 if(duty_cycle == I2C_FM_DUTY_2)
-//		 {
-//			 ccr = ( pclk * 1000000)/(3 * clkspeed);
-//
-//		 }
-//
-//		  if(duty_cycle == I2C_FM_DUTY_16BY9)
-//		 {
-//			 /* this is to reach 400khz in fm mode */
-//			ccr = ( pclk * 1000000)/(25 * clkspeed);
-//
-//		 }
-//	}
-//
-//	i2cx->CCR |= ccr;
-//
-//}
-//
-//void hal_i2c_rise_time_configuration(I2C_TypeDef *i2cx,uint32_t freqrange, uint32_t ClockSpeed)
-//{
-//	  /*---------------------------- I2Cx TRISE Configuration --------------------*/
-//  /* Configure I2Cx: Rise Time */
-////  hi2c->Instance->TRISE = I2C_RISE_TIME(freqrange, hi2c->Init.ClockSpeed);
-//
-//	uint32_t trise;
-//	if( ClockSpeed <= 100000)
-//	{
-//		trise = freqrange +1;
-//	}else
-//	{
-//		trise = (((freqrange * 300) / 1000) + 1);
-//	}
-//
-//		i2cx->TRISE  &= ~(0x3F);
-//		i2cx->TRISE  |= trise;
-//
-//}
-//
-//void hal_i2c_clk_init(I2C_TypeDef *i2cx, uint32_t clkspeed, uint32_t duty_cycle)
-//{
-//	uint32_t pclk = I2C_PERIPHERAL_CLK_FREQ_8MHZ;
-//	i2cx->CR2 |= (pclk );
-//	hal_i2c_rise_time_configuration(i2cx,pclk, clkspeed);
-//	hal_i2c_configure_ccr(i2cx,pclk,clkspeed,duty_cycle);
-//}
-//
-//
-//void hal_i2c_set_addressing_mode(I2C_TypeDef *i2cx, uint32_t adr_mode)
-//{
-//	if(adr_mode == I2C_ADDRMODE_10BI)
-//		i2cx->OAR1 |= I2C_REG_OAR1_ADDRMODE;
-//	else
-//		i2cx->OAR1 &= ~I2C_REG_OAR1_ADDRMODE;
-//}
-//
-//
-//
-//void hal_i2c_set_fm_mode_duty_cycle(I2C_TypeDef *i2cx, uint32_t duty_cycle)
-//{
-//	if(duty_cycle == I2C_FM_DUTY_16BY9 )
-//	{
-//     i2cx->CCR |= I2C_REG_CCR_DUTY;
-//	}else
-//  {
-//     i2cx->CCR &= ~I2C_REG_CCR_DUTY;
-//	}
-//
-//}
-//
-//
-//void hal_i2c_manage_ack(I2C_TypeDef *i2cx, uint32_t ack_noack)
-//{
-//	if(ack_noack == I2C_ACK_ENABLE)
-//		i2cx->CR1 |= I2C_REG_CR1_ACK;
-//	else
-//		i2cx->CR1 &= ~I2C_REG_CR1_ACK;
-//}
-//
-//void hal_i2c_generate_start_condition(I2C_TypeDef *i2cx)
-//{
-//	i2cx->CR1 |= I2C_REG_CR1_START_GEN;
-//
-//}
-//
-//void hal_i2c_generate_stop_condition(I2C_TypeDef *i2cx)
-//{
-//	i2cx->CR1 |= I2C_REG_CR1_STOP_GEN;
-//
-//}
-//
-//void hal_i2c_configure_tx_rx_interrupt(I2C_TypeDef *i2cx, uint32_t val)
-//{
-//	if(val)
-//	  i2cx->CR2 |= I2C_REG_CR2_BUF_INT_ENABLE;
-//	else
-//		i2cx->CR2 &= ~I2C_REG_CR2_BUF_INT_ENABLE;
-//
-//}
-//
-//
-//
-//
-//void hal_i2c_configure_error_interrupt(I2C_TypeDef *i2cx, uint32_t val)
-//{
-//
-//	if(val)
-//	  i2cx->CR2 |= I2C_REG_CR2_ERR_INT_ENABLE;
-//	else
-//		i2cx->CR2 &= ~I2C_REG_CR2_ERR_INT_ENABLE;
-//
-//}
-//
-//
-//void 	hal_i2c_configure_evt_interrupt(I2C_TypeDef *i2cx, uint32_t val)
-//{
-//		if(val)
-//			i2cx->CR2 |= I2C_REG_CR2_EVT_INT_ENABLE;
-//	  else
-//		  i2cx->CR2 &= ~I2C_REG_CR2_EVT_INT_ENABLE;
-//
-//}
-//
-//uint8_t is_bus_busy(I2C_TypeDef *i2cx)
-//{
-//	if(i2cx->SR2 & I2C_REG_SR2_BUS_BUSY_FLAG )
-//		return 1;
-//	else
-//		return 0;
-//}
-//
-//uint8_t i2c_wait_untill_sb_set(I2C_TypeDef *i2cx)
-//{
-//	//EV5: SB=1, cleared by reading SR1 register followed by writing DR register with Address.
-//
-//	if (i2cx->SR1 & I2C_REG_SR1_SB_FLAG )
-//	{
-//		return 1 ;
-//	}
-//	return 0;
-//}
-//
-//
-//uint8_t i2c_wait_untill_addr_set(I2C_TypeDef *i2cx)
-//{
-//	//EV6: ADDR=1, cleared by reading SR1 register followed by reading SR2.
-//
-//	if (i2cx->SR1 & I2C_REG_SR1_ADDR_SENT_FLAG )
-//	{
-//		return 1 ;
-//	}
-//	return 0;
-//}
-//
-//
-//void hal_i2c_init(i2c_handle_t *handle)
-//{
-//	hal_i2c_clk_init(handle->Instance, handle->Init.ClockSpeed,handle->Init.DutyCycle);
-//	hal_i2c_set_addressing_mode(handle->Instance, handle->Init.AddressingMode);
-//	hal_i2c_manage_ack(handle->Instance, handle->Init.ack_enable);
-//	hal_i2c_manage_clock_stretch(handle->Instance,handle->Init.NoStretchMode);
-//	hal_i2c_set_own_address1(handle->Instance,handle->Init.OwnAddress1);
-//
-//}
-//
-//void hal_i2c_send_addr_first(I2C_TypeDef *i2cx, uint8_t address)
-//{
-//
-//	i2cx->DR = address;
-//
-//}
-//
-//
-//
-//void clear_addr_flag(I2C_TypeDef *i2cx)
-//{
-//	uint16_t val;
-//
-//	val = i2cx->SR1;
-//	val = i2cx->SR2;
-//
-//}
-//
-//
-//void hal_i2c_master_tx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buffer, uint32_t len)
-//{
-//
-//	hal_i2c_enable_peripheral(handle->Instance);
-//
-//	/* doesnt care for PE = 0 */
-//	while(is_bus_busy(handle->Instance) ); //need to include timeout
-//
-//
-//
-//	 /* Disable Pos */
-//    handle->Instance->CR1 &= ~I2C_CR1_POS;
-//
-//	handle->State = HAL_I2C_STATE_BUSY_TX;
-//
-//	handle->pBuffPtr = buffer;
-//	handle->XferCount = len;
-//	handle->XferSize = len;
-//
-//
-//
-//  hal_i2c_generate_start_condition(handle->Instance);
-//
-//	/* wait till sb is set */
-//
-//	while(! i2c_wait_untill_sb_set(handle->Instance) );
-//
-//	//clear_sb_flag(); ???
-//
-//	hal_i2c_send_addr_first(handle->Instance,slave_address);
-//
-//
-//	while ( ! i2c_wait_untill_addr_set(handle->Instance) );
-//
-//	clear_addr_flag(handle->Instance); // IS THIS really needed ??
-//
-//	/* enable the buff, err , event interrupts */
-//	hal_i2c_configure_tx_rx_interrupt(handle->Instance,1);
-//	hal_i2c_configure_error_interrupt(handle->Instance,1);
-//	hal_i2c_configure_evt_interrupt(handle->Instance,1);
-//
-//
-//	void hal_i2c_slave_tx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len)
-//	{
-//		hal_i2c_enable_peripheral(handle->Instance);
-//
-//		//while(is_bus_busy(handle->Instance) );
-//
-//		handle->Instance->CR1 &= ~I2C_CR1_POS;
-//
-//		handle->State = HAL_I2C_STATE_BUSY_TX;
-//
-//		handle->pBuffPtr = buffer;
-//		handle->XferCount = len;
-//		handle->XferSize = len;
-//
-//		 /* Enable Address Acknowledge */
-//		handle->Instance->CR1 |= I2C_CR1_ACK;
-//
-//				/* ENABLE the buff, err , event interrupts */
-//		hal_i2c_configure_tx_rx_interrupt(handle->Instance,1);
-//		hal_i2c_configure_error_interrupt(handle->Instance,1);
-//		hal_i2c_configure_evt_interrupt(handle->Instance,1);
-//
-//	}
-//	void hal_i2c_slave_rx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len)
-//	{
-//		uint32_t val;
-//
-//		hal_i2c_enable_peripheral(handle->Instance);
-//
-//		//while(is_bus_busy(handle->Instance) );
-//
-//		handle->Instance->CR1 &= ~I2C_CR1_POS;
-//		handle->State = HAL_I2C_STATE_BUSY_RX;
-//
-//		handle->pBuffPtr = buffer;
-//		handle->XferCount = len;
-//		handle->XferSize = len;
-//
-//
-//
-//		handle->Instance->CR1 |= I2C_CR1_ACK;
-//
-//			/* disable the buff, err , event interrupts */
-//		hal_i2c_configure_tx_rx_interrupt(handle->Instance,1);
-//		hal_i2c_configure_error_interrupt(handle->Instance,1);
-//		hal_i2c_configure_evt_interrupt(handle->Instance,1);
-//
-//	#if 0
-//		val = handle->Instance->CR2;
-//		val = handle->Instance->CR1;
-//			val = handle->Instance->OAR1;
-//	#endif
-//
-//
-//}
+#include "hal_i2c_driver.h"
 
+/* Internal helpers (file scope) */
+static void clear_addr_flag(I2C_TypeDef *i2cx);
+static uint8_t is_bus_busy(I2C_TypeDef *i2cx);
+static uint8_t wait_for_start_flag(I2C_TypeDef *i2cx);
+static uint8_t wait_for_address_flag(I2C_TypeDef *i2cx);
+static void send_address(I2C_TypeDef *i2cx, uint8_t address);
+static void generate_start(I2C_TypeDef *i2cx);
+static void generate_stop(I2C_TypeDef *i2cx);
+static void configure_buffer_interrupt(I2C_TypeDef *i2cx, uint32_t enable);
+static void configure_error_interrupt(I2C_TypeDef *i2cx, uint32_t enable);
+static void configure_event_interrupt(I2C_TypeDef *i2cx, uint32_t enable);
 
-/* drivers/hal_gpio_driver.c */
-#include "hal_gpio_driver.h"
-
-static INT_CALLBCK callback_ptr = (INT_CALLBCK)0;
-
-static void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint32_t mode)
+/* Basic enable/disable */
+void hal_i2c_enable_peripheral(I2C_TypeDef *i2cx)
 {
-    GPIOx->MODER &= ~(3UL << (2U * pin_no));
-    GPIOx->MODER |= (mode << (2U * pin_no));
+    i2cx->CR1 |= I2C_REG_CR1_ENABLE_I2C;
 }
 
-static void hal_gpio_configure_pin_speed(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint32_t speed)
+void hal_i2c_disable_peripheral(I2C_TypeDef *i2cx)
 {
-    GPIOx->OSPEEDR &= ~(3UL << (2U * pin_no));
-    GPIOx->OSPEEDR |= (speed << (2U * pin_no));
+    i2cx->CR1 &= ~I2C_REG_CR1_ENABLE_I2C;
 }
 
-static void hal_gpio_configure_pin_otype(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint32_t op_type)
+/* Internal helper implementations */
+static void send_address(I2C_TypeDef *i2cx, uint8_t address)
 {
-    GPIOx->OTYPER &= ~(1UL << pin_no);
-    GPIOx->OTYPER |= (op_type << pin_no);
+    i2cx->DR = address;
 }
 
-static void hal_gpio_configure_pin_pupd(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint32_t pupd)
+static void generate_start(I2C_TypeDef *i2cx)
 {
-    GPIOx->PUPDR &= ~(3UL << (2U * pin_no));
-    GPIOx->PUPDR |= (pupd << (2U * pin_no));
+    i2cx->CR1 |= I2C_REG_CR1_START_GEN;
 }
 
-void hal_gpio_init(GPIO_TypeDef *GPIOx, gpio_pin_conf_t *gpio_pin_conf)
+static void generate_stop(I2C_TypeDef *i2cx)
 {
-    hal_gpio_configure_pin_mode(GPIOx, (uint16_t)gpio_pin_conf->pin, gpio_pin_conf->mode);
-    hal_gpio_configure_pin_speed(GPIOx, (uint16_t)gpio_pin_conf->pin, gpio_pin_conf->speed);
-    hal_gpio_configure_pin_otype(GPIOx, (uint16_t)gpio_pin_conf->pin, gpio_pin_conf->op_type);
-    hal_gpio_configure_pin_pupd(GPIOx, (uint16_t)gpio_pin_conf->pin, gpio_pin_conf->pull);
+    i2cx->CR1 |= I2C_REG_CR1_STOP_GEN;
 }
 
-void hal_gpio_write_to_pin(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint8_t val)
+static void configure_buffer_interrupt(I2C_TypeDef *i2cx, uint32_t enable)
 {
-    if (val)
-        GPIOx->ODR |= (1UL << pin_no);
+    if (enable)
+        i2cx->CR2 |= I2C_REG_CR2_BUF_INT_ENABLE;
     else
-        GPIOx->ODR &= ~(1UL << pin_no);
+        i2cx->CR2 &= ~I2C_REG_CR2_BUF_INT_ENABLE;
 }
 
-uint8_t hal_gpio_read_from_pin(GPIO_TypeDef *GPIOx, uint16_t pin_no)
+static void configure_error_interrupt(I2C_TypeDef *i2cx, uint32_t enable)
 {
-    return (uint8_t)((GPIOx->IDR >> pin_no) & 1UL);
+    if (enable)
+        i2cx->CR2 |= I2C_REG_CR2_ERR_INT_ENABLE;
+    else
+        i2cx->CR2 &= ~I2C_REG_CR2_ERR_INT_ENABLE;
 }
 
-void hal_gpio_set_alt_function(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint16_t alt_fun_value)
+static void configure_event_interrupt(I2C_TypeDef *i2cx, uint32_t enable)
 {
-    uint32_t reg = (uint32_t)pin_no / 8U;
-    uint32_t pos = ((uint32_t)pin_no % 8U) * 4U;
-    GPIOx->AFR[reg] &= ~(0x0FUL << pos);
-    GPIOx->AFR[reg] |= ((uint32_t)alt_fun_value << pos);
+    if (enable)
+        i2cx->CR2 |= I2C_REG_CR2_EVT_INT_ENABLE;
+    else
+        i2cx->CR2 &= ~I2C_REG_CR2_EVT_INT_ENABLE;
 }
 
-void hal_gpio_configure_interrupt(uint16_t pin_no, int_edge_sel_t edge_sel, INT_CALLBCK isr)
+static uint8_t is_bus_busy(I2C_TypeDef *i2cx)
 {
-    callback_ptr = isr;
-    if (edge_sel == INT_RISING_EDGE)
-        EXTI->RTSR |= (1UL << pin_no);
-    else if (edge_sel == INT_FALLING_EDGE)
-        EXTI->FTSR |= (1UL << pin_no);
-    else {
-        EXTI->RTSR |= (1UL << pin_no);
-        EXTI->FTSR |= (1UL << pin_no);
+    return ((i2cx->SR2 & I2C_REG_SR2_BUS_BUSY_FLAG) != 0U) ? 1U : 0U;
+}
+
+static uint8_t wait_for_start_flag(I2C_TypeDef *i2cx)
+{
+    return ((i2cx->SR1 & I2C_REG_SR1_SB_FLAG) != 0U) ? 1U : 0U;
+}
+
+static uint8_t wait_for_address_flag(I2C_TypeDef *i2cx)
+{
+    return ((i2cx->SR1 & I2C_REG_SR1_ADDR_FLAG) != 0U) ? 1U : 0U;
+}
+
+static void clear_addr_flag(I2C_TypeDef *i2cx)
+{
+    volatile uint32_t tmp = i2cx->SR1;
+    tmp = i2cx->SR2;
+    (void)tmp;
+}
+
+/* Public API */
+void hal_i2c_init(i2c_handle_t *handle)
+{
+    /* configure clock registers etc */
+    hal_i2c_clk_init(handle->Instance, handle->Init.ClockSpeed, handle->Init.DutyCycle);
+    hal_i2c_set_addressing_mode(handle->Instance, handle->Init.AddressingMode);
+    hal_i2c_manage_ack(handle->Instance, handle->Init.ack_enable);
+    hal_i2c_manage_clock_stretch(handle->Instance, handle->Init.NoStretchMode);
+    hal_i2c_set_own_address1(handle->Instance, handle->Init.OwnAddress1);
+
+    handle->State = HAL_I2C_STATE_READY;
+}
+
+void hal_i2c_master_tx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buffer, uint32_t len)
+{
+    hal_i2c_enable_peripheral(handle->Instance);
+
+    while (is_bus_busy(handle->Instance)) { /* wait */ }
+
+    handle->Instance->CR1 &= ~I2C_REG_CR1_POS;
+
+    handle->State = HAL_I2C_STATE_BUSY_TX;
+    handle->pBuffPtr = buffer;
+    handle->XferCount = len;
+    handle->XferSize = len;
+
+    generate_start(handle->Instance);
+    while (!wait_for_start_flag(handle->Instance)) { /* wait */ }
+
+    send_address(handle->Instance, slave_address);
+    while (!wait_for_address_flag(handle->Instance)) { /* wait */ }
+
+    clear_addr_flag(handle->Instance);
+
+    configure_buffer_interrupt(handle->Instance, 1U);
+    configure_error_interrupt(handle->Instance, 1U);
+    configure_event_interrupt(handle->Instance, 1U);
+}
+
+void hal_i2c_master_rx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buffer, uint32_t len)
+{
+    hal_i2c_enable_peripheral(handle->Instance);
+
+    while (is_bus_busy(handle->Instance)) { /* wait */ }
+
+    handle->Instance->CR1 &= ~I2C_REG_CR1_POS;
+
+    handle->State = HAL_I2C_STATE_BUSY_RX;
+    handle->pBuffPtr = buffer;
+    handle->XferCount = len;
+    handle->XferSize = len;
+
+    handle->Instance->CR1 |= I2C_REG_CR1_ACK;
+
+    generate_start(handle->Instance);
+    while (!wait_for_start_flag(handle->Instance)) { /* wait */ }
+
+    send_address(handle->Instance, slave_address);
+    while (!wait_for_address_flag(handle->Instance)) { /* wait */ }
+
+    clear_addr_flag(handle->Instance);
+
+    configure_buffer_interrupt(handle->Instance, 1U);
+    configure_error_interrupt(handle->Instance, 1U);
+    configure_event_interrupt(handle->Instance, 1U);
+}
+
+void hal_i2c_slave_tx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len)
+{
+    hal_i2c_enable_peripheral(handle->Instance);
+
+    handle->Instance->CR1 &= ~I2C_REG_CR1_POS;
+
+    handle->State = HAL_I2C_STATE_BUSY_TX;
+    handle->pBuffPtr = buffer;
+    handle->XferCount = len;
+    handle->XferSize = len;
+
+    handle->Instance->CR1 |= I2C_REG_CR1_ACK;
+
+    configure_buffer_interrupt(handle->Instance, 1U);
+    configure_error_interrupt(handle->Instance, 1U);
+    configure_event_interrupt(handle->Instance, 1U);
+}
+
+void hal_i2c_slave_rx(i2c_handle_t *handle, uint8_t *buffer, uint32_t len)
+{
+    hal_i2c_enable_peripheral(handle->Instance);
+
+    handle->Instance->CR1 &= ~I2C_REG_CR1_POS;
+
+    handle->State = HAL_I2C_STATE_BUSY_RX;
+    handle->pBuffPtr = buffer;
+    handle->XferCount = len;
+    handle->XferSize = len;
+
+    handle->Instance->CR1 |= I2C_REG_CR1_ACK;
+
+    configure_buffer_interrupt(handle->Instance, 1U);
+    configure_error_interrupt(handle->Instance, 1U);
+    configure_event_interrupt(handle->Instance, 1U);
+}
+
+/* IRQ handlers that operate on the provided handle */
+void HAL_I2C_EV_IRQHandler(i2c_handle_t *handle)
+{
+    I2C_TypeDef *i2cx = handle->Instance;
+
+    /* RXNE */
+    if (i2cx->SR1 & I2C_REG_SR1_RXNE_FLAG)
+    {
+        if ((handle->pBuffPtr != 0) && (handle->XferCount > 0U))
+        {
+            *handle->pBuffPtr = (uint8_t)i2cx->DR;
+            handle->pBuffPtr++;
+            handle->XferCount--;
+        }
+    }
+
+    /* TXE */
+    if (i2cx->SR1 & I2C_REG_SR1_TXE_FLAG)
+    {
+        if ((handle->pBuffPtr != 0) && (handle->XferCount > 0U))
+        {
+            i2cx->DR = *handle->pBuffPtr;
+            handle->pBuffPtr++;
+            handle->XferCount--;
+        }
+        else
+        {
+            generate_stop(i2cx);
+            configure_buffer_interrupt(i2cx, 0U);
+            configure_event_interrupt(i2cx, 0U);
+            handle->State = HAL_I2C_STATE_READY;
+        }
+    }
+
+    if ((handle->XferCount == 0U) && (handle->State != HAL_I2C_STATE_READY))
+    {
+        generate_stop(i2cx);
+        configure_buffer_interrupt(i2cx, 0U);
+        configure_error_interrupt(i2cx, 0U);
+        configure_event_interrupt(i2cx, 0U);
+        handle->State = HAL_I2C_STATE_READY;
     }
 }
 
-void hal_gpio_enable_interrupt(uint16_t pin_no)
+void HAL_I2C_ER_IRQHandler(i2c_handle_t *handle)
 {
-    EXTI->IMR |= (1UL << pin_no);
-    NVIC_EnableIRQ(EXTI0_IRQn);
-}
+    I2C_TypeDef *i2cx = handle->Instance;
 
-void hal_gpio_clear_interrupt(uint16_t pin)
-{
-    EXTI->PR |= (1UL << pin);
-}
+    handle->ErrorCode = i2cx->SR1;
 
-void EXTI0_IRQHandler(void)
-{
-    if (callback_ptr)
-        callback_ptr();
+    generate_stop(i2cx);
+
+    configure_buffer_interrupt(i2cx, 0U);
+    configure_error_interrupt(i2cx, 0U);
+    configure_event_interrupt(i2cx, 0U);
+
+    handle->State = HAL_I2C_STATE_ERROR;
 }

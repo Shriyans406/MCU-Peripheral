@@ -61,6 +61,10 @@
 #define I2C_FM_DUTY_16BY9           1U
 #define I2C_FM_DUTY_2               0U
 
+/* Clock-stretch macros expected by main.c */
+#define I2C_ENABLE_CLK_STRETCH  0U
+#define I2C_DISABLE_CLK_STRETCH 1U
+
 /* I2C state */
 typedef enum
 {

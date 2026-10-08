@@ -88,7 +88,7 @@ static void clear_addr_flag(I2C_TypeDef *i2cx)
 /* Public API */
 void hal_i2c_init(i2c_handle_t *handle)
 {
-    /* configure clock registers etc */
+    /* configure clock / CCR / TRISE etc */
     hal_i2c_clk_init(handle->Instance, handle->Init.ClockSpeed, handle->Init.DutyCycle);
     hal_i2c_set_addressing_mode(handle->Instance, handle->Init.AddressingMode);
     hal_i2c_manage_ack(handle->Instance, handle->Init.ack_enable);

@@ -2,9 +2,6 @@
 
 INT_CALLBCK callback_ptr = (INT_CALLBCK)0;
 
-/* ------------------------------ */
-/* Internal helper functions       */
-/* ------------------------------ */
 static void hal_gpio_configure_pin_mode(GPIO_TypeDef *GPIOx, uint16_t pin_no, uint32_t mode)
 {
     uint32_t pos = 2U * pin_no;
@@ -32,9 +29,6 @@ static void hal_gpio_configure_pin_pupd(GPIO_TypeDef *GPIOx, uint16_t pin_no, ui
     GPIOx->PUPDR |= ((pupd & 0x3UL) << pos);
 }
 
-/* ------------------------------ */
-/* Public GPIO APIs                */
-/* ------------------------------ */
 void hal_gpio_init(GPIO_TypeDef *GPIOx, gpio_pin_conf_t *gpio_pin_conf)
 {
     hal_gpio_configure_pin_mode(GPIOx, gpio_pin_conf->pin, gpio_pin_conf->mode);
@@ -86,10 +80,6 @@ void hal_gpio_configure_interrupt(uint16_t pin_no, int_edge_sel_t edge_sel, INT_
         EXTI->RTSR |= (1UL << pin_no);
         EXTI->FTSR |= (1UL << pin_no);
     }
-    else
-    {
-        /* TODO: handle invalid edge selection */
-    }
 }
 
 void hal_gpio_enable_interrupt(uint16_t pin_no)
@@ -103,10 +93,9 @@ void hal_gpio_clear_interrupt(uint16_t pin)
     EXTI->PR |= (1UL << pin);
 }
 
-/* EXTI ISR callback entry */
 void EXTI0_IRQHandler(void)
 {
-    if (callback_ptr)
+    if (callback_ptr != (INT_CALLBCK)0)
     {
         callback_ptr();
     }

@@ -5,6 +5,12 @@
  *      Author: HP
  */
 
+#ifndef __IO
+#define __IO volatile
+#endif
+
+typedef GPIO_RegDef_t GPIO_TypeDef;
+typedef I2C_RegDef_t  I2C_TypeDef;
 
 
 

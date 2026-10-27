@@ -8,14 +8,6 @@
 #define __IO volatile
 #endif
 
-#ifndef RESET
-#define RESET 0U
-#endif
-
-#ifndef SET
-#define SET 1U
-#endif
-
 #define I2C_1 I2C1
 #define I2C_2 I2C2
 #define I2C_3 I2C3

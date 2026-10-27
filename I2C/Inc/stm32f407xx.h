@@ -9,8 +9,6 @@
 #define __IO volatile
 #endif
 
-typedef GPIO_RegDef_t GPIO_TypeDef;
-typedef I2C_RegDef_t  I2C_TypeDef;
 
 
 
@@ -140,6 +138,9 @@ typedef struct
 
 }RCC_RegDef_t;
 
+typedef GPIO_RegDef_t GPIO_TypeDef;
+
+
 
 /*
  * peripheral register definition structure for EXTI
@@ -200,6 +201,8 @@ typedef struct
   __vo uint32_t TRISE;      /*!< TODO,     										Address offset: 0x20 */
   __vo uint32_t FLTR;       /*!< TODO,     										Address offset: 0x24 */
 }I2C_RegDef_t;
+
+typedef I2C_RegDef_t  I2C_TypeDef;
 
 /*
  * peripheral register definition structure for USART

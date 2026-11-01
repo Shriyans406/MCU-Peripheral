@@ -83,6 +83,79 @@ static void clear_addr_flag(I2C_TypeDef *i2cx)
     (void)tmp2;
 }
 
+void hal_i2c_manage_ack(I2C_TypeDef *i2cx, uint32_t ack_noack)
+{
+    if (ack_noack == I2C_ACK_ENABLE)
+        i2cx->CR1 |= I2C_REG_CR1_ACK;
+    else
+        i2cx->CR1 &= ~I2C_REG_CR1_ACK;
+}
+
+void hal_i2c_clk_init(I2C_TypeDef *i2cx, uint32_t clk_speed, uint32_t duty_cycle)
+{
+    uint32_t pclk1 = HAL_I2C_PCLK1_MHZ * 1000000UL;
+    uint32_t ccr;
+    uint32_t trise;
+
+    /* The peripheral must be disabled while CR2/CCR/TRISE are programmed. */
+    hal_i2c_disable_peripheral(i2cx);
+
+    i2cx->CR2 &= ~0x3FUL;
+    i2cx->CR2 |= HAL_I2C_PCLK1_MHZ;
+
+    if (clk_speed <= 100000UL)
+    {
+        /* Standard mode: Thigh = Tlow = CCR * TPCLK1 */
+        ccr = pclk1 / (2UL * clk_speed);
+        if (ccr < 4UL)
+            ccr = 4UL;
+        i2cx->CCR = ccr & 0xFFFUL;
+
+        trise = HAL_I2C_PCLK1_MHZ + 1UL;
+    }
+    else
+    {
+        /* Fast mode */
+        if (duty_cycle == I2C_FM_DUTY_2)
+        {
+            ccr = pclk1 / (3UL * clk_speed);
+            i2cx->CCR = I2C_REG_CCR_FS | (ccr & 0xFFFUL);
+        }
+        else
+        {
+            ccr = pclk1 / (25UL * clk_speed);
+            i2cx->CCR = I2C_REG_CCR_FS | I2C_REG_CCR_DUTY | (ccr & 0xFFFUL);
+        }
+
+        trise = (HAL_I2C_PCLK1_MHZ * 300UL / 1000UL) + 1UL;
+    }
+
+    i2cx->TRISE = trise & 0x3FUL;
+}
+
+void hal_i2c_set_addressing_mode(I2C_TypeDef *i2cx, uint32_t addr_mode)
+{
+    if (addr_mode == I2C_ADDRMODE_7BIT)
+        i2cx->OAR1 &= ~I2C_REG_OAR1_ADDRMODE;
+    else
+        i2cx->OAR1 |= I2C_REG_OAR1_ADDRMODE;
+}
+
+void hal_i2c_manage_clock_stretch(I2C_TypeDef *i2cx, uint32_t no_stretch)
+{
+    if (no_stretch == I2C_DISABLE_CLK_STRETCH)
+        i2cx->CR1 |= I2C_REG_CR1_NOSTRETCH;
+    else
+        i2cx->CR1 &= ~I2C_REG_CR1_NOSTRETCH;
+}
+
+void hal_i2c_set_own_address1(I2C_TypeDef *i2cx, uint32_t own_address)
+{
+    /* 7-bit address occupies OAR1[7:1]; bit 14 must be kept set by software. */
+    i2cx->OAR1 &= ~(0xFFUL << 0);
+    i2cx->OAR1 |= ((own_address & 0x7FUL) << 1) | (1UL << 14);
+}
+
 void hal_i2c_init(i2c_handle_t *handle)
 {
     hal_i2c_clk_init(handle->Instance, handle->Init.ClockSpeed, handle->Init.DutyCycle);

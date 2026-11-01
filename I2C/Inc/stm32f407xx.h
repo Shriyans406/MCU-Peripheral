@@ -99,6 +99,8 @@ typedef struct
 	__vo uint32_t AFR[2];
 }GPIO_RegDef_t;
 
+typedef GPIO_RegDef_t GPIO_TypeDef;
+
 typedef struct
 {
 	 __vo uint32_t CR;            /*!< TODO,     										Address offset: 0x00 */
@@ -137,10 +139,6 @@ typedef struct
 	  __vo uint32_t DCKCFGR2;      /*!< TODO,     										Address offset: 0x94 */
 
 }RCC_RegDef_t;
-
-typedef GPIO_RegDef_t GPIO_TypeDef;
-
-
 
 /*
  * peripheral register definition structure for EXTI
@@ -518,13 +516,6 @@ typedef struct
 #define USART_SR_LBD        			8
 #define USART_SR_CTS        			9
 
-
-#ifndef __IO
-#define __IO __vo
-#endif
-
-typedef GPIO_RegDef_t GPIO_TypeDef;
-typedef I2C_RegDef_t I2C_TypeDef;
 
 typedef int32_t IRQn_Type;
 

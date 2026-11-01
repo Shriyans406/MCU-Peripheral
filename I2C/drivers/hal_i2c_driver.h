@@ -30,6 +30,12 @@
 #define I2C_REG_CR2_ERR_INT_ENABLE  (1UL << 8)
 
 #define I2C_PERIPHERAL_CLK_FREQ_8MHZ 8U
+#define I2C_PERIPHERAL_CLK_FREQ_16MHZ 16U
+
+/* PCLK1 after reset (HSI, no prescalers) */
+#define HAL_I2C_PCLK1_MHZ           I2C_PERIPHERAL_CLK_FREQ_16MHZ
+
+#define I2C_REG_CCR_FS              (1UL << 15)
 
 #define I2C_REG_OAR1_ADDRMODE       (1UL << 15)
 #define I2C_ADDRMODE_7BIT           0U
@@ -100,6 +106,10 @@ void hal_i2c_disable_peripheral(I2C_TypeDef *i2cx);
 
 void hal_i2c_init(i2c_handle_t *handle);
 void hal_i2c_manage_ack(I2C_TypeDef *i2cx, uint32_t ack_noack);
+void hal_i2c_clk_init(I2C_TypeDef *i2cx, uint32_t clk_speed, uint32_t duty_cycle);
+void hal_i2c_set_addressing_mode(I2C_TypeDef *i2cx, uint32_t addr_mode);
+void hal_i2c_manage_clock_stretch(I2C_TypeDef *i2cx, uint32_t no_stretch);
+void hal_i2c_set_own_address1(I2C_TypeDef *i2cx, uint32_t own_address);
 
 void hal_i2c_master_tx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buffer, uint32_t len);
 void hal_i2c_master_rx(i2c_handle_t *handle, uint8_t slave_address, uint8_t *buffer, uint32_t len);

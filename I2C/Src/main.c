@@ -42,12 +42,6 @@
 #define WRITE_LEN           (5U)
 
 /* -------------------------------------------------------------------------- */
-/* Driver functions not declared in the supplied driver header                */
-/* -------------------------------------------------------------------------- */
-
-extern void hal_i2c_enable_peripheral(I2C_TypeDef *i2cx);
-
-/* -------------------------------------------------------------------------- */
 /* Global variables                                                           */
 /* -------------------------------------------------------------------------- */
 
@@ -156,6 +150,11 @@ static void gpio_button_interrupt_handler(void)
 {
     hal_gpio_clear_interrupt(0U);
     test_ready = SET;
+}
+
+/* Called from Reset_Handler; the reset clock configuration (16 MHz HSI) is kept. */
+void SystemInit(void)
+{
 }
 
 /* -------------------------------------------------------------------------- */
